@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://ds50p7iginw18"]
+
+[ext_resource type="Script" path="res://levels/soot_sprite.gd" id="1_iwu63"]
+[ext_resource type="Texture2D" uid="uid://c7ll4ncgy6x5s" path="res://sootSpriteIdle.png" id="2_8gd2o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
+radius = 92.0
+height = 202.0
+
+[node name="SootSprite" type="CharacterBody2D"]
+script = ExtResource("1_iwu63")
+
+[node name="SootSpriteImage" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_8gd2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_lmvvs")

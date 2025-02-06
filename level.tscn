@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://oh2yqogjhan5"]
+
+[ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://placeholderBackground.png" id="1_4mmie"]
+[ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://soot_sprite.tscn" id="2_kjw3a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqt37"]
+size = Vector2(70, 767.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ajbe8"]
+size = Vector2(1425, 101)
+
+[node name="level" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(650, 203)
+scale = Vector2(4.2035, 4.2035)
+texture = ExtResource("1_4mmie")
+
+[node name="SootSprite" parent="." instance=ExtResource("2_kjw3a")]
+position = Vector2(682, 598)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders"]
+
+[node name="RightWall" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(1307, 360)
+shape = SubResource("RectangleShape2D_hqt37")
+
+[node name="LeftWall" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(-24, 358)
+shape = SubResource("RectangleShape2D_hqt37")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(624, -40)
+shape = SubResource("RectangleShape2D_ajbe8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Borders/StaticBody2D"]
+position = Vector2(674, 750)
+shape = SubResource("RectangleShape2D_ajbe8")

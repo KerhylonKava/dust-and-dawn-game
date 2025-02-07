@@ -4,14 +4,14 @@
 [ext_resource type="Texture2D" uid="uid://c7ll4ncgy6x5s" path="res://sootSpriteIdle.png" id="2_8gd2o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
-radius = 92.0
-height = 202.0
+radius = 44.0
+height = 98.0
 
 [node name="SootSprite" type="CharacterBody2D"]
 script = ExtResource("1_iwu63")
 
 [node name="SootSpriteImage" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.13, 0.13)
 texture = ExtResource("2_8gd2o")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

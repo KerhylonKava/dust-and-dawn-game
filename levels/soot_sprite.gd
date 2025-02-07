@@ -1,10 +1,10 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
-@export var speed := 750
+@export var speed := 450
 
 var jump_time = 0
-var jump_strength := 1000
+var jump_strength := 700
 var max_jumps := 2
 var jumps_made := 0
 
@@ -50,7 +50,7 @@ func _process(delta: float) -> void:
 		velocity.y = -jump_strength
 	
 	#Gravity
-	velocity.y += 60
+	velocity.y += 30
 
 	move_and_slide()
 	

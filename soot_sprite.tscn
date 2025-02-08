@@ -19,7 +19,6 @@ position = Vector2(0, 4)
 shape = SubResource("CapsuleShape2D_lmvvs")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.2, 1.2)
 limit_bottom = 800
 limit_smoothed = true
 position_smoothing_enabled = true

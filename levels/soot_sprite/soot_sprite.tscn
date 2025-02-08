@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds50p7iginw18"]
+[gd_scene load_steps=7 format=3 uid="uid://ds50p7iginw18"]
 
 [ext_resource type="Script" path="res://levels/soot_sprite/soot_sprite.gd" id="1_iwu63"]
 [ext_resource type="Texture2D" uid="uid://c7ll4ncgy6x5s" path="res://levels/soot_sprite/sootSpriteIdle.png" id="2_8gd2o"]
 [ext_resource type="Resource" uid="uid://dhbtpbevbnnm" path="res://inventory/player_inv.tres" id="2_n2gm2"]
 [ext_resource type="PackedScene" uid="uid://c03hfwova610v" path="res://inventory/inv_ui.tscn" id="4_ce5f2"]
+[ext_resource type="Script" path="res://levels/soot_sprite/camera_2d.gd" id="4_my1oj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
 radius = 44.0
@@ -25,8 +26,10 @@ shape = SubResource("CapsuleShape2D_lmvvs")
 limit_bottom = 800
 limit_smoothed = true
 position_smoothing_enabled = true
+script = ExtResource("4_my1oj")
 
 [node name="Inv_UI" parent="." instance=ExtResource("4_ce5f2")]
+z_index = 1
 offset_left = -230.0
 offset_top = -430.0
 offset_right = -139.0

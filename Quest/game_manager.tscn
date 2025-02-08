@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://pfq7anv57pl"]
+
+[ext_resource type="Texture2D" uid="uid://b4koic1xeodbr" path="res://inventory/inventory-slot.png" id="1_mlq7q"]
+[ext_resource type="Texture2D" uid="uid://nr4urlnudp8e" path="res://inventory/Lantern 1 - Beonze and Yellow_007.png" id="2_yo4qq"]
+[ext_resource type="Texture2D" uid="uid://chhg4ijms1u0c" path="res://inventory/Lantern 7 - Bronze and Yellow_037.png" id="3_4kej5"]
+
+[sub_resource type="GDScript" id="GDScript_ta1th"]
+resource_name = "game_manager"
+script/source = "extends Node2D
+
+var lit = 0
+var unlit = 1
+
+
+func _process(delta :float) -> void: 
+	$CanvasLayer/Unlit.text = str(unlit)
+	$CanvasLayer/Lit.text = str(lit)
+"
+
+[node name="GameManager" type="Node2D"]
+script = SubResource("GDScript_ta1th")
+
+[node name="QuestBox" type="CanvasLayer" parent="."]
+
+[node name="Background" type="Sprite2D" parent="QuestBox"]
+texture_filter = 1
+position = Vector2(3, -8)
+scale = Vector2(16.1406, 8)
+texture = ExtResource("1_mlq7q")
+
+[node name="Lit_Lantern" type="Sprite2D" parent="QuestBox"]
+texture_filter = 1
+position = Vector2(77, -9)
+scale = Vector2(1.46436, 1.39286)
+texture = ExtResource("2_yo4qq")
+
+[node name="Unlit_Lantern" type="Sprite2D" parent="QuestBox"]
+texture_filter = 1
+position = Vector2(-71, -9)
+scale = Vector2(1.65263, 1.5051)
+texture = ExtResource("3_4kej5")
+
+[node name="Label" type="Label" parent="QuestBox"]
+texture_filter = 1
+offset_left = -21.0
+offset_top = -33.0
+offset_right = -3.0
+offset_bottom = -10.0
+scale = Vector2(2.5, 2.5)
+text = "->"

@@ -1,8 +1,16 @@
-[gd_scene load_steps=9 format=3 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=11 format=3 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://placeholderBackground.png" id="1_4mmie"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="2_kjw3a"]
 [ext_resource type="Texture2D" uid="uid://bnk46ffxjneqh" path="res://full-grass-tile.png" id="3_pry1n"]
+[ext_resource type="PackedScene" uid="uid://cy8y3vx6h7o6e" path="res://levels/lantern_unlit.tscn" id="4_hoq37"]
+
+[sub_resource type="GDScript" id="GDScript_xq3wu"]
+resource_name = "Quest System"
+script/source = "class_name QuestManager extends Node2D
+
+var quest1Accepted:bool = false
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqt37"]
 size = Vector2(70, 767.5)
@@ -25,6 +33,7 @@ physics_layer_0/collision_layer = 1
 sources/1 = SubResource("TileSetAtlasSource_x4kvx")
 
 [node name="level" type="Node2D"]
+script = SubResource("GDScript_xq3wu")
 
 [node name="Borders" type="Node2D" parent="."]
 
@@ -46,12 +55,12 @@ shape = SubResource("RectangleShape2D_ajbe8")
 disabled = true
 
 [node name="Floor" type="CollisionShape2D" parent="Borders/StaticBody2D"]
-position = Vector2(674, 750)
+position = Vector2(640, 770)
 shape = SubResource("RectangleShape2D_ajbe8")
 disabled = true
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(650, 203)
+position = Vector2(591, 262)
 scale = Vector2(4.2035, 4.2035)
 texture = ExtResource("1_4mmie")
 
@@ -77,3 +86,8 @@ layer_0/tile_data = PackedInt32Array(196617, 1, 0, 589828, 1, 0, 589829, 1, 0, 5
 
 [node name="SootSprite" parent="." instance=ExtResource("2_kjw3a")]
 position = Vector2(683, 647)
+script = null
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("4_hoq37")]
+position = Vector2(1080, 728)
+scale = Vector2(2, 2)

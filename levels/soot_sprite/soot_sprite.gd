@@ -56,4 +56,6 @@ func _process(delta: float) -> void:
 
 	move_and_slide()
 	
+	#func collect(item):
+	#	inv.insert(item)
 	

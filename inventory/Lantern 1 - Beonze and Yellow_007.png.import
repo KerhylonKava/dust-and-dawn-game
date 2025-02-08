@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c7ll4ncgy6x5s"
-path="res://.godot/imported/sootSpriteIdle.png-f7fbd6f09161017449095bf604e06c11.ctex"
+uid="uid://nr4urlnudp8e"
+path="res://.godot/imported/Lantern 1 - Beonze and Yellow_007.png-3d02064f2a0c3f4495d441e0776feda0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sootSpriteIdle.png"
-dest_files=["res://.godot/imported/sootSpriteIdle.png-f7fbd6f09161017449095bf604e06c11.ctex"]
+source_file="res://inventory/Lantern 1 - Beonze and Yellow_007.png"
+dest_files=["res://.godot/imported/Lantern 1 - Beonze and Yellow_007.png-3d02064f2a0c3f4495d441e0776feda0.ctex"]
 
 [params]
 

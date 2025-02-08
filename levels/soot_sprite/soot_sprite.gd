@@ -3,6 +3,8 @@ const UP_DIRECITON := Vector2.UP
 
 @export var speed := 450
 
+@export var inventory : Inventory
+
 var jump_time = 0
 var jump_strength := 700
 var max_jumps := 2

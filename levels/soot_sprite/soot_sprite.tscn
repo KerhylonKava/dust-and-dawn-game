@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds50p7iginw18"]
+
+[ext_resource type="Script" path="res://levels/soot_sprite/soot_sprite.gd" id="1_iwu63"]
+[ext_resource type="Texture2D" uid="uid://c7ll4ncgy6x5s" path="res://levels/soot_sprite/sootSpriteIdle.png" id="2_8gd2o"]
+[ext_resource type="Resource" uid="uid://dhbtpbevbnnm" path="res://inventory/player_inv.tres" id="2_n2gm2"]
+[ext_resource type="PackedScene" uid="uid://c03hfwova610v" path="res://inventory/inv_ui.tscn" id="4_ce5f2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
+radius = 44.0
+height = 98.0
+
+[node name="SootSprite" type="CharacterBody2D"]
+script = ExtResource("1_iwu63")
+inventory = ExtResource("2_n2gm2")
+
+[node name="SootSpriteImage" type="Sprite2D" parent="."]
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_8gd2o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 4)
+shape = SubResource("CapsuleShape2D_lmvvs")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_bottom = 800
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="Inv_UI" parent="." instance=ExtResource("4_ce5f2")]
+offset_left = -230.0
+offset_top = -430.0
+offset_right = -139.0
+offset_bottom = -360.0

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnk46ffxjneqh"
-path="res://.godot/imported/full-grass-tile.png-697882942c161b98779dad047783bfaf.ctex"
+uid="uid://b4koic1xeodbr"
+path="res://.godot/imported/inventory-slot.png-0aa08b22d5faae21155b8c0307c248a8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://full-grass-tile.png"
-dest_files=["res://.godot/imported/full-grass-tile.png-697882942c161b98779dad047783bfaf.ctex"]
+source_file="res://inventory/images/inventory-slot.png"
+dest_files=["res://.godot/imported/inventory-slot.png-0aa08b22d5faae21155b8c0307c248a8.ctex"]
 
 [params]
 

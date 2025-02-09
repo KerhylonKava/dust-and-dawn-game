@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://nr4urlnudp8e"
-path="res://.godot/imported/Lantern 1 - Beonze and Yellow_007.png-3d02064f2a0c3f4495d441e0776feda0.ctex"
+uid="uid://bnk46ffxjneqh"
+path="res://.godot/imported/full-grass-tile.png-4238cdf09e529e955f751338950de57a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://inventory/Lantern 1 - Beonze and Yellow_007.png"
-dest_files=["res://.godot/imported/Lantern 1 - Beonze and Yellow_007.png-3d02064f2a0c3f4495d441e0776feda0.ctex"]
+source_file="res://tiles_and_backgrounds/full-grass-tile.png"
+dest_files=["res://.godot/imported/full-grass-tile.png-4238cdf09e529e955f751338950de57a.ctex"]
 
 [params]
 

@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://c03hfwova610v"]
 
-[ext_resource type="Script" path="res://inventory/inv_ui.gd" id="1_qt7m7"]
-[ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/inventory-background.png" id="2_e382d"]
-[ext_resource type="PackedScene" uid="uid://g0380ahplhx5" path="res://inventory/inv_ui_slot.tscn" id="3_uvpqf"]
+[ext_resource type="Script" path="res://inventory/scripts/inv_ui.gd" id="1_qt7m7"]
+[ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="2_e382d"]
+[ext_resource type="PackedScene" uid="uid://g0380ahplhx5" path="res://inventory/scenes/inv_ui_slot.tscn" id="3_uvpqf"]
 
 [node name="Inv_UI" type="Control"]
 custom_minimum_size = Vector2(91, 70)
@@ -14,6 +14,7 @@ scale = Vector2(5, 5)
 script = ExtResource("1_qt7m7")
 
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 91.0
 offset_bottom = 70.0

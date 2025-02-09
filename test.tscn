@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://1icb3f06wb16"]
+
+[ext_resource type="Script" path="res://test.gd" id="1_5es4l"]
+[ext_resource type="Resource" uid="uid://busdtnffib51m" path="res://inventory/items/lantern.tres" id="2_uj71x"]
+[ext_resource type="Texture2D" uid="uid://cjbcoiancmkc7" path="res://icon.svg" id="3_8lq6i"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp4r"]
+radius = 90.0
+height = 192.0
+
+[node name="Test" type="Node2D"]
+script = ExtResource("1_5es4l")
+item = ExtResource("2_uj71x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("3_8lq6i")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_usp4r")

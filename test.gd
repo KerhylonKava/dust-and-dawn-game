@@ -13,8 +13,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
-	if Input.is_action_pressed("space"):
-		drop_lantern()
+	#if Input.is_action_pressed("space"):
+	#	drop_lantern()
 
 ##on area 2d get overlaping areas/bodys then check nodepaths
 #$CollisionShape2D.input_event.connect(handle_input)

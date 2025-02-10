@@ -13,6 +13,7 @@ script = ExtResource("1_5es4l")
 item = ExtResource("2_uj71x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture_filter = 1
 texture = ExtResource("3_8lq6i")
 

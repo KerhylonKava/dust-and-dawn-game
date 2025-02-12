@@ -5,15 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://cjbcoiancmkc7" path="res://icon.svg" id="3_8lq6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_usp4r"]
-radius = 90.0
-height = 192.0
+radius = 297.0
+height = 594.0
 
 [node name="Test" type="Node2D"]
 script = ExtResource("1_5es4l")
 item = ExtResource("2_uj71x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-visible = false
 texture_filter = 1
 texture = ExtResource("3_8lq6i")
 
@@ -21,3 +20,6 @@ texture = ExtResource("3_8lq6i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CapsuleShape2D_usp4r")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

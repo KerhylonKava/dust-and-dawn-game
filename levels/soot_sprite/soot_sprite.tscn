@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://levels/soot_sprite/camera_2d.gd" id="4_my1oj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
-radius = 44.0
+radius = 35.0
 height = 98.0
 
 [node name="SootSprite" type="CharacterBody2D"]

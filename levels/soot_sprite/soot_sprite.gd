@@ -27,7 +27,6 @@ func _process(delta: float) -> void:
 	#Movement
 	if jump_time > 0:
 		jump_time -= 1
-		print(jump_time)
 	
 	if Input.is_action_just_pressed("up"):
 		if is_on_floor():
@@ -36,7 +35,6 @@ func _process(delta: float) -> void:
 		elif jumps_made < max_jumps:
 			jump_time += 5
 			jumps_made += 1
-		print(jump_time,",", jumps_made)
 	
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
@@ -63,3 +61,6 @@ func _process(delta: float) -> void:
 	
 func collect(item):
 	inventory.insert(item)
+	
+func soot_sprite():
+	pass

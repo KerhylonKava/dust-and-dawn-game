@@ -64,3 +64,5 @@ func collect(item):
 	
 func soot_sprite():
 	pass
+
+var has_collected_light_sprite = false

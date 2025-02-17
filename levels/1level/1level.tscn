@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=17 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
 [ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://tiles_and_backgrounds/placeholderBackground.png" id="2_f16cp"]
@@ -7,6 +7,10 @@
 [ext_resource type="Texture2D" uid="uid://do1pk8ohswfs8" path="res://tiles_and_backgrounds/sr2101fc6b8e0aws3.png" id="5_cjouc"]
 [ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="6_7l357"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_whatu"]
+[ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/unlit_lantern.png" id="8_cxf7o"]
+[ext_resource type="Script" path="res://Quest/sprite_2d.gd" id="9_8e38i"]
+[ext_resource type="PackedScene" uid="uid://by0lyhto3vtcc" path="res://Quest/light_collectable.tscn" id="10_lfpot"]
+[ext_resource type="Resource" uid="uid://bcr4e74tlmgvx" path="res://inventory/items/light.tres" id="11_4kfkn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qi1tc"]
 texture = ExtResource("4_whemk")
@@ -94,7 +98,7 @@ script = ExtResource("1_8s68j")
 
 [node name="Background" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(650, 203)
+position = Vector2(649, 197)
 scale = Vector2(4.2035, 4.2035)
 texture = ExtResource("2_f16cp")
 
@@ -124,5 +128,16 @@ shape = SubResource("RectangleShape2D_qyar3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBorder"]
 position = Vector2(5000, 0)
 shape = SubResource("RectangleShape2D_pp4ih")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(350, 490)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("8_cxf7o")
+script = ExtResource("9_8e38i")
+
+[node name="light_collectable" parent="." instance=ExtResource("10_lfpot")]
+position = Vector2(967, 441)
+scale = Vector2(0.1, 0.1)
+item = ExtResource("11_4kfkn")
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

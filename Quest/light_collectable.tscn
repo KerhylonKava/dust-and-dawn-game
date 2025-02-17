@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://by0lyhto3vtcc"]
+
+[ext_resource type="Script" path="res://Quest/light_collectable.gd" id="1_7335b"]
+[ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/sr25ace012ff8aws3.png" id="2_dvk5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n2cyi"]
+radius = 31.0161
+
+[node name="light_collectable" type="StaticBody2D"]
+script = ExtResource("1_7335b")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dvk5t")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_n2cyi")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

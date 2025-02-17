@@ -1,12 +1,14 @@
-[gd_scene load_steps=13 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=15 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
-[ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://tiles_and_backgrounds/placeholderBackground.png" id="2_f16cp"]
 [ext_resource type="Script" path="res://levels/ground.gd" id="3_usbm4"]
-[ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/Tileset.png" id="4_whemk"]
-[ext_resource type="Texture2D" uid="uid://do1pk8ohswfs8" path="res://tiles_and_backgrounds/sr2101fc6b8e0aws3.png" id="5_cjouc"]
-[ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="6_7l357"]
+[ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/tiles/Tileset.png" id="4_whemk"]
+[ext_resource type="Texture2D" uid="uid://do1pk8ohswfs8" path="res://tiles_and_backgrounds/tiles/sr2101fc6b8e0aws3.png" id="5_cjouc"]
+[ext_resource type="Texture2D" uid="uid://c7fw54fpys2d7" path="res://tiles_and_backgrounds/background/pixil-layer-0.png" id="6_1m8p0"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_whatu"]
+[ext_resource type="Texture2D" uid="uid://313im0xbbisy" path="res://tiles_and_backgrounds/background/pixil-layer-1.png" id="7_xqaii"]
+[ext_resource type="Texture2D" uid="uid://iut0fj8e8eer" path="res://tiles_and_backgrounds/background/pixil-layer-2.png" id="8_o2p4o"]
+[ext_resource type="Texture2D" uid="uid://qpf33phv06cv" path="res://tiles_and_backgrounds/background/pixil-layer-3.png" id="9_fa4dk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qi1tc"]
 texture = ExtResource("4_whemk")
@@ -92,12 +94,6 @@ size = Vector2(5, 5000)
 texture_filter = 1
 script = ExtResource("1_8s68j")
 
-[node name="Background" type="Sprite2D" parent="."]
-texture_filter = 1
-position = Vector2(650, 203)
-scale = Vector2(4.2035, 4.2035)
-texture = ExtResource("2_f16cp")
-
 [node name="Ground" type="Node" parent="."]
 script = ExtResource("3_usbm4")
 
@@ -106,9 +102,6 @@ texture_filter = 1
 scale = Vector2(0.25, 0.25)
 tile_map_data = PackedByteArray("AAD+/woAAAAAAAAAAAD+/wsAAAADAAIAAAD//woAAAAAAAAAAAD//wsAAAADAAIAAAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAkAAAACAAAAAAADAAoAAAAEAAAAAAAEAAkAAAAAAAAAAAAEAAoAAAADAAIAAAAFAAkAAAAAAAAAAAAFAAoAAAADAAIAAAAGAAkAAAAAAAAAAAAGAAoAAAADAAIAAAAVAAsAAAACAAEAAAAVAAwAAAADAAIAAAAWAAsAAAAEAAEAAAAWAAwAAAADAAIAAAAXAAsAAAAAAAAAAAAXAAwAAAADAAIAAAAAAAsAAAADAAIAAAABAAsAAAADAAIAAAACAAsAAAADAAIAAAADAAsAAAADAAIAAAAEAAsAAAADAAIAAAAGAPz/AAACAAAAAAAGAP3/AAABAAAAAAAGAP7/AAABAAAAAAAGAP//AAABAAAAAAAGAAAAAAABAAAAAAAHAPz/AAADAAAAAAAHAP3/AAABAAAAAQAHAP7/AAABAAAAAQAHAP//AAABAAAAAQAHAAAAAAABAAAAAQAHAAkAAAAAAAAAAAAHAAoAAAADAAIAAAAIAAkAAAAAAAAAAAAIAAoAAAADAAIAAAAJAAkAAAAAAAAAAAAJAAoAAAADAAIAAAAKAAkAAAAAAAAAAAAKAAoAAAADAAIAAAALAAkAAAAAAAAAAAALAAoAAAADAAIAAAAMAAkAAAAAAAAAAAAMAAoAAAADAAIAAAANAAkAAAAAAAAAAAANAAoAAAADAAIAAAAOAAgAAAACAAAAAAAOAAkAAAAEAAAAAAAOAAoAAAADAAIAAAAPAPv/AAAAAAAAAAAPAAgAAAAAAAAAAAAPAAkAAAADAAIAAAAPAAoAAAADAAIAAAAQAPv/AAAAAAAAAAAQAAgAAAAAAAAAAAAQAAkAAAADAAIAAAARAPv/AAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAACAAEAAAASAPv/AAAAAAAAAAASAAgAAAAAAAAAAAASAAkAAAACAAEAAAATAPv/AAAAAAAAAAATAAgAAAAAAAAAAAATAAkAAAACAAEAAAAUAPv/AAAAAAAAAAAUAAgAAAAAAAAAAAAUAAkAAAACAAEAAAAVAPr/AAACAAAAAAAVAPv/AAAEAAAAAAAVAAgAAAAAAAAA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")
 tile_set = SubResource("TileSet_c7f3n")
-
-[node name="Test" parent="." instance=ExtResource("6_7l357")]
-visible = false
 
 [node name="SootSprite" parent="." instance=ExtResource("7_whatu")]
 texture_filter = 1
@@ -124,5 +117,46 @@ shape = SubResource("RectangleShape2D_qyar3")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBorder"]
 position = Vector2(5000, 0)
 shape = SubResource("RectangleShape2D_pp4ih")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scale = Vector2(7, 7)
+transform = Transform2D(7, 0, 0, 7, 0, 0)
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.01, 0)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+modulate = Color(1, 1, 1, 0.862745)
+texture = ExtResource("6_1m8p0")
+centered = false
+
+[node name="SmallClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0, 0)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SmallClouds"]
+texture = ExtResource("7_xqaii")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.05, 0.025)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture = ExtResource("8_o2p4o")
+centered = false
+
+[node name="Forground" type="ParallaxLayer" parent="ParallaxBackground"]
+texture_filter = 1
+motion_scale = Vector2(0.1, 0.05)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Forground"]
+texture = ExtResource("9_fa4dk")
+centered = false
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

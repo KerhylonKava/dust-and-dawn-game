@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://yo642kyq01we"
-path="res://.godot/imported/inside_corner.png-e95680ce3c5811411d447a929f69c475.ctex"
+uid="uid://qpf33phv06cv"
+path="res://.godot/imported/pixil-layer-3.png-aac6e886968e541d648a24f3ac3de54b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles_and_backgrounds/inside_corner.png"
-dest_files=["res://.godot/imported/inside_corner.png-e95680ce3c5811411d447a929f69c475.ctex"]
+source_file="res://tiles_and_backgrounds/background/pixil-layer-3.png"
+dest_files=["res://.godot/imported/pixil-layer-3.png-aac6e886968e541d648a24f3ac3de54b.ctex"]
 
 [params]
 

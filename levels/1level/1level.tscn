@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=16 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
 [ext_resource type="Script" path="res://levels/ground.gd" id="3_usbm4"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://313im0xbbisy" path="res://tiles_and_backgrounds/background/pixil-layer-1.png" id="7_xqaii"]
 [ext_resource type="Texture2D" uid="uid://iut0fj8e8eer" path="res://tiles_and_backgrounds/background/pixil-layer-2.png" id="8_o2p4o"]
 [ext_resource type="Texture2D" uid="uid://qpf33phv06cv" path="res://tiles_and_backgrounds/background/pixil-layer-3.png" id="9_fa4dk"]
+[ext_resource type="PackedScene" uid="uid://dj8xnrf5blv1j" path="res://inventory/scenes/collectable.tscn" id="10_uogw4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qi1tc"]
 texture = ExtResource("4_whemk")
@@ -158,5 +159,8 @@ motion_mirroring = Vector2(240, 0)
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Forground"]
 texture = ExtResource("9_fa4dk")
 centered = false
+
+[node name="collectable" parent="." instance=ExtResource("10_uogw4")]
+position = Vector2(1162, 371)
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

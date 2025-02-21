@@ -2,6 +2,9 @@ extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
 @export var speed := 450/0.0166
+#scale.x = scale.y * direction 
+
+@onready var animation = $AnimationPlayer
 
 @export var inventory : Inventory
 
@@ -30,6 +33,7 @@ func _process(delta: float) -> void:
 	
 
 	if Input.is_action_just_pressed("up"):
+		animation.play("jump")
 		if is_on_floor():
 			jump_time = 15
 			jumps_made = 1
@@ -41,13 +45,13 @@ func _process(delta: float) -> void:
 		$SootSpriteImage.flip_h = true
 		if is_on_floor():
 			animation.play("run")
-		velocity.x = -speed 
+		velocity.x = -speed * delta
 	
 	elif Input.is_action_pressed("right"):
 		$SootSpriteImage.flip_h = false
 		if is_on_floor():
 			animation.play("run")
-		velocity.x = speed
+		velocity.x = speed * delta
 
 	else:
 		if velocity.x > 0:

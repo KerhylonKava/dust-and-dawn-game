@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4o43lodtajx"
-path="res://.godot/imported/wakatime_logo.jpg-a50f628e445fd6bef17dff1651d611bc.ctex"
+uid="uid://cwh8sio0f1b8k"
+path="res://.godot/imported/Sprite Sheet.png-1cd08822f19a6ba8db8e08b65ff595f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://wakatime_logo.jpg"
-dest_files=["res://.godot/imported/wakatime_logo.jpg-a50f628e445fd6bef17dff1651d611bc.ctex"]
+source_file="res://levels/soot_sprite/Sprite Sheet.png"
+dest_files=["res://.godot/imported/Sprite Sheet.png-1cd08822f19a6ba8db8e08b65ff595f0.ctex"]
 
 [params]
 

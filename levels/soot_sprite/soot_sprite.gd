@@ -2,6 +2,9 @@ extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
 @export var speed := 450/0.0166
+#scale.x = scale.y * direction 
+
+@onready var animation = $AnimationPlayer
 
 @export var inventory : Inventory
 
@@ -29,6 +32,7 @@ func _process(delta: float) -> void:
 		jump_time -= 1
 	
 	if Input.is_action_just_pressed("up"):
+		animation.play("jump")
 		if is_on_floor():
 			jump_time = 15
 			jumps_made = 1
@@ -37,18 +41,28 @@ func _process(delta: float) -> void:
 			jumps_made += 1
 	
 	if Input.is_action_pressed("left"):
-		velocity.x = -speed * delta
-
+		#direction = -1 #Left
+		#$SootSprite.flip_h = true
+		animation.play("run")
+		#scale.x = scale.x * direction
+		#$soot_sprite.scale.x = -1
+		velocity.x = -speed * delta #* direction
 	
 	elif Input.is_action_pressed("right"):
-		velocity.x = speed * delta
-
+		#direction = 1 #Right
+		#$SootSprite.flip_h = false
+		animation.play("run")
+		#$soot_sprite.scale.x = 1
+		#scale.y = scale.y * direction
+		velocity.x = speed * delta #* direction
 
 	else:
 		if velocity.x > 0:
 			velocity.x -= 0.15 * velocity.x
 		if velocity.x < 0:
 			velocity.x -= 0.15 * velocity.x
+		if velocity.x == 0:
+			animation.play("idle")
 			
 	if jump_time > 0:
 		velocity.y = -jump_strength * delta
@@ -66,3 +80,5 @@ func remove(item):
 	
 func soot_sprite():
 	pass
+
+var has_collected_light_sprite = false

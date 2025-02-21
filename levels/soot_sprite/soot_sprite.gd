@@ -1,12 +1,12 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
-@export var speed := 450
+@export var speed := 450/0.0166
 
 @export var inventory : Inventory
 
 var jump_time = 0
-var jump_strength := 700
+var jump_strength := 700/0.0166
 var max_jumps := 2
 var jumps_made := 0
 
@@ -37,11 +37,12 @@ func _process(delta: float) -> void:
 			jumps_made += 1
 	
 	if Input.is_action_pressed("left"):
-		velocity.x = -speed
+		velocity.x = -speed * delta
 
 	
 	elif Input.is_action_pressed("right"):
-		velocity.x = speed
+		velocity.x = speed * delta
+
 
 	else:
 		if velocity.x > 0:
@@ -50,16 +51,13 @@ func _process(delta: float) -> void:
 			velocity.x -= 0.15 * velocity.x
 			
 	if jump_time > 0:
-		velocity.y = -jump_strength
+		velocity.y = -jump_strength * delta
 	
 	#Gravity
-	velocity.y += 30
+	velocity.y += 30 * delta / 0.0166
 
 	move_and_slide()
-	
-	#func collect(item):
-	#	inventory.insert(item)
-	
+
 func collect(item):
 	inventory.insert(item)
 

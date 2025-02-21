@@ -38,6 +38,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_pressed("left"):
 		velocity.x = -speed
+
 	
 	elif Input.is_action_pressed("right"):
 		velocity.x = speed
@@ -61,6 +62,9 @@ func _process(delta: float) -> void:
 	
 func collect(item):
 	inventory.insert(item)
+
+func remove(item):
+	inventory.remove(item)
 	
 func soot_sprite():
 	pass

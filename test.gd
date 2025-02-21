@@ -16,12 +16,15 @@ func _process(delta: float) -> void:
 	if player_in_area:
 		if Input.is_action_just_pressed("space"):
 			drop_lantern()
+		if Input.is_action_just_pressed("test"):
+			playerremove()
 
 
 func drop_lantern():
 	SootSprite.collect(item)
 
-
+func playerremove():
+	SootSprite.remove(item)
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):

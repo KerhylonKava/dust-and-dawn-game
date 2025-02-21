@@ -10,6 +10,6 @@ func _on_interactable_area_body_entered(body: Node2D) -> void:
 		SootSprite = body
 		visible = false
 		playercollect()
-
+		
 func playercollect():
 	SootSprite.collect(item)

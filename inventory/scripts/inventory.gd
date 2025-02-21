@@ -16,3 +16,14 @@ func insert(item: InvItem):
 			emptyslots[0].item = item
 			emptyslots[0].amount = 1
 	update.emit()
+
+func remove(item: InvItem):
+	var itemslots = slots.filter(func(slot):return slot.item == item)
+	if !itemslots.is_empty() and itemslots[0].amount >= 1:
+		itemslots[0].amount -= 1
+		print("removed")
+	else:
+		var emptyslots = slots.filter(func(slot): return slot.item == null)
+		if !emptyslots.is_empty():
+			print("oh no, not enough ", item, "s")
+	update.emit()

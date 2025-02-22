@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvwwcc8f7ilb4"]
+
+[ext_resource type="AudioStream" uid="uid://cf5fyv7n6tpxt" path="res://Music/4822823478099968.wav" id="1_70ro5"]
+
+[node name="LoadingScreenMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_70ro5")
+autoplay = true

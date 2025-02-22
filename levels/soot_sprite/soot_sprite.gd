@@ -28,6 +28,7 @@ func _process(delta: float) -> void:
 	if jump_time > 0:
 		jump_time -= 1
 	
+
 	if Input.is_action_just_pressed("up"):
 		if is_on_floor():
 			jump_time = 15
@@ -36,19 +37,25 @@ func _process(delta: float) -> void:
 			jump_time += 5
 			jumps_made += 1
 	
-	if Input.is_action_pressed("left"):
-		velocity.x = -speed * delta
-
+	elif Input.is_action_pressed("left"):
+		$SootSpriteImage.flip_h = true
+		if is_on_floor():
+			animation.play("run")
+		velocity.x = -speed 
 	
 	elif Input.is_action_pressed("right"):
-		velocity.x = speed * delta
-
+		$SootSpriteImage.flip_h = false
+		if is_on_floor():
+			animation.play("run")
+		velocity.x = speed
 
 	else:
 		if velocity.x > 0:
 			velocity.x -= 0.15 * velocity.x
 		if velocity.x < 0:
 			velocity.x -= 0.15 * velocity.x
+		if velocity.x == 0 and is_on_floor():
+			animation.play("idle")
 			
 	if jump_time > 0:
 		velocity.y = -jump_strength * delta

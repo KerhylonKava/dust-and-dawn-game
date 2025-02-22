@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cy8y3vx6h7o6e"]
 
-[ext_resource type="Texture2D" uid="uid://chhg4ijms1u0c" path="res://inventory/Lantern 7 - Bronze and Yellow_037.png" id="1_ena8a"]
+[ext_resource type="Texture2D" uid="uid://chhg4ijms1u0c" path="res://inventory/images/Lantern 7 - Bronze and Yellow_037.png" id="1_ena8a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qbpis"]
 radius = 22.0

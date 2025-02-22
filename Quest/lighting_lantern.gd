@@ -18,7 +18,7 @@ func _ready():
 
 # Called every frame
 func _process(delta):
-	# Check if the player has collected the light sprite and the down arrow key is pressed
-	if player.has_collected_light_sprite and Input.is_action_just_pressed("ui_down"):
-		# Switch to the lit lantern when the down arrow key is pressed
+	# Check if the player has collected the light sprite and the space key is pressed
+	if player.has_collected_light_sprite and Input.is_action_just_pressed("ui_accept"):
+		# Switch to the lit lantern when the space key is pressed
 		texture = lit_lantern

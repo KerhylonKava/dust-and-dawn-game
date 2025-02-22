@@ -5,51 +5,39 @@
 
 [sub_resource type="Resource" id="Resource_6iqul"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_mmg6x"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_46jkw"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_fp1sk"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_236ix"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_g5aue"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_n0myg"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_v8jg6"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_jgfd1"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_panti"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_wdc1d"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [sub_resource type="Resource" id="Resource_tl7on"]
 script = ExtResource("2_jcrvg")
-amount = 0
 
 [resource]
 script = ExtResource("1_jbptn")

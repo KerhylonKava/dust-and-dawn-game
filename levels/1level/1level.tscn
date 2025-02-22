@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=20 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
 [ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/tiles/Tileset.png" id="4_whemk"]
@@ -6,14 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://c7fw54fpys2d7" path="res://tiles_and_backgrounds/background/pixil-layer-0.png" id="6_1m8p0"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_whatu"]
 [ext_resource type="Texture2D" uid="uid://313im0xbbisy" path="res://tiles_and_backgrounds/background/pixil-layer-1.png" id="7_xqaii"]
-[ext_resource type="Texture2D" uid="uid://iut0fj8e8eer" path="res://tiles_and_backgrounds/background/pixil-layer-2.png" id="8_o2p4o"]
-[ext_resource type="Texture2D" uid="uid://qpf33phv06cv" path="res://tiles_and_backgrounds/background/pixil-layer-3.png" id="9_fa4dk"]
-[ext_resource type="PackedScene" uid="uid://dj8xnrf5blv1j" path="res://inventory/scenes/collectable.tscn" id="10_uogw4"]
-[ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="11_7x38o"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/unlit_lantern.png" id="8_cxf7o"]
+[ext_resource type="Texture2D" uid="uid://iut0fj8e8eer" path="res://tiles_and_backgrounds/background/pixil-layer-2.png" id="8_o2p4o"]
 [ext_resource type="Script" path="res://Quest/sprite_2d.gd" id="9_8e38i"]
-[ext_resource type="PackedScene" uid="uid://by0lyhto3vtcc" path="res://Quest/light_collectable.tscn" id="10_lfpot"]
-[ext_resource type="Resource" uid="uid://bcr4e74tlmgvx" path="res://inventory/items/light.tres" id="11_4kfkn"]
+[ext_resource type="Texture2D" uid="uid://qpf33phv06cv" path="res://tiles_and_backgrounds/background/pixil-layer-3.png" id="9_fa4dk"]
+[ext_resource type="PackedScene" path="res://Quest/light_collectable.tscn" id="10_lfpot"]
+[ext_resource type="PackedScene" uid="uid://dj8xnrf5blv1j" path="res://inventory/scenes/collectable.tscn" id="10_uogw4"]
+[ext_resource type="Resource" path="res://inventory/items/light.tres" id="11_4kfkn"]
+[ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="11_7x38o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qi1tc"]
 texture = ExtResource("4_whemk")
@@ -171,6 +171,7 @@ position = Vector2(1353, -417)
 
 [node name="Test" parent="." instance=ExtResource("11_7x38o")]
 position = Vector2(2220, 478)
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(350, 490)
 scale = Vector2(0.1, 0.1)

@@ -1,9 +1,13 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
+var is_moving := false
+var was_moving := false
+
 @export var speed := 450/0.0166
 #scale.x = scale.y * direction 
-
+@onready var FootSteps_Sound = $FootSteps_Sound
+@onready var Jump_Sound = $Jump_Sound
 @onready var animation = $AnimationPlayer
 
 @export var inventory : Inventory
@@ -15,12 +19,9 @@ var jumps_made := 0
 
 var is_falling := velocity.y > 0 and not is_on_floor()
 
-
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -34,6 +35,7 @@ func _process(delta: float) -> void:
 
 	if Input.is_action_just_pressed("up"):
 		animation.play("jump")
+		Jump_Sound.play()
 		if is_on_floor():
 			jump_time = 15
 			jumps_made = 1
@@ -42,12 +44,14 @@ func _process(delta: float) -> void:
 			jumps_made += 1
 	
 	elif Input.is_action_pressed("left"):
+		is_moving = true
 		$SootSpriteImage.flip_h = true
 		if is_on_floor():
 			animation.play("run")
 		velocity.x = -speed * delta
 	
 	elif Input.is_action_pressed("right"):
+		is_moving = true 
 		$SootSpriteImage.flip_h = false
 		if is_on_floor():
 			animation.play("run")
@@ -61,6 +65,13 @@ func _process(delta: float) -> void:
 		if velocity.x == 0 and is_on_floor():
 			animation.play("idle")
 			
+
+
+	# Update the previous movement state
+	was_moving = is_moving
+	
+	
+	
 	if jump_time > 0:
 		velocity.y = -jump_strength * delta
 	

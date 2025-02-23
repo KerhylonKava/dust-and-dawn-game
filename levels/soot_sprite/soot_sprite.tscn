@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://ds50p7iginw18"]
+[gd_scene load_steps=14 format=3 uid="uid://ds50p7iginw18"]
 
 [ext_resource type="Script" path="res://levels/soot_sprite/soot_sprite.gd" id="1_iwu63"]
 [ext_resource type="Resource" uid="uid://dhbtpbevbnnm" path="res://inventory/scripts/player_inv.tres" id="2_n2gm2"]
 [ext_resource type="Texture2D" uid="uid://xjbnfvpd2suy" path="res://levels/soot_sprite/pixil-frame-0.png" id="3_yhqiy"]
 [ext_resource type="PackedScene" uid="uid://c03hfwova610v" path="res://inventory/scenes/inv_ui.tscn" id="4_ce5f2"]
 [ext_resource type="Script" path="res://levels/soot_sprite/camera_2d.gd" id="4_my1oj"]
+[ext_resource type="AudioStream" uid="uid://pho45f0yakdp" path="res://Sound_Effects/Footsteps Loop 1 (Rpg).wav" id="6_x3b8b"]
+[ext_resource type="AudioStream" uid="uid://dv8x3mschx3r6" path="res://Sound_Effects/Jump 1.wav" id="7_f3r64"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
 radius = 29.0
@@ -120,3 +122,11 @@ offset_bottom = -360.0
 libraries = {
 "": SubResource("AnimationLibrary_fx4h1")
 }
+
+[node name="FootSteps_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_x3b8b")
+pitch_scale = 4.0
+
+[node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_f3r64")
+volume_db = -3.506

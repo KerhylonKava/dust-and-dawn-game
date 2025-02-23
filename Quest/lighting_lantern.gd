@@ -1,8 +1,12 @@
 extends Sprite2D
 
+
+@onready var LightingLantern_Sound = $LightingLantern_Sound
+
 @export var unlit_lantern : Texture
 @export var lit_lantern : Texture
 var player = null
+var lantern_lit = false
 
 # Called when the node enters the scene tree for the first time
 func _ready():
@@ -19,6 +23,9 @@ func _ready():
 # Called every frame
 func _process(delta):
 	# Check if the player has collected the light sprite and the space key is pressed
-	if player.has_collected_light_sprite and Input.is_action_just_pressed("ui_accept"):
+	if player.has_collected_light_sprite and Input.is_action_just_pressed("ui_accept") and not lantern_lit:
 		# Switch to the lit lantern when the space key is pressed
 		texture = lit_lantern
+		LightingLantern_Sound.play()
+		lantern_lit = true
+		

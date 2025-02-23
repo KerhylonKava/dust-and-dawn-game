@@ -124,7 +124,7 @@ text = "Dust and Dawn"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AudioStreamPlayer" parent="." instance=ExtResource("4_2f73n")]
+[node name="LoadingScreenMusic" parent="." instance=ExtResource("4_2f73n")]
 
 [connection signal="pressed" from="VBoxContainer/StartGame" to="." method="_on_start_game_pressed"]
 [connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]

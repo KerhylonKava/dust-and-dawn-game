@@ -1,8 +1,7 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
-var is_moving := false
-var was_moving := false
+#@onready var is_moving = false
 
 @export var speed := 450/0.0166
 #scale.x = scale.y * direction 
@@ -44,17 +43,21 @@ func _process(delta: float) -> void:
 			jumps_made += 1
 	
 	elif Input.is_action_pressed("left"):
-		is_moving = true
+		#is_moving = true
 		$SootSpriteImage.flip_h = true
 		if is_on_floor():
 			animation.play("run")
+		#if is_on_floor() and is_moving:
+			#FootSteps_Sound.play()
 		velocity.x = -speed * delta
 	
 	elif Input.is_action_pressed("right"):
-		is_moving = true 
+		#is_moving = true
 		$SootSpriteImage.flip_h = false
 		if is_on_floor():
 			animation.play("run")
+		#if is_on_floor() and is_moving:
+			#FootSteps_Sound.play()
 		velocity.x = speed * delta
 
 	else:
@@ -66,9 +69,6 @@ func _process(delta: float) -> void:
 			animation.play("idle")
 			
 
-
-	# Update the previous movement state
-	was_moving = is_moving
 	
 	
 	

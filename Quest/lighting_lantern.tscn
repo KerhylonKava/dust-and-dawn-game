@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://c5jrcf4yhds7q"]
+[gd_scene load_steps=6 format=3 uid="uid://ck5hocqdbjbxp"]
 
 [ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lit_lantern.png" id="1_5eb4q"]
 [ext_resource type="Script" path="res://Quest/lighting_lantern.gd" id="2_vp048"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/unlit_lantern.png" id="3_3vni1"]
+[ext_resource type="Resource" uid="uid://dgvgdem2lwae3" path="res://inventory/items/light.tres" id="4_kp31b"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xsjh"]
+radius = 610.0
+height = 1460.0
 
 [node name="LightingLantern" type="Sprite2D"]
 position = Vector2(6.00003, 5.00003)
@@ -11,3 +16,12 @@ texture = ExtResource("3_3vni1")
 script = ExtResource("2_vp048")
 unlit_lantern = ExtResource("3_3vni1")
 lit_lantern = ExtResource("1_5eb4q")
+item = ExtResource("4_kp31b")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CapsuleShape2D_0xsjh")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

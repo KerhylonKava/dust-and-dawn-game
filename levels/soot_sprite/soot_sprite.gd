@@ -7,6 +7,7 @@ const UP_DIRECITON := Vector2.UP
 @onready var animation = $AnimationPlayer
 
 @export var inventory : Inventory
+#@export var enough_items = inventory.enough_items
 
 var jump_time = 0
 var jump_strength := 700/0.0166
@@ -74,6 +75,14 @@ func collect(item):
 
 func remove(item):
 	inventory.remove(item)
+
+func contains(item):
+	if inventory.contains(item):
+		#print("ifcontains checked: ", inventory.contains(item))
+		return true
+	elif !inventory.contains(item):
+		#print("elifcontains checked: ", inventory.contains(item))
+		return false
 	
 func soot_sprite():
 	pass

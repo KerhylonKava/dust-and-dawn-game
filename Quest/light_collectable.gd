@@ -18,8 +18,8 @@ func playercollect():
 	
 	# Set a flag to indicate that the light sprite has been collected
 	# This can be a global variable or a reference to the player's lantern state
-	var player = get_node("/root/1level/SootSprite") # Assuming the player is at this location
-	player.has_collected_light_sprite = true
+	#var player = get_node("res://levels/soot_sprite/soot_sprite.gd") # Assuming the player is at this location
+	SootSprite.has_collected_light_sprite = true
 	
 	# Optionally, you can emit a signal if you need to notify other parts of the game
 	emit_signal("light_sprite_collected")

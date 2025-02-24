@@ -21,7 +21,7 @@ shape = SubResource("CircleShape2D_n2cyi")
 
 [node name="Light_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hhxds")
-volume_db = -17.91
+volume_db = -1.489
 pitch_scale = 1.47
 
 [connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

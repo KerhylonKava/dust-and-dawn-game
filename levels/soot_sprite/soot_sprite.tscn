@@ -125,8 +125,8 @@ libraries = {
 
 [node name="FootSteps_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rbydm")
-volume_db = -16.152
-pitch_scale = 4.0
+volume_db = 5.743
+pitch_scale = 1.1
 
 [node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obrhm")

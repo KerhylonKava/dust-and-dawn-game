@@ -15,4 +15,5 @@ lit_lantern = ExtResource("1_5eb4q")
 
 [node name="LightingLantern_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_g0d61")
-volume_db = -20.46
+volume_db = -0.755
+pitch_scale = 2.85

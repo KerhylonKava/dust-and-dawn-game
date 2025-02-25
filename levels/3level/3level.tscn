@@ -1,10 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/2level/2master_script.gd" id="1_nlma7"]
-[ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://tiles_and_backgrounds/placeholderBackground.png" id="2_gp825"]
+[ext_resource type="Texture2D" uid="uid://b6e3jmlhxga7q" path="res://tiles_and_backgrounds/background/placeholderBackground.png" id="2_gp825"]
 [ext_resource type="Script" path="res://levels/ground.gd" id="3_8r7kk"]
-[ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/tiles/Tileset.png" id="4_gq7be"]
-[ext_resource type="Texture2D" uid="uid://do1pk8ohswfs8" path="res://tiles_and_backgrounds/tiles/sr2101fc6b8e0aws3.png" id="5_1ugoa"]
+[ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/tilesets/base/Tileset.png" id="4_gq7be"]
+[ext_resource type="Texture2D" uid="uid://do1pk8ohswfs8" path="res://tiles_and_backgrounds/tilesets/base/sr2101fc6b8e0aws3.png" id="5_1ugoa"]
 [ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="6_jcgbv"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_i4h8m"]
 

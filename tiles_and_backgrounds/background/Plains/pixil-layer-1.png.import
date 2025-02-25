@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0dusxi1fn3gv"
-path="res://.godot/imported/pixil-layer-0.png-1724594b90e6c6b07accb6e6e20223a3.ctex"
+uid="uid://cld7n3pu1cbsu"
+path="res://.godot/imported/pixil-layer-1.png-74c468ba8e8eac120a6c960a63322aec.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tiles_and_backgrounds/tiles/pixilart-layers/pixil-layer-0.png"
-dest_files=["res://.godot/imported/pixil-layer-0.png-1724594b90e6c6b07accb6e6e20223a3.ctex"]
+source_file="res://tiles_and_backgrounds/background/Plains/pixil-layer-1.png"
+dest_files=["res://.godot/imported/pixil-layer-1.png-74c468ba8e8eac120a6c960a63322aec.ctex"]
 
 [params]
 

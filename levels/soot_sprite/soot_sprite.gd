@@ -88,3 +88,5 @@ func soot_sprite():
 	pass
 
 var has_collected_light_sprite = false
+var has_collected_leaf_sprite = false
+var has_collected_string_sprite = false

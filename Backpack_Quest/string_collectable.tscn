@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://g3kjnm0gy6io"]
+
+[ext_resource type="Script" path="res://Backpack_Quest/leaf_collectable.gd" id="1_2iicu"]
+[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Backpack_Quest/sr2a10ef88c05aws3.webp" id="2_jlfri"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mlo7e"]
+radius = 502.26
+
+[node name="string_collectable" type="StaticBody2D"]
+script = ExtResource("1_2iicu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_jlfri")
+
+[node name="interactable_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="interactable_area"]
+shape = SubResource("CircleShape2D_mlo7e")
+
+[connection signal="body_entered" from="interactable_area" to="." method="_on_interactable_area_body_entered"]

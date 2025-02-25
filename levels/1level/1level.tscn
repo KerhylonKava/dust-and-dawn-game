@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=24 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
 [ext_resource type="Texture2D" uid="uid://c7myeoii0safc" path="res://tiles_and_backgrounds/tiles/Tileset.png" id="4_whemk"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://dv064xpo0jy2l" path="res://tiles_and_backgrounds/background/pixil-layer-6.png" id="11_563lp"]
 [ext_resource type="PackedScene" uid="uid://ck5hocqdbjbxp" path="res://Quest/lighting_lantern.tscn" id="13_gjd16"]
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="14_6a4cs"]
+[ext_resource type="PackedScene" uid="uid://cqowo3akni3e3" path="res://Backpack_Quest/leaf_collectable.tscn" id="18_24wu8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
 size = Vector2(5, 5000)
@@ -223,5 +224,9 @@ position = Vector2(1516, 610)
 [node name="SootSprite" parent="." instance=ExtResource("7_whatu")]
 texture_filter = 1
 position = Vector2(685, 489)
+
+[node name="leaf_collectable" parent="." instance=ExtResource("18_24wu8")]
+position = Vector2(1276, 448)
+scale = Vector2(0.05, 0.05)
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

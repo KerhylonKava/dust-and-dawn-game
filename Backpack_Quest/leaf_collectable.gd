@@ -14,7 +14,11 @@ func playercollect():
 	SootSprite.collect(item)
 	
 	# Set a flag to indicate that the light sprite has been collected
-	SootSprite.has_collected_light_sprite = true
+	SootSprite.has_collected_leaf_sprite = true
 	
 	# Optionally, you can emit a signal if you need to notify other parts of the game
-	#emit_signal("light_sprite_collected")
+	#emit_signal("leaf_sprite_collected")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.

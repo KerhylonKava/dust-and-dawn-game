@@ -13,8 +13,8 @@ func playercollect():
 	# Collect the item and trigger a signal
 	SootSprite.collect(item)
 	
-	# Set a flag to indicate that the string sprite has been collected
-	SootSprite.has_collected_string_sprite = true
+	# Set a flag to indicate that the light sprite has been collected
+	SootSprite.has_collected_leaf_sprite = true
 	
 
 

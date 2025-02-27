@@ -10,7 +10,7 @@ extends Sprite2D
 var SootSprite = null
 var player_in_area = false
 
-@export var is_lantern_lit = false
+var is_lantern_lit = false
 
 #var enough_items = SootSprite.enough_items
 
@@ -36,23 +36,17 @@ func _process(delta):
 		# Switch to the lit lantern when the space key is pressed
 		if is_lantern_lit == false:
 			if playercontains():
-				texture = lit_lantern
+				#texture = lit_lantern
 				is_lantern_lit = true
-				#self.z_index = 2
 				playerremove()
 				print("player contains: ", playercontains())
 			elif !playercontains():
 				print("player contains: ", playercontains())
 		else:
 			print("lantern is already lit")
-
-	"""
+	
 	if is_lantern_lit == true:
 		texture = lit_lantern
-		self.z_index = 2
-	else:
-		self.z_index = 1
-	"""
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):

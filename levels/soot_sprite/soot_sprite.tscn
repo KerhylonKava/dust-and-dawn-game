@@ -104,16 +104,12 @@ texture = ExtResource("3_yhqiy")
 hframes = 14
 
 [node name="Camera2D" type="Camera2D" parent="."]
-offset = Vector2(-100, 0)
-limit_left = -150
-limit_right = 5150
-limit_bottom = 775
+limit_bottom = 800
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_my1oj")
 
 [node name="Inv_UI" parent="." instance=ExtResource("4_ce5f2")]
-visible = false
 z_index = 1
 offset_left = -230.0
 offset_top = -430.0

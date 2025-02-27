@@ -1,11 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://dkomw1ppldg5v"]
+[gd_scene load_steps=13 format=3 uid="uid://dkomw1ppldg5v"]
 
 [ext_resource type="Texture2D" uid="uid://bq4fkfcvpjpy" path="res://Characters/pixilart-sprite (2).png" id="1_8jo08"]
 [ext_resource type="Script" path="res://Characters/racoon_npc.gd" id="1_xpwem"]
-[ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="3_bj8m4"]
-[ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lit_lantern.png" id="4_vgruo"]
-[ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/sr25ace012ff8aws3.png" id="5_jostw"]
-[ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/unlit_lantern.png" id="6_iqdfx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d02tu"]
 atlas = ExtResource("1_8jo08")
@@ -79,86 +75,10 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_m8yex"]
-radius = 28.0
-
-[node name="NPC" type="Node2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_xpwem")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g408x")
 frame_progress = 0.554956
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-shape = SubResource("CircleShape2D_m8yex")
-
-[node name="space" type="Label" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -23.0
-offset_top = -37.0
-offset_right = 23.0
-offset_bottom = -14.0
-text = "Space"
-
-[node name="QuestBoard" type="NinePatchRect" parent="."]
-visible = false
-texture_filter = 1
-offset_left = -35.0
-offset_top = -64.0
-offset_right = 23.0
-offset_bottom = -22.0
-scale = Vector2(1.2, 1.2)
-texture = ExtResource("3_bj8m4")
-patch_margin_left = 6
-patch_margin_top = 6
-patch_margin_right = 6
-patch_margin_bottom = 6
-
-[node name="NotLit" type="Node2D" parent="QuestBoard"]
-visible = false
-
-[node name="LitLantern" type="Sprite2D" parent="QuestBoard/NotLit"]
-position = Vector2(43, 22.2667)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("4_vgruo")
-
-[node name="Light" type="Sprite2D" parent="QuestBoard/NotLit"]
-position = Vector2(29, 15.2667)
-scale = Vector2(0.006, 0.006)
-texture = ExtResource("5_jostw")
-
-[node name="UnlitLantern" type="Sprite2D" parent="QuestBoard/NotLit"]
-position = Vector2(15, 22.2667)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("6_iqdfx")
-
-[node name="Arrow" type="Label" parent="QuestBoard/NotLit"]
-texture_filter = 1
-offset_left = 25.0
-offset_top = 16.2667
-offset_right = 43.0
-offset_bottom = 44.2667
-scale = Vector2(0.5, 0.5)
-theme_override_font_sizes/font_size = 20
-text = "->"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Lit" type="Node2D" parent="QuestBoard"]
-visible = false
-
-[node name="yay" type="Label" parent="QuestBoard/Lit"]
-offset_left = 9.16667
-offset_top = 9.16667
-offset_right = 49.1667
-offset_bottom = 32.1667
-text = "YAY!"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

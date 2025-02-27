@@ -1,8 +1,6 @@
 extends Node2D
 class_name One_master
 
-#@onready var lantern = $LightingLantern  # Store reference to Player
-
 @export var side = 'left'
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -10,7 +8,7 @@ func _ready() -> void:
 		$SootSprite.position.x = 50
 	elif side == 'right':
 		$SootSprite.position.x = 4950
-	#$SootSprite/Camera2D.position.x = 500
+	$SootSprite/Camera2D.position_smoothing_speed = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

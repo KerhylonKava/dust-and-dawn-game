@@ -11,7 +11,7 @@ func _ready() -> void:
 	if side == 'left':
 		$SootSprite.position.x = 50
 	elif side == 'right':
-		$SootSprite.position.x = 4950
+		$SootSprite.position.x = 4925
 	$SootSprite/Camera2D.position_smoothing_speed = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ck5hocqdbjbxp"]
 
-[ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lit_lantern.png" id="1_5eb4q"]
-[ext_resource type="Script" path="res://Quest/lighting_lantern.gd" id="2_vp048"]
-[ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/unlit_lantern.png" id="3_3vni1"]
+[ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="1_5eb4q"]
+[ext_resource type="Script" path="res://Quest/lantern_quest/lighting_lantern.gd" id="2_vp048"]
+[ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="3_3vni1"]
 [ext_resource type="Resource" uid="uid://dgvgdem2lwae3" path="res://inventory/items/light.tres" id="4_kp31b"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xsjh"]

@@ -17,8 +17,8 @@ var is_lantern_lit = false
 # Called when the node enters the scene tree for the first time
 func _ready():
 	# Initialize the lantern's textures
-	unlit_lantern = preload("res://Quest/unlit_lantern.png")
-	lit_lantern = preload("res://Quest/lit_lantern.png")
+	unlit_lantern = preload("res://Quest/lantern_quest/unlit_lantern.png")
+	lit_lantern = preload("res://Quest/lantern_quest/lit_lantern.png")
 	
 	# Start with the unlit lantern texture
 	texture = unlit_lantern

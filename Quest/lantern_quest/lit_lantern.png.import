@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmnqlw0ixnfar"
-path="res://.godot/imported/sr25ace012ff8aws3.png-7e369828203bb1ae33fa1a2ee3f3f068.ctex"
+uid="uid://d1w1iji3am8v4"
+path="res://.godot/imported/lit_lantern.png-1f6a62e9a8933e685c8477daefcef6a6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Quest/sr25ace012ff8aws3.png"
-dest_files=["res://.godot/imported/sr25ace012ff8aws3.png-7e369828203bb1ae33fa1a2ee3f3f068.ctex"]
+source_file="res://Quest/lantern_quest/lit_lantern.png"
+dest_files=["res://.godot/imported/lit_lantern.png-1f6a62e9a8933e685c8477daefcef6a6.ctex"]
 
 [params]
 

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dxtqmbi3w4ay7"]
+
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_wqdpb"]
+[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Quest/Backpack_Quest/sr2a10ef88c05aws3.webp" id="2_jetqm"]
+
+[resource]
+script = ExtResource("1_wqdpb")
+name = "String"
+texture = ExtResource("2_jetqm")

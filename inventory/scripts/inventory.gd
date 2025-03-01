@@ -32,7 +32,7 @@ func remove(item: InvItem):
 	else:
 		if !emptyslots.is_empty():
 			#enough_items = false
-			print("oh no, not enough ", item, "s")
+			print("oh no, not enough ", item.name, "s")
 	update.emit()
 
 func contains (item:InvItem):

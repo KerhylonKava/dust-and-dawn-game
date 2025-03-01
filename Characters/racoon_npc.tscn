@@ -1,7 +1,17 @@
-[gd_scene load_steps=13 format=3 uid="uid://dkomw1ppldg5v"]
+[gd_scene load_steps=25 format=3 uid="uid://dkomw1ppldg5v"]
 
 [ext_resource type="Texture2D" uid="uid://bq4fkfcvpjpy" path="res://Characters/pixilart-sprite (2).png" id="1_8jo08"]
 [ext_resource type="Script" path="res://Characters/racoon_npc.gd" id="1_xpwem"]
+[ext_resource type="Resource" uid="uid://dxtqmbi3w4ay7" path="res://inventory/items/string.tres" id="2_ukvr2"]
+[ext_resource type="Resource" uid="uid://djfbhxdrp547d" path="res://inventory/items/leaf.tres" id="3_0hlgj"]
+[ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="3_bj8m4"]
+[ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="4_0703h"]
+[ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="4_vgruo"]
+[ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/lantern_quest/sr25ace012ff8aws3.png" id="5_jostw"]
+[ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="6_iqdfx"]
+[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Quest/Backpack_Quest/sr2a10ef88c05aws3.webp" id="7_6lu2f"]
+[ext_resource type="Texture2D" uid="uid://c8or5i5grjrve" path="res://Quest/Backpack_Quest/sr2f128026675aws3.webp" id="8_vyjll"]
+[ext_resource type="Texture2D" uid="uid://ber12p8vabu4e" path="res://Quest/Backpack_Quest/sr24e99a044a7aws3.png" id="9_2hxh8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d02tu"]
 atlas = ExtResource("1_8jo08")
@@ -75,10 +85,163 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8yex"]
+radius = 28.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nycvp"]
+radius = 763.889
+
+[node name="NPC" type="Node2D"]
 script = ExtResource("1_xpwem")
+string = ExtResource("2_ukvr2")
+leaf = ExtResource("3_0hlgj")
+backpack = ExtResource("4_0703h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_g408x")
 frame_progress = 0.554956
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_m8yex")
+
+[node name="space" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -23.0
+offset_top = -37.0
+offset_right = 23.0
+offset_bottom = -14.0
+text = "Space"
+
+[node name="QuestBoards" type="Node2D" parent="."]
+visible = false
+
+[node name="LanternQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+texture_filter = 1
+offset_left = -35.0
+offset_top = -64.0
+offset_right = 23.0
+offset_bottom = -22.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_bj8m4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NotLit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
+visible = false
+
+[node name="LitLantern" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
+position = Vector2(43, 22.2667)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("4_vgruo")
+
+[node name="Light" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
+position = Vector2(29, 15.2667)
+scale = Vector2(0.006, 0.006)
+texture = ExtResource("5_jostw")
+
+[node name="UnlitLantern" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
+position = Vector2(15, 22.2667)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("6_iqdfx")
+
+[node name="Arrow" type="Label" parent="QuestBoards/LanternQuestBoard/NotLit"]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 16.2667
+offset_right = 43.0
+offset_bottom = 44.2667
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
+visible = false
+
+[node name="yay" type="Label" parent="QuestBoards/LanternQuestBoard/Lit"]
+offset_left = 9.16667
+offset_top = 9.16667
+offset_right = 49.1667
+offset_bottom = 32.1667
+text = "YAY!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackpackQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+texture_filter = 1
+offset_left = -35.0
+offset_top = -64.0
+offset_right = 23.0
+offset_bottom = -22.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("3_bj8m4")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="Lacking" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
+
+[node name="String" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+position = Vector2(20.8333, 32.5)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("7_6lu2f")
+
+[node name="String2" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+position = Vector2(20, 10)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("7_6lu2f")
+
+[node name="Leaf" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+position = Vector2(11.6667, 24.1667)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("8_vyjll")
+
+[node name="Backpack" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+position = Vector2(45, 22.5)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("9_2hxh8")
+
+[node name="Arrow" type="Label" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+texture_filter = 1
+offset_left = 25.0
+offset_top = 16.2667
+offset_right = 43.0
+offset_bottom = 44.2667
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "->"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="All" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
+
+[node name="yay" type="Label" parent="QuestBoards/BackpackQuestBoard/All"]
+offset_left = 9.16667
+offset_top = 0.833334
+offset_right = 49.1667
+offset_bottom = 23.8333
+text = ":)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Backpack" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/All"]
+position = Vector2(29.1667, 30)
+scale = Vector2(0.012, 0.012)
+texture = ExtResource("9_2hxh8")
+
+[node name="Area2D" type="Area2D" parent="QuestBoards/BackpackQuestBoard/All/Backpack"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="QuestBoards/BackpackQuestBoard/All/Backpack/Area2D"]
+position = Vector2(0, 69.4444)
+shape = SubResource("CircleShape2D_nycvp")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

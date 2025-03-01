@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://g3kjnm0gy6io"]
+[gd_scene load_steps=5 format=3 uid="uid://g3kjnm0gy6io"]
 
-[ext_resource type="Script" path="res://Backpack_Quest/leaf_collectable.gd" id="1_2iicu"]
-[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Backpack_Quest/sr2a10ef88c05aws3.webp" id="2_jlfri"]
+[ext_resource type="Script" path="res://Quest/Backpack_Quest/string_collectable.gd" id="1_yekqd"]
+[ext_resource type="Resource" uid="uid://dxtqmbi3w4ay7" path="res://inventory/items/string.tres" id="2_34aof"]
+[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Quest/Backpack_Quest/sr2a10ef88c05aws3.webp" id="2_jlfri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlo7e"]
 radius = 502.26
 
 [node name="string_collectable" type="StaticBody2D"]
-script = ExtResource("1_2iicu")
+visible = false
+script = ExtResource("1_yekqd")
+item = ExtResource("2_34aof")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

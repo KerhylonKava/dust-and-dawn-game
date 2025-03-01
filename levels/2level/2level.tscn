@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=4 uid="uid://cx4nlrqn51avp"]
 
 [ext_resource type="Script" path="res://levels/2level/2master_script.gd" id="1_r5tmd"]
-[ext_resource type="Texture2D" uid="uid://cfmqpbjuw2r7k" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="3_vdxa2"]
+[ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="3_vdxa2"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="4_38spk"]
 [ext_resource type="PackedScene" uid="uid://1icb3f06wb16" path="res://test.tscn" id="6_w3ian"]
 [ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="6_xw1xi"]
@@ -182,9 +182,9 @@ position = Vector2(5000, 0)
 shape = SubResource("RectangleShape2D_l050v")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-offset = Vector2(0, -300)
+offset = Vector2(-40, -300)
 scale = Vector2(14, 14)
-transform = Transform2D(14, 0, 0, 14, 0, -300)
+transform = Transform2D(14, 0, 0, 14, -40, -300)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
 modulate = Color(0.45, 0.45, 0.45, 1)

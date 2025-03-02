@@ -275,6 +275,11 @@ visible = true
 position = Vector2(1547, 68)
 scale = Vector2(0.1, 0.1)
 
+[node name="string_collectable2" parent="." instance=ExtResource("12_ox258")]
+visible = true
+position = Vector2(2257, 484)
+scale = Vector2(0.1, 0.1)
+
 [node name="Smog" type="Control" parent="."]
 visible = false
 z_index = 2

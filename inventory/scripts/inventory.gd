@@ -35,6 +35,17 @@ func remove(item: InvItem):
 			print("oh no, not enough ", item.name, "s")
 	update.emit()
 
+func amount (item:InvItem):
+	var itemslots = slots.filter(func(slot): return slot.item == item)
+	var emptyslots = slots.filter(func(slot): return slot.item == null)
+	if !itemslots.is_empty():
+		#print("inv", itemslots[0].amount)
+		return itemslots[0].amount
+	elif !emptyslots.is_empty():
+		#print("inv0")
+		return 0
+
+
 func contains (item:InvItem):
 	var itemslots = slots.filter(func(slot): return slot.item == item)
 	var emptyslots = slots.filter(func(slot): return slot.item == null)

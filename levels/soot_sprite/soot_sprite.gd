@@ -32,7 +32,6 @@ func _process(delta: float) -> void:
 	if jump_time > 0:
 		jump_time -= 1
 	
-
 	if Input.is_action_just_pressed("up"):
 		animation.play("jump")
 		if is_on_floor():
@@ -83,10 +82,15 @@ func contains(item):
 	elif !inventory.contains(item):
 		#print("elifcontains checked: ", inventory.contains(item))
 		return false
+
+func amount(item):
+	#print("soot", inventory.amount(item))
+	return inventory.amount(item)
 	
 func soot_sprite():
 	pass
-
+"""
 var has_collected_light_sprite = false
 var has_collected_leaf_sprite = false
 var has_collected_string_sprite = false
+"""

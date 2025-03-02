@@ -28,20 +28,22 @@ func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("space"):
 		if scene == '1level':
 			$QuestBoards/BackpackQuestBoard.visible =  true
-			if playercontains(leaf) and playercontains(string): #or playercontains(backpack):
+			if amount(leaf)>=1 and amount(string)>=2: #or playercontains(backpack):
 				$QuestBoards/BackpackQuestBoard/All.visible = true
 				$QuestBoards/BackpackQuestBoard/Lacking.visible = false
 				$QuestBoards.visible = true
 				if !playercontains(backpack):
 					playerremove(leaf)
 					playerremove(string)
+					playerremove(string)
 					playercollect(backpack)
 					print("backpack made")
+				else:
+					print("backpack already made")
 			elif playercontains(backpack):
 				$QuestBoards/BackpackQuestBoard/All.visible = true
 				$QuestBoards/BackpackQuestBoard/Lacking.visible = false
 				$QuestBoards.visible = true
-				print("backpack already made")
 			else:
 				$QuestBoards/BackpackQuestBoard/All.visible = false
 				$QuestBoards/BackpackQuestBoard/Lacking.visible = true
@@ -61,15 +63,6 @@ func _process(delta):
 			elif !player_in_area:
 				$LanternQuestBoard.visible = false
 	
-	"""
-	if $QuestBoards/BackpackQuestBoard/All.visible:
-		if $QuestBoards.visible:
-			if Input.is_action_just_pressed("space"):
-				playerremove(leaf)
-				playerremove(string)
-				playercollect(backpack)
-				print("backpack made")
-			"""
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
@@ -96,3 +89,7 @@ func playercontains(item):
 	elif !SootSprite.contains(item):
 		#print(SootSprite.contains(item))
 		return false
+
+func amount(item):
+	#print("racoon ",item.name,SootSprite.amount(item))
+	return SootSprite.amount(item)

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwh8sio0f1b8k"
-path="res://.godot/imported/Sprite Sheet.png-1cd08822f19a6ba8db8e08b65ff595f0.ctex"
+uid="uid://bviwgonmpc6d8"
+path="res://.godot/imported/mini_lantern.png-5eb0775ca96c7665e0e9ba4f02b4b2f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/soot_sprite/Sprite Sheet.png"
-dest_files=["res://.godot/imported/Sprite Sheet.png-1cd08822f19a6ba8db8e08b65ff595f0.ctex"]
+source_file="res://levels/soot_sprite/mini_lantern.png"
+dest_files=["res://.godot/imported/mini_lantern.png-5eb0775ca96c7665e0e9ba4f02b4b2f1.ctex"]
 
 [params]
 

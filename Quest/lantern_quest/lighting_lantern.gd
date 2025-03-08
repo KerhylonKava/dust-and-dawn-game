@@ -3,7 +3,7 @@ extends Sprite2D
 @export var unlit_lantern : Texture
 @export var lit_lantern : Texture
 #var player = null
-@export var item: InvItem
+@export var light: InvItem
 #@export var inventory : Inventory;
 #@export var inventory = "res://inventory/scripts/inventory.gd"
 
@@ -35,13 +35,13 @@ func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("space"):
 		# Switch to the lit lantern when the space key is pressed
 		if is_lantern_lit == false:
-			if playercontains():
+			if playercontains(light,5):
 				#texture = lit_lantern
 				is_lantern_lit = true
-				playerremove()
-				print("player contains: ", playercontains())
-			elif !playercontains():
-				print("player contains: ", playercontains())
+				playerremove(light,5)
+				print("player contains: ", playercontains(light,5))
+			elif !playercontains(light,5):
+				print("player contains: ", playercontains(light,5))
 		else:
 			print("lantern is already lit")
 	
@@ -58,13 +58,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_area = true
 		SootSprite = body
 
-func playerremove():
-	SootSprite.remove(item)
+func playerremove(item,amount):
+	SootSprite.remove(item,amount)
 
-func playercontains():
-	if SootSprite.contains(item):
+func playercontains(item,amount):
+	if SootSprite.contains(item,amount):
 		#print(SootSprite.contains(item))
 		return true
-	elif !SootSprite.contains(item):
+	elif !SootSprite.contains(item,amount):
 		#print(SootSprite.contains(item))
 		return false

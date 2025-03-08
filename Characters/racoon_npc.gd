@@ -33,11 +33,12 @@ func _process(delta):
 				$QuestBoards/BackpackQuestBoard/Lacking.visible = false
 				$QuestBoards.visible = true
 				if !playercontains(backpack):
-					playerremove(leaf)
-					playerremove(string)
-					playerremove(string)
-					playercollect(backpack)
+					playerremove(leaf,1)
+					playerremove(string,2)
+					#playerremove(string)
+					playercollect(backpack,1)
 					print("backpack made")
+					size(12)
 				else:
 					print("backpack already made")
 			elif playercontains(backpack):
@@ -74,13 +75,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 		player_in_area = true
 		SootSprite = body
 
-func playerremove(item):
-	SootSprite.remove(item)
+func playerremove(item,amount):
+	SootSprite.remove(item,amount)
 	#SootSprite.remove(string)
 	#SootSprite.remove(string)
 
-func playercollect(item):
-	SootSprite.collect(item)
+func playercollect(item,amount):
+	SootSprite.collect(item,amount)
 	
 func playercontains(item):
 	if SootSprite.contains(item):
@@ -93,3 +94,6 @@ func playercontains(item):
 func amount(item):
 	#print("racoon ",item.name,SootSprite.amount(item))
 	return SootSprite.amount(item)
+
+func size(size):
+	SootSprite.size(size)

@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://n5w8iif0wcgb"]
+
+[ext_resource type="Script" path="res://levels/soot_sprite/mini_lantern.gd" id="1_hutqo"]
+[ext_resource type="Texture2D" uid="uid://bviwgonmpc6d8" path="res://levels/soot_sprite/mini_lantern.png" id="2_dcfrg"]
+
+[node name="MiniLantern" type="CharacterBody2D"]
+script = ExtResource("1_hutqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_dcfrg")

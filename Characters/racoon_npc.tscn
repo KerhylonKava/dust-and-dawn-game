@@ -117,9 +117,9 @@ offset_bottom = -14.0
 text = "Space"
 
 [node name="QuestBoards" type="Node2D" parent="."]
-visible = false
 
 [node name="LanternQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -221,7 +221,20 @@ text = "->"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="plus" type="Label" parent="QuestBoards/BackpackQuestBoard/Lacking"]
+texture_filter = 1
+offset_left = 15.8333
+offset_top = 13.3333
+offset_right = 33.8333
+offset_bottom = 41.3333
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="All" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
+visible = false
 
 [node name="yay" type="Label" parent="QuestBoards/BackpackQuestBoard/All"]
 offset_left = 9.16667

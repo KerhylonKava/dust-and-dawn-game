@@ -10,7 +10,7 @@ radius = 502.26
 [node name="string_collectable" type="StaticBody2D"]
 visible = false
 script = ExtResource("1_yekqd")
-item = ExtResource("2_34aof")
+string = ExtResource("2_34aof")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

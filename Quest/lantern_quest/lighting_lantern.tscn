@@ -16,7 +16,7 @@ texture = ExtResource("3_3vni1")
 script = ExtResource("2_vp048")
 unlit_lantern = ExtResource("3_3vni1")
 lit_lantern = ExtResource("1_5eb4q")
-item = ExtResource("4_kp31b")
+light = ExtResource("4_kp31b")
 
 [node name="Area2D" type="Area2D" parent="."]
 

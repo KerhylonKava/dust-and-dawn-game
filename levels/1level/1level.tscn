@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="7_hr6en"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_whatu"]
 [ext_resource type="Texture2D" uid="uid://bcyq3sk001som" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-2.png" id="8_o2p4o"]
+[ext_resource type="Texture2D" uid="uid://bh1qxnw2ox80u" path="res://tiles_and_backgrounds/tilesets/base/grass_top.png" id="9_ebco8"]
 [ext_resource type="Texture2D" uid="uid://8178q70cckvt" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-3.png" id="9_fa4dk"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="9_hjrew"]
 [ext_resource type="Texture2D" uid="uid://cletcmyy33hw5" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-4.png" id="9_hylvw"]
@@ -75,7 +76,7 @@ texture_region_size = Vector2i(240, 240)
 
 [sub_resource type="TileSet" id="TileSet_c7f3n"]
 tile_size = Vector2i(240, 240)
-physics_layer_0/collision_layer = 1
+physics_layer_0/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_2c6j7")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x4pd"]
@@ -112,7 +113,9 @@ texture_region_size = Vector2i(12, 12)
 4:4/0 = 0
 5:4/0 = 0
 6:4/0 = 0
+6:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 7:4/0 = 0
+7:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -120,7 +123,9 @@ texture_region_size = Vector2i(12, 12)
 4:5/0 = 0
 5:5/0 = 0
 6:5/0 = 0
+6:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 7:5/0 = 0
+7:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 0:6/0 = 0
 1:6/0 = 0
 2:6/0 = 0
@@ -128,7 +133,9 @@ texture_region_size = Vector2i(12, 12)
 4:6/0 = 0
 5:6/0 = 0
 6:6/0 = 0
+6:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 7:6/0 = 0
+7:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-6, -6, 6, -6, 6, 6, -6, 6)
 0:7/0 = 0
 1:7/0 = 0
 2:7/0 = 0
@@ -140,6 +147,7 @@ texture_region_size = Vector2i(12, 12)
 
 [sub_resource type="TileSet" id="TileSet_lqmsa"]
 tile_size = Vector2i(12, 12)
+physics_layer_0/collision_layer = 64
 sources/0 = SubResource("TileSetAtlasSource_5x4pd")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oymjr"]
@@ -152,9 +160,11 @@ script = ExtResource("1_8s68j")
 [node name="LeftWorldBorder" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBorder"]
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_qyar3")
 
 [node name="RightWorldBorder" type="Area2D" parent="."]
+position = Vector2(-1, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBorder"]
 position = Vector2(10000, 0)
@@ -261,7 +271,14 @@ tile_set = SubResource("TileSet_c7f3n")
 modulate = Color(0.44352, 0.3969, 0.63, 1)
 texture_filter = 1
 scale = Vector2(5, 5)
-tile_map_data = PackedByteArray("AAAdAP//AAAGAAQAAAAdAAAAAAAGAAUAAAAeAP//AAAHAAQAAAAeAAAAAAAHAAUAAAAdAAIAAAAGAAUAAAAeAAIAAAAHAAUAAAAdAAMAAAAGAAYAAAAdAAQAAAAGAAcAAAAeAAMAAAAHAAYAAAAeAAQAAAAHAAcAAAAcAP3/AAAEAAMAAAAdAP3/AAAFAAMAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAEAAAAbAPz/AAABAAAAAAAbAP3/AAABAAEAAAAVAAcAAAAEAAMAAAAWAAcAAAAFAAMAAAAIAAgAAAAEAAMAAAAJAAgAAAAFAAMAAAASAPr/AAAEAAMAAAATAPr/AAAFAAMAAAAbAAoAAAAAAAMAAAAcAAoAAAABAAMAAAAdAAEAAAAGAAQAAAAeAAEAAAAHAAQAAAA=")
+tile_map_data = PackedByteArray("AAAdAAQAAAAGAAcAAAAeAAQAAAAHAAcAAAAcAP3/AAAEAAMAAAAdAP3/AAAFAAMAAAAaAPz/AAAAAAAAAAAaAP3/AAAAAAEAAAAbAPz/AAABAAAAAAAbAP3/AAABAAEAAAAVAAcAAAAEAAMAAAAWAAcAAAAFAAMAAAAIAAgAAAAEAAMAAAAJAAgAAAAFAAMAAAASAPr/AAAEAAMAAAATAPr/AAAFAAMAAAAbAAoAAAAAAAMAAAA=")
+tile_set = SubResource("TileSet_lqmsa")
+
+[node name="Vines" type="TileMapLayer" parent="Ground"]
+modulate = Color(0.44352, 0.3969, 0.63, 1)
+texture_filter = 1
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AAAdAAQAAAAHAAUAAAAeAAQAAAAHAAcAAAATAPr/AAAFAAMAAAAbAAoAAAAAAAMAAAAcAAAAAAAGAAUAAAAdAAAAAAAHAAUAAAAcAAEAAAAGAAUAAAAdAAEAAAAHAAUAAAAcAAIAAAAGAAUAAAAdAAIAAAAHAAUAAAAcAAMAAAAGAAUAAAAdAAMAAAAHAAUAAAAcAAQAAAAGAAUAAAAcAAUAAAAGAAUAAAAdAAUAAAAHAAUAAAAcAAYAAAAGAAUAAAAdAAYAAAAHAAUAAAAcAAcAAAAGAAUAAAAdAAcAAAAHAAUAAAAcAAgAAAAGAAUAAAAdAAgAAAAHAAUAAAAcAAkAAAAGAAUAAAAdAAkAAAAHAAUAAAAcAAoAAAAGAAYAAAAdAAoAAAAHAAYAAAAcAP//AAAGAAQAAAAdAP//AAAHAAQAAAA=")
 tile_set = SubResource("TileSet_lqmsa")
 
 [node name="NPC" parent="." instance=ExtResource("14_6a4cs")]
@@ -271,7 +288,8 @@ scale = Vector2(5, 5)
 [node name="SootSprite" parent="." instance=ExtResource("7_whatu")]
 z_index = 4
 texture_filter = 1
-position = Vector2(615, 500)
+position = Vector2(685, 489)
+collision_mask = 6
 
 [node name="leaf_collectable" parent="." instance=ExtResource("11_5tquh")]
 position = Vector2(2492, -2023)
@@ -313,5 +331,9 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oymjr")
 
 [node name="MiniLantern" parent="." instance=ExtResource("14_pgln6")]
 scale = Vector2(0.5, 0.5)
+[node name="GrassTop" type="Sprite2D" parent="."]
+position = Vector2(1741.5, -90)
+scale = Vector2(0.104167, 0.05)
+texture = ExtResource("9_ebco8")
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

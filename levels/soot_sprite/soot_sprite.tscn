@@ -86,6 +86,7 @@ _data = {
 }
 
 [node name="SootSprite" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_iwu63")
 inventory = ExtResource("2_n2gm2")
 backpack = ExtResource("3_8805s")
@@ -122,3 +123,11 @@ libraries = {
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(16, 35, -17, 35, -10, 24, -22, 7, -23, -21, 21, -22, 22, 8, 9, 23)
+[node name="VineRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(1, -36)
+collision_mask = 64
+hit_from_inside = true
+
+[node name="Vine2RayCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 162)
+collision_mask = 64

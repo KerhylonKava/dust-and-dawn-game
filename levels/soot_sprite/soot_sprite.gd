@@ -21,7 +21,11 @@ var is_falling := velocity.y > 0 and not is_on_floor()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	size(3)
+	if !contains(backpack):
+		size(3)
+		
+	elif contains(backpack):
+		size(12)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

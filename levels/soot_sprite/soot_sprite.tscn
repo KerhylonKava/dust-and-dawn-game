@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ds50p7iginw18"]
+[gd_scene load_steps=12 format=3 uid="uid://ds50p7iginw18"]
 
 [ext_resource type="Script" path="res://levels/soot_sprite/soot_sprite.gd" id="1_iwu63"]
 [ext_resource type="Resource" uid="uid://dhbtpbevbnnm" path="res://inventory/scripts/player_inv.tres" id="2_n2gm2"]
@@ -6,10 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://xjbnfvpd2suy" path="res://levels/soot_sprite/pixil-frame-0.png" id="3_yhqiy"]
 [ext_resource type="PackedScene" uid="uid://c03hfwova610v" path="res://inventory/scenes/inv_ui.tscn" id="4_ce5f2"]
 [ext_resource type="Script" path="res://levels/soot_sprite/camera_2d.gd" id="4_my1oj"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmvvs"]
-radius = 29.0
-height = 74.0
 
 [sub_resource type="Animation" id="Animation_t6tgq"]
 length = 1.5
@@ -94,10 +90,6 @@ script = ExtResource("1_iwu63")
 inventory = ExtResource("2_n2gm2")
 backpack = ExtResource("3_8805s")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 1)
-shape = SubResource("CapsuleShape2D_lmvvs")
-
 [node name="SootSpriteImage" type="Sprite2D" parent="."]
 texture_filter = 1
 position = Vector2(1.52588e-05, 1.00001)
@@ -106,9 +98,10 @@ texture = ExtResource("3_yhqiy")
 hframes = 14
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, 19)
 offset = Vector2(-100, 0)
 limit_left = 0
-limit_right = 5000
+limit_right = 10050
 limit_bottom = 775
 limit_smoothed = true
 position_smoothing_enabled = true
@@ -126,3 +119,6 @@ offset_bottom = -360.0
 libraries = {
 "": SubResource("AnimationLibrary_fx4h1")
 }
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(16, 35, -17, 35, -10, 24, -22, 7, -23, -21, 21, -22, 22, 8, 9, 23)

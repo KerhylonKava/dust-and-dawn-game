@@ -15,6 +15,7 @@ const UP_DIRECITON := Vector2.UP
 
 
 var onAutoJumpObject: bool = false
+
 var jump_time = 0
 var jump_strength := 700/0.0166
 var max_jumps := 2
@@ -23,6 +24,7 @@ var on_ladder = false
 var is_falling := velocity.y > 0 and not is_on_floor()
 var onAutoJumpOpject = false
 
+var Jump_Force = -1100
 
 
 # Called when the node enters the scene tree for the first time.
@@ -133,4 +135,6 @@ func _vine_climb(delta):
 	#if Input.is_action_just_pressed("left") and Input.is_action_just_pressed("ui_up"):
 		#velocity.y = Jump_Force * 0.7
 	
+
+
 	

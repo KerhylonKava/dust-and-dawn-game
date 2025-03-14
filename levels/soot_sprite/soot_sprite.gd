@@ -1,21 +1,26 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
 
+
 @export var speed := 450/0.0166
 #scale.x = scale.y * direction 
 
 @onready var animation = $AnimationPlayer
-
+@onready var vine_ray_cast: RayCast2D = $VineRayCast
 @export var inventory : Inventory
 #@export var enough_items = inventory.enough_items
+
+@export var climbing = false
+
+
 
 var jump_time = 0
 var jump_strength := 700/0.0166
 var max_jumps := 2
 var jumps_made := 0
-
+var on_ladder = false
 var is_falling := velocity.y > 0 and not is_on_floor()
-
+var Jump_Force = -1100
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,7 +30,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+
 	#if Input.is_action_just_pressed("space"):
 		#collect(item)
 	#Movement
@@ -94,3 +99,24 @@ var has_collected_light_sprite = false
 var has_collected_leaf_sprite = false
 var has_collected_string_sprite = false
 """
+func _physics_process(delta: float) -> void:
+	var vineCollider = vine_ray_cast.get_collider()
+	if vineCollider: _vine_climb(delta)
+
+
+
+
+
+func _vine_climb(delta):
+	var direction := Vector2.ZERO
+	direction.x = Input.get_axis("ui_left", "ui_right")
+	direction.y = Input.get_axis("ui_up", "ui_down")
+	if direction: velocity = direction * speed / 80
+	else: velocity = Vector2.ZERO
+	#if Input.is_action_just_pressed("right") and Input.is_action_just_pressed("ui_up"):
+		#velocity.y = Jump_Force * 0.7
+	#if Input.is_action_just_pressed("left") and Input.is_action_just_pressed("ui_up"):
+		#velocity.y = Jump_Force * 0.7
+
+
+	

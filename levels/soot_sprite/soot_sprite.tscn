@@ -89,6 +89,7 @@ _data = {
 }
 
 [node name="SootSprite" type="CharacterBody2D"]
+collision_mask = 7
 script = ExtResource("1_iwu63")
 inventory = ExtResource("2_n2gm2")
 
@@ -124,3 +125,12 @@ offset_bottom = -360.0
 libraries = {
 "": SubResource("AnimationLibrary_fx4h1")
 }
+
+[node name="VineRayCast" type="RayCast2D" parent="."]
+target_position = Vector2(1, -36)
+collision_mask = 64
+hit_from_inside = true
+
+[node name="Vine2RayCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 162)
+collision_mask = 64

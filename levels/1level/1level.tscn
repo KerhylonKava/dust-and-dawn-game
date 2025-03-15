@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://oh2yqogjhan5"]
+[gd_scene load_steps=26 format=4 uid="uid://oh2yqogjhan5"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_8s68j"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="7_hr6en"]
@@ -8,13 +8,14 @@
 [ext_resource type="Texture2D" uid="uid://8178q70cckvt" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-3.png" id="9_fa4dk"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="9_hjrew"]
 [ext_resource type="Texture2D" uid="uid://cletcmyy33hw5" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-4.png" id="9_hylvw"]
+[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://Jump_Mushroom.tscn" id="9_tmshh"]
 [ext_resource type="Texture2D" uid="uid://dncplu5p885jw" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-5.png" id="10_ovr10"]
 [ext_resource type="PackedScene" uid="uid://cqowo3akni3e3" path="res://Quest/Backpack_Quest/leaf_collectable.tscn" id="11_5tquh"]
 [ext_resource type="Texture2D" uid="uid://d1eatynxj624b" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-6.png" id="11_563lp"]
-[ext_resource type="Resource" uid="uid://djfbhxdrp547d" path="res://inventory/items/leaf.tres" id="12_c6r26"]
+[ext_resource type="Resource" path="res://inventory/items/leaf.tres" id="12_c6r26"]
 [ext_resource type="PackedScene" uid="uid://g3kjnm0gy6io" path="res://Quest/Backpack_Quest/string_collectable.tscn" id="12_ox258"]
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="14_6a4cs"]
-[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="14_pgln6"]
+[ext_resource type="PackedScene" path="res://levels/soot_sprite/mini_lantern.tscn" id="14_pgln6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
 size = Vector2(5, 5000)
@@ -282,6 +283,9 @@ scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AAATAPr/AAAFAAMAAAAbAAoAAAAAAAMAAAAcAAAAAAAGAAUAAAAdAAAAAAAHAAUAAAAcAAEAAAAGAAUAAAAdAAEAAAAHAAUAAAAcAAIAAAAGAAUAAAAdAAIAAAAHAAUAAAAcAAMAAAAGAAUAAAAcAAQAAAAGAAUAAAAcAAUAAAAGAAUAAAAdAAUAAAAHAAUAAAAcAAYAAAAGAAUAAAAdAAYAAAAHAAUAAAAcAAcAAAAGAAUAAAAdAAcAAAAHAAUAAAAcAAgAAAAGAAUAAAAdAAgAAAAHAAUAAAAcAAkAAAAGAAUAAAAdAAkAAAAHAAUAAAAcAAoAAAAGAAYAAAAdAAoAAAAHAAYAAAAcAP//AAAGAAQAAAAdAP//AAAHAAQAAAAdAAMAAAAHAAUAAAAdAAQAAAAHAAUAAAA=")
 tile_set = SubResource("TileSet_lqmsa")
 
+[node name="Node2D" parent="Ground" instance=ExtResource("9_tmshh")]
+position = Vector2(2054, 535)
+
 [node name="NPC" parent="." instance=ExtResource("14_6a4cs")]
 position = Vector2(1115, 601)
 scale = Vector2(5, 5)
@@ -332,6 +336,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_oymjr")
 
 [node name="MiniLantern" parent="." instance=ExtResource("14_pgln6")]
 scale = Vector2(0.5, 0.5)
+
 [node name="GrassTop" type="Sprite2D" parent="."]
 position = Vector2(1741.5, -90)
 scale = Vector2(0.104167, 0.05)

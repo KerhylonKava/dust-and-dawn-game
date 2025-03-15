@@ -14,14 +14,15 @@ const UP_DIRECITON := Vector2.UP
 @export var climbing = false
 
 
-
+var onAutoJumpObject: bool = false
 var jump_time = 0
 var jump_strength := 700/0.0166
 var max_jumps := 2
 var jumps_made := 0
 var on_ladder = false
 var is_falling := velocity.y > 0 and not is_on_floor()
-var Jump_Force = -1100
+var onAutoJumpOpject = false
+
 
 
 # Called when the node enters the scene tree for the first time.
@@ -113,6 +114,9 @@ var has_collected_string_sprite = false
 func _physics_process(delta: float) -> void:
 	var vineCollider = vine_ray_cast.get_collider()
 	if vineCollider: _vine_climb(delta)
+	
+	if onAutoJumpOpject:
+		if is_on_floor(): onAutoJumpOpject = false
 
 
 

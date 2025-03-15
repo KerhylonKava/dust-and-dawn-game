@@ -3,7 +3,7 @@ extends Node2D
 #@onready var one_script = $"../one_level"
 #@onready var one_script = $"../one_level"
 #var side = one_script.side #1=left, 2=right
-var side = "right"
+var side = "left"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

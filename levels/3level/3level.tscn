@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bph0w16j0hg18"]
+[gd_scene load_steps=15 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/2level/2master_script.gd" id="1_nlma7"]
 [ext_resource type="Texture2D" uid="uid://bgq457l8c5fl8" path="res://levels/3level/sr2eabe8ee2c1aws3.png" id="2_oi5e8"]
@@ -57,9 +57,6 @@ size = Vector2(5, 5000)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l050v"]
 size = Vector2(5, 5000)
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qgqaq"]
-friction = 0.0
-
 [node name="3level" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_nlma7")
@@ -113,7 +110,6 @@ motion_mirroring = Vector2(240, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/CloseSpikes"]
 position = Vector2(-0.857143, -1.14286)
-scale = Vector2(1, 1)
 texture = ExtResource("9_b2w7e")
 centered = false
 
@@ -156,8 +152,6 @@ position = Vector2(5000, 0)
 shape = SubResource("RectangleShape2D_l050v")
 
 [node name="JumpMushroom" parent="." instance=ExtResource("10_vevxb")]
-position = Vector2(1795, 417)
-physics_material_override = SubResource("PhysicsMaterial_qgqaq")
-flipH = true
+position = Vector2(543, 333)
 
 [connection signal="body_entered" from="RightWorldBorder" to="." method="_on_right_world_border_body_entered"]

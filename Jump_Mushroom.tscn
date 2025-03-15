@@ -20,6 +20,7 @@ position = Vector2(-0.5, -1)
 shape = SubResource("RectangleShape2D_wa1l6")
 
 [node name="Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-0.5, -44.5)

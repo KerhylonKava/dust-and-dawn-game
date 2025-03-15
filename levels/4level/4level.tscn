@@ -1,0 +1,195 @@
+[gd_scene load_steps=16 format=4 uid="uid://do2bc0yiyglqv"]
+
+[ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_6twnj"]
+[ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="2_opgrr"]
+[ext_resource type="Texture2D" uid="uid://6ikmhb43drcv" path="res://levels/3level/pixil-layer-1 (1).png" id="3_d0ayg"]
+[ext_resource type="Texture2D" uid="uid://cik5ttwtol5kn" path="res://levels/3level/pixil-layer-3 (1).png" id="4_0ro1q"]
+[ext_resource type="Texture2D" uid="uid://c6jr21lojj1f0" path="res://levels/3level/pixil-layer-5 (1).png" id="5_ag27o"]
+[ext_resource type="Texture2D" uid="uid://2f2a52sstxxi" path="res://levels/3level/pixil-layer-7.png" id="6_k7bc3"]
+[ext_resource type="Texture2D" uid="uid://bgq457l8c5fl8" path="res://levels/3level/sr2eabe8ee2c1aws3.png" id="7_mq1d2"]
+[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://Jump_Mushroom.tscn" id="9_44tkh"]
+[ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_vd736"]
+[ext_resource type="PackedScene" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
+size = Vector2(5, 5000)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pp4ih"]
+size = Vector2(5, 5000)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xalik"]
+texture = ExtResource("7_mq1d2")
+texture_region_size = Vector2i(240, 240)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-120, -120, 120, -120, 120, 120, -120, 120)
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p7swh"]
+tile_size = Vector2i(240, 240)
+physics_layer_0/collision_layer = 2
+sources/1 = SubResource("TileSetAtlasSource_xalik")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oymjr"]
+bg_color = Color(0.36, 0.36, 0.36, 0.552941)
+
+[node name="1level" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_6twnj")
+
+[node name="LeftWorldBorder" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftWorldBorder"]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_qyar3")
+
+[node name="RightWorldBorder" type="Area2D" parent="."]
+position = Vector2(-1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightWorldBorder"]
+position = Vector2(10000, 0)
+shape = SubResource("RectangleShape2D_pp4ih")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+offset = Vector2(0, -80)
+scale = Vector2(7, 7)
+transform = Transform2D(7, 0, 0, 7, 0, -80)
+
+[node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.45, 0.45, 0.45, 1)
+texture_filter = 1
+motion_scale = Vector2(0.01, 0)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
+modulate = Color(1, 1, 1, 0.862745)
+position = Vector2(-0.285714, 0)
+scale = Vector2(1.98929, 1.70833)
+texture = ExtResource("2_opgrr")
+centered = false
+
+[node name="SmallClouds" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.45, 0.45, 0.45, 1)
+texture_filter = 1
+motion_scale = Vector2(0.01, 0.001)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/SmallClouds"]
+texture = ExtResource("3_d0ayg")
+centered = false
+
+[node name="Clouds" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.45, 0.45, 0.45, 1)
+texture_filter = 1
+motion_scale = Vector2(0.03, 0.015)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Clouds"]
+texture = ExtResource("4_0ro1q")
+centered = false
+
+[node name="Forground" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.45, 0.45, 0.45, 1)
+texture_filter = 1
+position = Vector2(-1.85714, 3.57143)
+motion_scale = Vector2(0.05, 0.02)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Forground"]
+position = Vector2(2.71428, -1.14286)
+scale = Vector2(0.985119, 1)
+texture = ExtResource("5_ag27o")
+centered = false
+
+[node name="Forground2" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(0.45, 0.45, 0.45, 1)
+texture_filter = 1
+motion_scale = Vector2(0.07, 0.03)
+motion_mirroring = Vector2(240, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Forground2"]
+position = Vector2(2.98023e-08, 0.714286)
+scale = Vector2(1, 1.02381)
+texture = ExtResource("6_k7bc3")
+centered = false
+
+[node name="Ground" type="Node" parent="."]
+
+[node name="Ground" type="TileMapLayer" parent="Ground"]
+texture_filter = 1
+position = Vector2(-40, 0)
+scale = Vector2(0.25, 0.25)
+tile_map_data = PackedByteArray("AABBALb/AgADAAEAAAACAAcAAQAAAAMAAAADAAcAAQAAAAMAAAABAAcAAQAAAAMAAAAAAAcAAQAAAAMAAAAAAAgAAQAAAAMAAAAAAAkAAQAAAAMAAAAAAAoAAQAAAAMAAAAAAAsAAQAAAAMAAAAAAAwAAQAAAAMAAAABAAgAAQAAAAMAAAABAAkAAQAAAAMAAAABAAoAAQAAAAMAAAABAAsAAQAAAAMAAAABAAwAAQAAAAMAAAACAAgAAQAAAAMAAAACAAkAAQAAAAMAAAACAAoAAQAAAAMAAAACAAsAAQAAAAMAAAACAAwAAQAAAAMAAAADAAgAAQAAAAMAAAADAAkAAQAAAAMAAAADAAoAAQAAAAMAAAADAAsAAQAAAAMAAAADAAwAAQAAAAMAAAAAAA0AAQAAAAMAAAABAA0AAQAAAAMAAAACAA0AAQAAAAMAAAADAA0AAQAAAAMAAAADAA4AAQAAAAMAAAADAA8AAQAAAAMAAAADABAAAQAAAAMAAAADABEAAQAAAAMAAAADABIAAQAAAAMAAAADABMAAQAAAAMAAAADABQAAQAAAAMAAAADABUAAQAAAAMAAAAEABUAAQAAAAMAAAAFABUAAQAAAAMAAAAGABUAAQAAAAMAAAAHABUAAQAAAAMAAAAIABUAAQAAAAMAAAAJABUAAQAAAAMAAAAKABUAAQAAAAMAAAALABUAAQAAAAMAAAAMABUAAQAAAAMAAAAYABUAAQAAAAMAAAAZABUAAQAAAAMAAAAdABUAAQAAAAMAAAAcABUAAQAAAAMAAAAbABUAAQAAAAMAAAAaABUAAQAAAAMAAAAiABUAAQAAAAMAAAAjABUAAQAAAAMAAAAkABUAAQAAAAMAAAAlABUAAQAAAAMAAAAmABUAAQAAAAMAAAAnABUAAQAAAAMAAAAoABUAAQAAAAMAAAApABUAAQAAAAMAAAAqABUAAQAAAAMAAAArABUAAQAAAAMAAAAsABUAAQAAAAMAAAAtABUAAQAAAAMAAAAuABUAAQAAAAMAAAAvABUAAQAAAAMAAAANABUAAQAAAAMAAAAOABUAAQAAAAMAAAAPABUAAQAAAAMAAAAQABUAAQAAAAMAAAARABUAAQAAAAMAAAASABUAAQAAAAMAAAATABUAAQAAAAMAAAAUABUAAQAAAAMAAAAVABUAAQAAAAMAAAAWABUAAQAAAAMAAAAXABUAAQAAAAMAAAAeABUAAQAAAAMAAAAfABUAAQAAAAMAAAAgABUAAQAAAAMAAAAhABUAAQAAAAMAAAAGABMAAQAAAAIAAAAGABIAAQAAAAIAAAAGABEAAQAAAAIAAAAGABAAAQAAAAIAAAAGAA8AAQAAAAIAAAAGAA4AAQAAAAIAAAAGAA0AAQAAAAIAAAAGAAwAAQAAAAIAAAAGAAsAAQAAAAIAAAAGAAoAAQAAAAIAAAAGAAkAAQAAAAIAAAAGAAgAAQAAAAIAAAAGAAcAAQAAAAIAAAAKAAcAAQABAAMAAAALAAcAAQAAAAIAAAAMAAcAAQABAAQAAAAQAAUAAQABAAMAAAARAAUAAQAAAAIAAAASAAUAAQABAAQAAAATAA4AAQAAAAMAAAAUAA4AAQAAAAMAAAAVAA4AAQAAAAMAAAAVAAAAAQABAAMAAAAWAAAAAQAAAAMAAAAXAAAAAQAAAAMAAAAYAAAAAQABAAQAAAA=")
+tile_set = SubResource("TileSet_p7swh")
+
+[node name="Node2D" parent="Ground" instance=ExtResource("9_44tkh")]
+position = Vector2(1199, 778)
+
+[node name="SootSprite" parent="." instance=ExtResource("11_vd736")]
+z_index = 4
+texture_filter = 1
+position = Vector2(72, 390)
+collision_mask = 6
+
+[node name="Smog" type="Control" parent="."]
+visible = false
+z_index = 2
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -1500.0
+offset_right = 6500.0
+offset_bottom = 1500.0
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Smog"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -680.0
+offset_right = -680.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oymjr")
+
+[node name="MiniLantern" parent="." instance=ExtResource("15_tmyrt")]
+scale = Vector2(0.5, 0.5)
+
+[connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

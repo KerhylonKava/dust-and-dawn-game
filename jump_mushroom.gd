@@ -1,6 +1,6 @@
 extends StaticBody2D
 
-@export var jumpHeight = 1700
+@export var jumpHeight = 1850
 #@export var jumpDistance = 200
 @export var flipH = false
 

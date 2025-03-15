@@ -1,6 +1,6 @@
 extends CharacterBody2D
 const UP_DIRECITON := Vector2.UP
-
+const WALL_SLIDING_SPEED = 1600
 
 @export var speed := 450/0.0166
 #scale.x = scale.y * direction 
@@ -34,10 +34,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	#inventory.slots.size -=10
-	#if Input.is_action_just_pressed("space"):
-		#collect(item)
-	#Movement
+	if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
 	if jump_time > 0:
 		jump_time -= 1
 	

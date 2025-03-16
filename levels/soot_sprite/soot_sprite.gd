@@ -35,14 +35,14 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
+	#if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
 	if jump_time > 0:
 		jump_time -= 1
 	
 	
 	if Input.is_action_just_pressed("up"):
 		animation.play("jump")
-		if is_on_floor():
+		if is_on_floor() or is_on_wall():
 			jump_time = 15
 			jumps_made = 1
 		elif jumps_made < max_jumps:

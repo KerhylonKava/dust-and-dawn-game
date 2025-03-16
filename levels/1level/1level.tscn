@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://8178q70cckvt" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-3.png" id="9_fa4dk"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="9_hjrew"]
 [ext_resource type="Texture2D" uid="uid://cletcmyy33hw5" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-4.png" id="9_hylvw"]
-[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://Jump_Mushroom.tscn" id="9_tmshh"]
+[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://levels/3level/Jump_Mushroom.tscn" id="9_tmshh"]
 [ext_resource type="Texture2D" uid="uid://dncplu5p885jw" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-5.png" id="10_ovr10"]
 [ext_resource type="PackedScene" uid="uid://cqowo3akni3e3" path="res://Quest/Backpack_Quest/leaf_collectable.tscn" id="11_5tquh"]
 [ext_resource type="Texture2D" uid="uid://d1eatynxj624b" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-6.png" id="11_563lp"]

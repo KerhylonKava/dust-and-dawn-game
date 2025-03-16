@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cik5ttwtol5kn" path="res://levels/3level/pixil-layer-3 (1).png" id="8_eh8va"]
 [ext_resource type="Texture2D" uid="uid://c6jr21lojj1f0" path="res://levels/3level/pixil-layer-5 (1).png" id="9_b2w7e"]
 [ext_resource type="Texture2D" uid="uid://2f2a52sstxxi" path="res://levels/3level/pixil-layer-7.png" id="10_81bb3"]
-[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://Jump_Mushroom.tscn" id="10_vevxb"]
+[ext_resource type="PackedScene" uid="uid://rjnqkprn4eov" path="res://levels/3level/Jump_Mushroom.tscn" id="10_vevxb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ruqy"]
 texture = ExtResource("2_oi5e8")

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbp33ud3j1h1h"
+path="res://.godot/imported/Happi Npc Voice.wav-5fe8b7a25f7b36a86a3d063220fcb82e.sample"
+
+[deps]
+
+source_file="res://Sound_Effects/Happi Npc Voice.wav"
+dest_files=["res://.godot/imported/Happi Npc Voice.wav-5fe8b7a25f7b36a86a3d063220fcb82e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

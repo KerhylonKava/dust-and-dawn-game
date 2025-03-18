@@ -27,6 +27,7 @@ var onAutoJumpOpject = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("SootSprite")
 	if !contains(backpack):
 		size(3)
 		
@@ -129,6 +130,3 @@ func _vine_climb(delta):
 		#velocity.y = Jump_Force * 0.7
 	#if Input.is_action_just_pressed("left") and Input.is_action_just_pressed("ui_up"):
 		#velocity.y = Jump_Force * 0.7
-
-
-	

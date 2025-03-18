@@ -20,6 +20,6 @@ func _process(delta: float) -> void:
 
 func _on_right_world_border_body_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
-		get_tree().change_scene_to_file("res://levels/1level/1level.tscn")
+		get_tree().change_scene_to_file("res://levels/4level/4level.tscn")
 		side = 'right'
 		$SootSprite/Camera2D.position_smoothing_speed = 0

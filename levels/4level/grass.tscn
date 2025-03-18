@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdptbxqh7goug"]
+
+[ext_resource type="Script" path="res://grass.gd" id="1_22iqo"]
+[ext_resource type="Texture2D" uid="uid://bg5bn26xguynq" path="res://levels/3level/pixil-frame-0 (2).png" id="2_5jtb4"]
+
+[sub_resource type="Shader" id="Shader_x25q6"]
+code = "shader_type canvas_item;
+
+uniform float skew = 0;
+
+void vertex() {
+	VERTEX.x += (1.0-UV.y) * skew;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjcmc"]
+resource_local_to_scene = true
+shader = SubResource("Shader_x25q6")
+shader_parameter/skew = 0.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_21tyg"]
+size = Vector2(3.5, 5.5)
+
+[node name="grass" type="Area2D"]
+scale = Vector2(8, 8)
+script = ExtResource("1_22iqo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = SubResource("ShaderMaterial_fjcmc")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_5jtb4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.25, 1.25)
+shape = SubResource("RectangleShape2D_21tyg")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

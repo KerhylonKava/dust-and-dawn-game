@@ -4,6 +4,8 @@ extends Node2D
 #@onready var one_script = $"../one_level"
 #var side = one_script.side #1=left, 2=right
 var side = "right"
+@export var backpack : InvItem
+var SootSprite = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,7 +13,7 @@ func _ready() -> void:
 	if side == 'left':
 		$SootSprite.position.x = 50
 	elif side == 'right':
-		$SootSprite.position.x = 4950
+		$SootSprite.position.x = 9950
 	$SootSprite/Camera2D.position_smoothing_speed = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,6 +22,18 @@ func _process(delta: float) -> void:
 
 func _on_right_world_border_body_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
-		get_tree().change_scene_to_file("res://levels/1level/1level.tscn")
-		side = 'right'
-		$SootSprite/Camera2D.position_smoothing_speed = 0
+		SootSprite = body
+		if playercontains(backpack):
+			get_tree().change_scene_to_file("res://levels/1level/1level.tscn")
+			side = 'right'
+			$SootSprite/Camera2D.position_smoothing_speed = 0
+		else:
+			print("player no contain backpack")
+
+func playercontains(item):
+	if SootSprite.contains(item):
+		#print(SootSprite.contains(item))
+		return true
+	elif !SootSprite.contains(item):
+		#print(SootSprite.contains(item))
+		return false

@@ -1,12 +1,13 @@
 extends Sprite2D
 
+
 @export var unlit_lantern : Texture
 @export var lit_lantern : Texture
 #var player = null
 @export var light: InvItem
 #@export var inventory : Inventory;
 #@export var inventory = "res://inventory/scripts/inventory.gd"
-
+@onready var LightingLantern_Sound = $LightingLantern_Sound
 var SootSprite = null
 var player_in_area = false
 
@@ -17,8 +18,8 @@ var is_lantern_lit = false
 # Called when the node enters the scene tree for the first time
 func _ready():
 	# Initialize the lantern's textures
-	unlit_lantern = preload("res://Quest/lantern_quest/unlit_lantern.png")
-	lit_lantern = preload("res://Quest/lantern_quest/lit_lantern.png")
+	#unlit_lantern = preload("res://Quest/lantern_quest/unlit_lantern.png")
+	#lit_lantern = preload("res://Quest/lantern_quest/lit_lantern.png")
 	
 	# Start with the unlit lantern texture
 	texture = unlit_lantern
@@ -35,13 +36,15 @@ func _process(delta):
 	if player_in_area and Input.is_action_just_pressed("space"):
 		# Switch to the lit lantern when the space key is pressed
 		if is_lantern_lit == false:
-			if playercontains(light,5):
+			if amount(light) >= 3:
 				#texture = lit_lantern
 				is_lantern_lit = true
-				playerremove(light,5)
-				print("player contains: ", playercontains(light,5))
-			elif !playercontains(light,5):
-				print("player contains: ", playercontains(light,5))
+				LightingLantern_Sound.play()
+				playerremove(light,3)
+				#print("player contains: ", playercontains(light,5))
+			elif !amount(light) >= 3:
+				#print("player contains: ", playercontains(light,5))
+				pass
 		else:
 			print("lantern is already lit")
 	
@@ -61,10 +64,6 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 func playerremove(item,amount):
 	SootSprite.remove(item,amount)
 
-func playercontains(item,amount):
-	if SootSprite.contains(item,amount):
-		#print(SootSprite.contains(item))
-		return true
-	elif !SootSprite.contains(item,amount):
-		#print(SootSprite.contains(item))
-		return false
+func amount(item):
+	#print("racoon ",item.name,SootSprite.amount(item))
+	return SootSprite.amount(item)

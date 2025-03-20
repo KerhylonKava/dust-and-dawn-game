@@ -2,7 +2,8 @@ extends Node2D
 
 var SootSprite = null
 var player_in_area = false
-@onready var lantern = get_parent().get_node("LightingLantern")
+@onready var lantern1 = get_parent().get_node("LightingLantern")
+@onready var lantern2 = get_parent().get_node("LightingLantern2")
 @export var string: InvItem
 @export var leaf : InvItem
 @export var backpack : InvItem
@@ -27,7 +28,7 @@ func _process(delta):
 	
 	if player_in_area and Input.is_action_just_pressed("space"):
 		if scene == '1level':
-			$QuestBoards/BackpackQuestBoard.visible =  true
+			$QuestBoards/BackpackQuestBoard.visible = true
 			if amount(leaf)>=1 and amount(string)>=2: #or playercontains(backpack):
 				$QuestBoards/BackpackQuestBoard/All.visible = true
 				$QuestBoards/BackpackQuestBoard/Lacking.visible = false
@@ -51,18 +52,22 @@ func _process(delta):
 				$QuestBoards.visible = true
 			#else:
 			#	print("player contains function errored")
-		elif scene == '2level':
-			$QuestBoards/LanternQuestBoard.visible =  true
-			if lantern.is_lantern_lit == true:
-				$LanternQuestBoard/NotLit.visible = false
-				$LanternQuestBoard/Lit.visible = true
-				$LanternQuestBoard.visible = true
-			elif lantern.is_lantern_lit == false:
-				$LanternQuestBoard/NotLit.visible = true
-				$LanternQuestBoard/Lit.visible = false
-				$LanternQuestBoard.visible = true
+		if scene == '2level':
+			print("2level")
+			$QuestBoards.visible =  true
+			if lantern1.is_lantern_lit == true and lantern2.is_lantern_lit == true:
+				print("lantern is lit")
+				$QuestBoards/LanternQuestBoard/NotLit.visible = false
+				$QuestBoards/LanternQuestBoard/Lit.visible = true
+				$QuestBoards/LanternQuestBoard.visible = true
+			elif lantern1.is_lantern_lit == false and lantern2.is_lantern_lit == false:
+				print("lantern is not lit")
+				$QuestBoards/LanternQuestBoard/NotLit.visible = true
+				$QuestBoards/LanternQuestBoard/Lit.visible = false
+				$QuestBoards/LanternQuestBoard.visible = true
 			elif !player_in_area:
-				$LanternQuestBoard.visible = false
+				print("bye")
+				$QuestBoards.visible = false
 	
 	
 func _on_area_2d_body_exited(body: Node2D) -> void:
@@ -74,6 +79,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
 		player_in_area = true
 		SootSprite = body
+		#print("player in area")
 
 func playerremove(item,amount):
 	SootSprite.remove(item,amount)

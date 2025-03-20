@@ -102,7 +102,6 @@ hframes = 14
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 19)
-offset = Vector2(-100, 0)
 limit_left = 0
 limit_right = 10050
 limit_bottom = 775
@@ -134,6 +133,7 @@ hit_from_inside = true
 [node name="Vine2RayCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 162)
 collision_mask = 64
+
 [node name="FootSteps_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_rbydm")
 volume_db = 5.743

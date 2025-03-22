@@ -104,7 +104,6 @@ hframes = 14
 position = Vector2(0, 19)
 limit_left = 0
 limit_right = 10050
-limit_bottom = 775
 limit_smoothed = true
 position_smoothing_enabled = true
 script = ExtResource("4_my1oj")

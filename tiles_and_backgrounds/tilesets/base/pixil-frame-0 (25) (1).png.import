@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhk44k0hcbvbe"
-path="res://.godot/imported/Rock_01 32x32.png-b765ecff1a7d8e30bb50a075636c8bfd.ctex"
+uid="uid://dvlji5qsbw7di"
+path="res://.godot/imported/pixil-frame-0 (25) (1).png-93c08721f2e120aae068eb7a6083793d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/4level/Rock_01 32x32.png"
-dest_files=["res://.godot/imported/Rock_01 32x32.png-b765ecff1a7d8e30bb50a075636c8bfd.ctex"]
+source_file="res://tiles_and_backgrounds/tilesets/base/pixil-frame-0 (25) (1).png"
+dest_files=["res://.godot/imported/pixil-frame-0 (25) (1).png-93c08721f2e120aae068eb7a6083793d.ctex"]
 
 [params]
 

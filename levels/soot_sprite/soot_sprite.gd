@@ -81,6 +81,7 @@ func _process(delta: float) -> void:
 @warning_ignore("shadowed_variable")
 func collect(item,amount):
 	inventory.insert(item,amount)
+	print(amount(item))
 
 @warning_ignore("shadowed_variable")
 func remove(item,amount):

@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhwpmq1iutnpm"]
+[gd_scene load_steps=5 format=3 uid="uid://bhwpmq1iutnpm"]
 
 [ext_resource type="Script" path="res://crystal.gd" id="1_8snvf"]
+[ext_resource type="Resource" uid="uid://cffhbv8okplrm" path="res://inventory/items/crystal.tres" id="2_7jreq"]
 [ext_resource type="Texture2D" uid="uid://crv86ptanakds" path="res://levels/4level/crystal_04_greent.png" id="2_vufxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rddex"]
 size = Vector2(112, 124)
 
 [node name="Crystal" type="StaticBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_8snvf")
+crystal = ExtResource("2_7jreq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

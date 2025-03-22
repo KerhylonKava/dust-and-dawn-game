@@ -1,11 +1,8 @@
-[gd_scene load_steps=25 format=3 uid="uid://dkomw1ppldg5v"]
+[gd_scene load_steps=22 format=3 uid="uid://dkomw1ppldg5v"]
 
 [ext_resource type="Texture2D" uid="uid://bq4fkfcvpjpy" path="res://Characters/pixilart-sprite (2).png" id="1_8jo08"]
 [ext_resource type="Script" path="res://Characters/racoon_npc.gd" id="1_xpwem"]
-[ext_resource type="Resource" uid="uid://dxtqmbi3w4ay7" path="res://inventory/items/string.tres" id="2_ukvr2"]
-[ext_resource type="Resource" uid="uid://djfbhxdrp547d" path="res://inventory/items/leaf.tres" id="3_0hlgj"]
 [ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="3_bj8m4"]
-[ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="4_0703h"]
 [ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="4_vgruo"]
 [ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/lantern_quest/sr25ace012ff8aws3.png" id="5_jostw"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="6_iqdfx"]
@@ -93,9 +90,6 @@ radius = 763.889
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_xpwem")
-string = ExtResource("2_ukvr2")
-leaf = ExtResource("3_0hlgj")
-backpack = ExtResource("4_0703h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -105,6 +99,7 @@ frame_progress = 0.554956
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
 shape = SubResource("CircleShape2D_m8yex")
 
 [node name="space" type="Label" parent="."]
@@ -119,7 +114,6 @@ text = "Space"
 [node name="QuestBoards" type="Node2D" parent="."]
 
 [node name="LanternQuestBoard" type="NinePatchRect" parent="QuestBoards"]
-visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -133,7 +127,6 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="NotLit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
-visible = false
 
 [node name="LitLantern" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
 position = Vector2(43, 22.2667)
@@ -163,7 +156,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
-visible = false
 
 [node name="yay" type="Label" parent="QuestBoards/LanternQuestBoard/Lit"]
 offset_left = 9.16667
@@ -175,6 +167,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BackpackQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -234,7 +227,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="All" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
-visible = false
 
 [node name="yay" type="Label" parent="QuestBoards/BackpackQuestBoard/All"]
 offset_left = 9.16667

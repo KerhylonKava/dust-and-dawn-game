@@ -26,7 +26,7 @@ func _process(delta):
 	elif !player_in_area:
 		$space.visible = false
 		$QuestBoards.visible = false
-	
+
 	if player_in_area and Input.is_action_just_pressed("space"):
 		if scene == '1level':
 			$QuestBoards/BackpackQuestBoard.visible = true

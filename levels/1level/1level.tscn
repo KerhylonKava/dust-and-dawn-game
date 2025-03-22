@@ -285,8 +285,10 @@ tile_set = SubResource("TileSet_lqmsa")
 
 [node name="Node2D" parent="Ground" instance=ExtResource("9_tmshh")]
 position = Vector2(2054, 535)
+scale = Vector2(1.5, 1.5)
 
 [node name="JumpMushroom" parent="Ground/Node2D" instance=ExtResource("9_tmshh")]
+position = Vector2(395, -1787)
 
 [node name="NPC" parent="." instance=ExtResource("14_6a4cs")]
 position = Vector2(1115, 601)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bhwpmq1iutnpm"]
 
 [ext_resource type="Script" path="res://crystal.gd" id="1_8snvf"]
-[ext_resource type="Texture2D" uid="uid://cjbcoiancmkc7" path="res://icon.svg" id="2_g2ugw"]
+[ext_resource type="Texture2D" uid="uid://crv86ptanakds" path="res://levels/4level/crystal_04_greent.png" id="2_vufxg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rddex"]
 size = Vector2(112, 124)
@@ -10,7 +10,9 @@ size = Vector2(112, 124)
 script = ExtResource("1_8snvf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_g2ugw")
+texture_filter = 1
+scale = Vector2(5, 5)
+texture = ExtResource("2_vufxg")
 
 [node name="Area2D" type="Area2D" parent="."]
 z_index = -1

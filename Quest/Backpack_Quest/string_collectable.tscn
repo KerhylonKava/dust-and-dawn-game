@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://g3kjnm0gy6io"]
 
 [ext_resource type="Script" path="res://Quest/Backpack_Quest/string_collectable.gd" id="1_yekqd"]
-[ext_resource type="Resource" uid="uid://dxtqmbi3w4ay7" path="res://inventory/items/string.tres" id="2_34aof"]
+[ext_resource type="Resource" path="res://inventory/items/string.tres" id="2_34aof"]
 [ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Quest/Backpack_Quest/sr2a10ef88c05aws3.webp" id="2_jlfri"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlo7e"]

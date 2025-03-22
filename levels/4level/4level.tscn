@@ -211,12 +211,12 @@ position = Vector2(3838, 1037)
 scale = Vector2(0.6, 0.6)
 
 [node name="Node2D12" parent="." instance=ExtResource("9_44tkh")]
-position = Vector2(202, -592)
+position = Vector2(232, -583)
 scale = Vector2(0.6, 0.6)
 
 [node name="Node2D13" parent="." instance=ExtResource("9_44tkh")]
 position = Vector2(590, -1603)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 
 [node name="Node2D2" parent="." instance=ExtResource("9_44tkh")]
 position = Vector2(3960, 504)

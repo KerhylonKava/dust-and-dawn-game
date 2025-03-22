@@ -2,8 +2,9 @@ extends Node2D
 
 var SootSprite = null
 var player_in_area = false
-@onready var lantern1 = get_parent().get_node("LightingLantern")
-@onready var lantern2 = get_parent().get_node("LightingLantern2")
+@onready var l1 = get_parent().get_node("LightingLantern")
+@onready var l2 = get_parent().get_node("LightingLantern2")
+@onready var b3 = get_parent().get_node("BubbleLantern")
 @export var string: InvItem
 @export var leaf : InvItem
 @export var backpack : InvItem
@@ -55,12 +56,12 @@ func _process(delta):
 		if scene == '2level':
 			print("2level")
 			$QuestBoards.visible =  true
-			if lantern1.is_lantern_lit == true and lantern2.is_lantern_lit == true:
+			if l1.lit and l2.lit and b3.lit:
 				print("lantern is lit")
 				$QuestBoards/LanternQuestBoard/NotLit.visible = false
 				$QuestBoards/LanternQuestBoard/Lit.visible = true
 				$QuestBoards/LanternQuestBoard.visible = true
-			elif lantern1.is_lantern_lit == false and lantern2.is_lantern_lit == false:
+			elif !l1.lit and !l2.lit and !b3.lit:
 				print("lantern is not lit")
 				$QuestBoards/LanternQuestBoard/NotLit.visible = true
 				$QuestBoards/LanternQuestBoard/Lit.visible = false

@@ -11,7 +11,7 @@ extends Sprite2D
 var SootSprite = null
 var player_in_area = false
 
-var is_lantern_lit = false
+var lit = false
 
 #var enough_items = SootSprite.enough_items
 
@@ -29,11 +29,28 @@ func _ready():
 
 # Called every frame
 func _process(delta):
+	if player_in_area:
+		if amount(light) >= 3:
+				$Node2D/space.visible = true
+				if Input.is_action_just_pressed("space"):
+					if lit == false:
+						lit = true
+						LightingLantern_Sound.play()
+						playerremove(light,3)
+					else:
+						print("lantern is already lit")
+		elif !amount(light) >= 3:
+				$Node2D/space.visible = false
+	elif !player_in_area:
+		$Node2D/space.visible = false
 	# Check if the player has collected the light sprite and the space key is pressed
 	
-	
+	"""
 #	if SootSprite.has_collected_light_sprite:
-	if player_in_area and Input.is_action_just_pressed("space"):
+	if player_in_area:
+		if amount(light) >= 3:
+			
+		Input.is_action_just_pressed("space"):
 		# Switch to the lit lantern when the space key is pressed
 		if is_lantern_lit == false:
 			if amount(light) >= 3:
@@ -47,8 +64,8 @@ func _process(delta):
 				pass
 		else:
 			print("lantern is already lit")
-	
-	if is_lantern_lit == true:
+	"""
+	if lit == true:
 		texture = lit_lantern
 
 func _on_area_2d_body_exited(body: Node2D) -> void:

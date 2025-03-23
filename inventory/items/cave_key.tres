@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://clkgkrmd0llf2"]
-
-[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_y8jk4"]
-[ext_resource type="Texture2D" uid="uid://cak246ni8pwqh" path="res://levels/2level/00.png" id="2_miu0y"]
-
-[resource]
-script = ExtResource("1_y8jk4")
-name = "cave_key"
-texture = ExtResource("2_miu0y")

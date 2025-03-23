@@ -1,6 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://by0lyhto3vtcc"]
 
 [ext_resource type="Script" path="res://Quest/lantern_quest/light_collectable.gd" id="1_7335b"]
+[ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/lantern_quest/sr25ace012ff8aws3.png" id="2_dvk5t"]
 [ext_resource type="Resource" uid="uid://dgvgdem2lwae3" path="res://inventory/items/light.tres" id="2_mhtgi"]
 [ext_resource type="AudioStream" uid="uid://c8s1i5xo558lp" path="res://Sound_Effects/Fruit collect 1.wav" id="3_hhxds"]
 [ext_resource type="Texture2D" uid="uid://caqwtf3ab2jni" path="res://Quest/lantern_quest/ball_of_light.png" id="3_uxld2"]
@@ -10,14 +11,13 @@
 radius = 345.0
 
 [node name="light_collectable" type="StaticBody2D"]
-texture_filter = 1
 script = ExtResource("1_7335b")
 light = ExtResource("2_mhtgi")
 cave_key = ExtResource("3_vwxq7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(50, 50)
-texture = ExtResource("3_uxld2")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dvk5t")
 
 [node name="interactable_area" type="Area2D" parent="."]
 

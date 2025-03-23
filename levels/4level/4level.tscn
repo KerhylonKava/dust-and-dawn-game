@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_vd736"]
 [ext_resource type="PackedScene" uid="uid://cwkwjx1r8wk30" path="res://levels/4level/bat.tscn" id="12_1yvu0"]
 [ext_resource type="PackedScene" uid="uid://db0lgg5o1033u" path="res://Characters/golem_npc.tscn" id="14_fv8gv"]
-[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
+[ext_resource type="PackedScene" uid="uid://b827sqqr1lud2" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
 size = Vector2(5, 5000)
@@ -67,7 +67,7 @@ texture_region_size = Vector2i(240, 240)
 
 [sub_resource type="TileSet" id="TileSet_p7swh"]
 tile_size = Vector2i(240, 240)
-physics_layer_0/collision_layer = 2
+physics_layer_0/collision_layer = 3
 sources/1 = SubResource("TileSetAtlasSource_xalik")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oymjr"]
@@ -125,6 +125,7 @@ texture_region_size = Vector2i(12, 12)
 
 [sub_resource type="TileSet" id="TileSet_6x3au"]
 tile_size = Vector2i(12, 12)
+physics_layer_0/collision_layer = 2
 sources/0 = SubResource("TileSetAtlasSource_y4mvq")
 
 [node name="4level" type="Node2D"]
@@ -327,10 +328,9 @@ z_index = 4
 texture_filter = 1
 position = Vector2(230, 668)
 scale = Vector2(0.996108, 1.01161)
-collision_mask = 6
 
 [node name="MiniLantern" parent="." instance=ExtResource("15_tmyrt")]
-position = Vector2(3, -168)
+position = Vector2(50, 536)
 scale = Vector2(0.5, 0.5)
 
 [node name="grass78" parent="." instance=ExtResource("10_kc7n5")]
@@ -726,26 +726,20 @@ scale = Vector2(4, 4)
 
 [node name="Bat" parent="." instance=ExtResource("12_1yvu0")]
 position = Vector2(4480, -1506)
-scale = Vector2(5, 5)
 
 [node name="Bat2" parent="." instance=ExtResource("12_1yvu0")]
 position = Vector2(7118, -37)
-scale = Vector2(5, 5)
 
 [node name="Bat3" parent="." instance=ExtResource("12_1yvu0")]
 position = Vector2(7547, -2200)
-scale = Vector2(5, 5)
 
 [node name="Bat4" parent="." instance=ExtResource("12_1yvu0")]
 position = Vector2(5010, -455)
-scale = Vector2(5, 5)
 
 [node name="Bat5" parent="." instance=ExtResource("12_1yvu0")]
-position = Vector2(852, -589)
-scale = Vector2(5, 5)
+position = Vector2(2198, -696)
 
 [node name="Bat6" parent="." instance=ExtResource("12_1yvu0")]
-position = Vector2(1647, -2069)
-scale = Vector2(5, 5)
+position = Vector2(2606, -2214)
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

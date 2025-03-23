@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d1eatynxj624b" path="res://tiles_and_backgrounds/background/Plains/pixil-layer-6.png" id="11_563lp"]
 [ext_resource type="PackedScene" uid="uid://g3kjnm0gy6io" path="res://Quest/Backpack_Quest/string_collectable.tscn" id="12_ox258"]
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="14_6a4cs"]
-[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="14_pgln6"]
+[ext_resource type="PackedScene" uid="uid://b827sqqr1lud2" path="res://levels/soot_sprite/mini_lantern.tscn" id="14_pgln6"]
 [ext_resource type="PackedScene" uid="uid://dqvk14guaki7d" path="res://Quest/help_sign.tscn" id="16_101gk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
@@ -291,6 +291,7 @@ scale = Vector2(5, 5)
 [node name="leaf_collectable" parent="." instance=ExtResource("11_5tquh")]
 position = Vector2(1879, -1858)
 scale = Vector2(0.1, 0.1)
+leaf = ExtResource("12_c6r26")
 
 [node name="string_collectable" parent="." instance=ExtResource("12_ox258")]
 position = Vector2(5846, -3307)

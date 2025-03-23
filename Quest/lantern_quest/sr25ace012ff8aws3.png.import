@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://caqwtf3ab2jni"
-path="res://.godot/imported/ball_of_light.png-b51eac094f66ffd6a637601a2ee6c3f3.ctex"
+uid="uid://dmnqlw0ixnfar"
+path="res://.godot/imported/sr25ace012ff8aws3.png-919da0d946702f72333f971a94489640.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Quest/lantern_quest/ball_of_light.png"
-dest_files=["res://.godot/imported/ball_of_light.png-b51eac094f66ffd6a637601a2ee6c3f3.ctex"]
+source_file="res://Quest/lantern_quest/sr25ace012ff8aws3.png"
+dest_files=["res://.godot/imported/sr25ace012ff8aws3.png-919da0d946702f72333f971a94489640.ctex"]
 
 [params]
 

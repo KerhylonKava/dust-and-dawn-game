@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cnoem4oju6eph" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-3.png" id="10_wreu6"]
 [ext_resource type="PackedScene" uid="uid://ck5hocqdbjbxp" path="res://Quest/lantern_quest/lighting_lantern.tscn" id="11_bkda0"]
 [ext_resource type="PackedScene" uid="uid://by0lyhto3vtcc" path="res://Quest/lantern_quest/light_collectable.tscn" id="12_5otbi"]
-[ext_resource type="PackedScene" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_b5h50"]
+[ext_resource type="PackedScene" uid="uid://b827sqqr1lud2" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_b5h50"]
 [ext_resource type="PackedScene" path="res://Quest/lantern_quest/bubble_lantern.tscn" id="15_p7h23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ct018"]

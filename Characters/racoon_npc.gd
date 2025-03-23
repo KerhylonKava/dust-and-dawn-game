@@ -8,6 +8,7 @@ var player_in_area = false
 @export var string: InvItem
 @export var leaf : InvItem
 @export var backpack : InvItem
+@export var cave_key : InvItem
 
 
 @onready var scene = get_parent().name
@@ -26,6 +27,9 @@ func _process(delta):
 	elif !player_in_area:
 		$space.visible = false
 		$QuestBoards.visible = false
+
+	if Input.is_action_just_pressed("test"):
+		playercollect(cave_key,1)
 
 	if player_in_area and Input.is_action_just_pressed("space"):
 		if scene == '1level':
@@ -61,6 +65,7 @@ func _process(delta):
 				$QuestBoards/LanternQuestBoard/NotLit.visible = false
 				$QuestBoards/LanternQuestBoard/Lit.visible = true
 				$QuestBoards/LanternQuestBoard.visible = true
+				playercollect(cave_key,1)
 			elif !l1.lit and !l2.lit and !b3.lit:
 				print("lantern is not lit")
 				$QuestBoards/LanternQuestBoard/NotLit.visible = true

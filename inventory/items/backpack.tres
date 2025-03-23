@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bfpb4ji0lsj5q"]
 
 [ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_5jc5d"]
-[ext_resource type="Texture2D" uid="uid://ber12p8vabu4e" path="res://Quest/Backpack_Quest/sr24e99a044a7aws3.png" id="2_l2fad"]
+[ext_resource type="Texture2D" uid="uid://bvw6b0j84fr45" path="res://Quest/Backpack_Quest/backpack.png" id="2_d2yep"]
 
 [resource]
 script = ExtResource("1_5jc5d")
 name = "backpack"
-texture = ExtResource("2_l2fad")
+texture = ExtResource("2_d2yep")

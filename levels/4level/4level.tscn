@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cdptbxqh7goug" path="res://levels/4level/grass.tscn" id="10_kc7n5"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_vd736"]
 [ext_resource type="PackedScene" uid="uid://db0lgg5o1033u" path="res://Characters/golem_npc.tscn" id="14_fv8gv"]
-[ext_resource type="PackedScene" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
+[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
 size = Vector2(5, 5000)

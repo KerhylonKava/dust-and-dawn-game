@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dgvgdem2lwae3"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bcr4e74tlmgvx"]
 
 [ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_0gdl2"]
 [ext_resource type="Texture2D" uid="uid://caqwtf3ab2jni" path="res://Quest/lantern_quest/ball_of_light.png" id="2_7oc88"]

@@ -6,11 +6,12 @@ var player_in_area = false
 
 
 @onready var scene = get_parent().name
-
-@onready var anim = $Sprite2D
+@onready var animated_sprite_2d = $"Animated Sprite"
+#@onready var anim = $Sprite2D
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$QuestBoards/GolemQuestBoard.visible = false
+	animated_sprite_2d.play("idle")
 
 
 func _process(delta):

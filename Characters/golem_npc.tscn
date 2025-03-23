@@ -1,15 +1,58 @@
-[gd_scene load_steps=7 format=3 uid="uid://db0lgg5o1033u"]
+[gd_scene load_steps=13 format=3 uid="uid://db0lgg5o1033u"]
 
 [ext_resource type="Script" path="res://Characters/golem_npc.gd" id="1_cyxbc"]
 [ext_resource type="Resource" uid="uid://cffhbv8okplrm" path="res://inventory/items/crystal.tres" id="2_lld8v"]
-[ext_resource type="Texture2D" uid="uid://u4xyngv60577" path="res://levels/4level/crystal_02_green.png" id="3_d807o"]
-[ext_resource type="Texture2D" uid="uid://c66cce2hjp442" path="res://levels/4level/crystal_03_green.png" id="4_xci7a"]
+[ext_resource type="Texture2D" uid="uid://drx8amowvmyq2" path="res://levels/4level/golem_sprite_sheet.png" id="3_p18g6"]
+[ext_resource type="Texture2D" uid="uid://kede5mrvcnlo" path="res://levels/4level/crystal_04_blue.png" id="5_06slb"]
 [ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="6_x7y7w"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_m8yex"]
 radius = 28.0
 
-[node name="NPC" type="Node2D"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vtup"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ietu4"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbiu1"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(30, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_enx2s"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(45, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu837"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(60, 0, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcuja"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vtup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ietu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mbiu1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_enx2s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bu837")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Golem NPC" type="Node2D"]
 script = ExtResource("1_cyxbc")
 crystal = ExtResource("2_lld8v")
 
@@ -18,11 +61,11 @@ crystal = ExtResource("2_lld8v")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_m8yex")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Animated Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(1, -6)
 scale = Vector2(2, 2)
-texture = ExtResource("3_d807o")
+sprite_frames = SubResource("SpriteFrames_vcuja")
+animation = &"idle"
 
 [node name="space" type="Label" parent="."]
 texture_filter = 1
@@ -36,10 +79,10 @@ text = "Space"
 
 [node name="GolemQuestBoard" type="NinePatchRect" parent="QuestBoards"]
 texture_filter = 1
-offset_left = -38.0
-offset_top = -56.0
-offset_right = 27.0
-offset_bottom = -20.0
+offset_left = -39.0
+offset_top = -58.0
+offset_right = 26.0
+offset_bottom = -22.0
 scale = Vector2(1.2, 1.2)
 texture = ExtResource("6_x7y7w")
 patch_margin_left = 6
@@ -50,9 +93,9 @@ patch_margin_bottom = 6
 [node name="NotFixed" type="Node2D" parent="QuestBoards/GolemQuestBoard"]
 scale = Vector2(0.8, 0.8)
 
-[node name="LitLantern" type="Sprite2D" parent="QuestBoards/GolemQuestBoard/NotFixed"]
+[node name="Crystal" type="Sprite2D" parent="QuestBoards/GolemQuestBoard/NotFixed"]
 position = Vector2(71.875, 21.875)
-texture = ExtResource("4_xci7a")
+texture = ExtResource("5_06slb")
 
 [node name="Arrow" type="Label" parent="QuestBoards/GolemQuestBoard/NotFixed"]
 texture_filter = 1
@@ -93,11 +136,12 @@ vertical_alignment = 1
 [node name="Fixed" type="Node2D" parent="QuestBoards/GolemQuestBoard"]
 
 [node name="yay" type="Label" parent="QuestBoards/GolemQuestBoard/Fixed"]
-offset_left = 9.16667
-offset_top = 9.16667
-offset_right = 49.1667
-offset_bottom = 32.1667
-text = "YAY!"
+texture_filter = 1
+offset_left = -19.1667
+offset_top = 8.33333
+offset_right = 81.8336
+offset_bottom = 31.3333
+text = "😄🙌"
 horizontal_alignment = 1
 vertical_alignment = 1
 

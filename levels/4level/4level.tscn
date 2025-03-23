@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://do2bc0yiyglqv"]
+[gd_scene load_steps=23 format=4 uid="uid://do2bc0yiyglqv"]
 
 [ext_resource type="Script" path="res://levels/1level/1master.gd" id="1_6twnj"]
 [ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="2_opgrr"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://bhwpmq1iutnpm" path="res://levels/4level/crystal.tscn" id="9_375ka"]
 [ext_resource type="PackedScene" uid="uid://cdptbxqh7goug" path="res://levels/4level/grass.tscn" id="10_kc7n5"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_vd736"]
+[ext_resource type="PackedScene" uid="uid://cwkwjx1r8wk30" path="res://levels/4level/bat.tscn" id="12_1yvu0"]
 [ext_resource type="PackedScene" uid="uid://db0lgg5o1033u" path="res://Characters/golem_npc.tscn" id="14_fv8gv"]
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
 
@@ -211,12 +212,12 @@ position = Vector2(3838, 1037)
 scale = Vector2(0.6, 0.6)
 
 [node name="Node2D12" parent="." instance=ExtResource("9_44tkh")]
-position = Vector2(202, -592)
+position = Vector2(232, -583)
 scale = Vector2(0.6, 0.6)
 
 [node name="Node2D13" parent="." instance=ExtResource("9_44tkh")]
 position = Vector2(590, -1603)
-scale = Vector2(0.6, 0.6)
+scale = Vector2(0.7, 0.7)
 
 [node name="Node2D2" parent="." instance=ExtResource("9_44tkh")]
 position = Vector2(3960, 504)
@@ -260,7 +261,7 @@ tile_map_data = PackedByteArray("AAAIAO3/AQAAAAIAAAAIAO7/AQAAAAIAAAAIAPH/AQAAAAI
 tile_set = SubResource("TileSet_p7swh")
 
 [node name="Crystal" parent="Ground/Ground" instance=ExtResource("9_375ka")]
-position = Vector2(14448, 512)
+position = Vector2(14504, 208)
 
 [node name="Crystal2" parent="Ground/Ground" instance=ExtResource("9_375ka")]
 position = Vector2(17044, -8700)
@@ -269,7 +270,7 @@ position = Vector2(17044, -8700)
 position = Vector2(5948, -3308)
 
 [node name="Crystal6" parent="Ground/Ground" instance=ExtResource("9_375ka")]
-position = Vector2(14384, 3996)
+position = Vector2(14384, 4016)
 
 [node name="Crystal7" parent="Ground/Ground" instance=ExtResource("9_375ka")]
 position = Vector2(5780, -7668)
@@ -278,7 +279,7 @@ position = Vector2(5780, -7668)
 position = Vector2(27028, -7240)
 
 [node name="Crystal9" parent="Ground/Ground" instance=ExtResource("9_375ka")]
-position = Vector2(35648, -2124)
+position = Vector2(35732, -2048)
 
 [node name="Crystal10" parent="Ground/Ground" instance=ExtResource("9_375ka")]
 position = Vector2(27964, -344)
@@ -324,7 +325,7 @@ tile_set = SubResource("TileSet_6x3au")
 [node name="SootSprite" parent="." instance=ExtResource("11_vd736")]
 z_index = 4
 texture_filter = 1
-position = Vector2(9523, 530)
+position = Vector2(230, 668)
 scale = Vector2(0.996108, 1.01161)
 collision_mask = 6
 
@@ -720,7 +721,31 @@ position = Vector2(8889, -509)
 position = Vector2(8242, -686)
 
 [node name="NPC" parent="." instance=ExtResource("14_fv8gv")]
-position = Vector2(925, 679)
+position = Vector2(913, 684)
 scale = Vector2(4, 4)
+
+[node name="Bat" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(4480, -1506)
+scale = Vector2(5, 5)
+
+[node name="Bat2" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(7118, -37)
+scale = Vector2(5, 5)
+
+[node name="Bat3" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(7547, -2200)
+scale = Vector2(5, 5)
+
+[node name="Bat4" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(5010, -455)
+scale = Vector2(5, 5)
+
+[node name="Bat5" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(852, -589)
+scale = Vector2(5, 5)
+
+[node name="Bat6" parent="." instance=ExtResource("12_1yvu0")]
+position = Vector2(1647, -2069)
+scale = Vector2(5, 5)
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

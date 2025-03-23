@@ -291,6 +291,9 @@ position = Vector2(2052, -350)
 [node name="LightingLantern2" parent="." instance=ExtResource("11_bkda0")]
 position = Vector2(3999, -1789)
 
+[node name="BubbleLantern" parent="." instance=ExtResource("15_p7h23")]
+position = Vector2(6994, -1495)
+
 [node name="lights" type="Node2D" parent="."]
 
 [node name="light_collectable" parent="lights" instance=ExtResource("12_5otbi")]
@@ -331,9 +334,6 @@ scale = Vector2(0.1, 0.1)
 
 [node name="MiniLantern" parent="." instance=ExtResource("13_b5h50")]
 scale = Vector2(0.5, 0.5)
-
-[node name="BubbleLantern" parent="." instance=ExtResource("15_p7h23")]
-position = Vector2(6994, -1495)
 
 [node name="key_ask" type="Sprite2D" parent="."]
 position = Vector2(200, 500)

@@ -41,7 +41,7 @@ layout_mode = 2
 
 [node name="item_display" type="Sprite2D" parent="CenterContainer/Panel"]
 texture_filter = 1
-scale = Vector2(0.01, 0.01)
+scale = Vector2(0.75, 0.75)
 script = SubResource("GDScript_ucjrs")
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]

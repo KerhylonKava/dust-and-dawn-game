@@ -1,16 +1,22 @@
-[gd_scene load_steps=24 format=3 uid="uid://dkomw1ppldg5v"]
+[gd_scene load_steps=30 format=3 uid="uid://dkomw1ppldg5v"]
 
 [ext_resource type="Texture2D" uid="uid://bq4fkfcvpjpy" path="res://Characters/pixilart-sprite (2).png" id="1_8jo08"]
 [ext_resource type="Script" path="res://Characters/racoon_npc.gd" id="1_xpwem"]
+[ext_resource type="Resource" uid="uid://dxtqmbi3w4ay7" path="res://inventory/items/string.tres" id="2_jylhy"]
 [ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="3_bj8m4"]
+[ext_resource type="Resource" uid="uid://djfbhxdrp547d" path="res://inventory/items/leaf.tres" id="3_x8ott"]
+[ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="4_cjbe1"]
 [ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="4_vgruo"]
-[ext_resource type="Texture2D" uid="uid://dmnqlw0ixnfar" path="res://Quest/lantern_quest/sr25ace012ff8aws3.png" id="5_jostw"]
+[ext_resource type="Resource" uid="uid://clkgkrmd0llf2" path="res://inventory/items/cave_key.tres" id="5_5m52e"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="6_iqdfx"]
-[ext_resource type="Texture2D" uid="uid://da3vth78lrsda" path="res://Quest/Backpack_Quest/sr2a10ef88c05aws3.webp" id="7_6lu2f"]
-[ext_resource type="Texture2D" uid="uid://c8or5i5grjrve" path="res://Quest/Backpack_Quest/sr2f128026675aws3.webp" id="8_vyjll"]
 [ext_resource type="Texture2D" uid="uid://ber12p8vabu4e" path="res://Quest/Backpack_Quest/sr24e99a044a7aws3.png" id="9_2hxh8"]
+[ext_resource type="Texture2D" uid="uid://caqwtf3ab2jni" path="res://Quest/lantern_quest/ball_of_light.png" id="9_6g6xx"]
 [ext_resource type="Texture2D" uid="uid://ouwlu2dov6h" path="res://Quest/lantern_quest/party_horn.png" id="10_lj4wc"]
+[ext_resource type="Texture2D" uid="uid://cak246ni8pwqh" path="res://levels/2level/00.png" id="12_elvhs"]
+[ext_resource type="Texture2D" uid="uid://cvndibjxuwggg" path="res://Quest/Backpack_Quest/string.png" id="13_wgbse"]
+[ext_resource type="Texture2D" uid="uid://d06hjtj5jgfxy" path="res://Quest/Backpack_Quest/leaf.png" id="14_cvdyu"]
 [ext_resource type="Texture2D" uid="uid://24yarlusdui2" path="res://Quest/Backpack_Quest/image-1-removebg-preview.png" id="14_kha1s"]
+[ext_resource type="Texture2D" uid="uid://bvw6b0j84fr45" path="res://Quest/Backpack_Quest/backpack.png" id="15_w4f27"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_d02tu"]
 atlas = ExtResource("1_8jo08")
@@ -92,6 +98,10 @@ texture = ExtResource("10_lj4wc")
 
 [node name="NPC" type="Node2D"]
 script = ExtResource("1_xpwem")
+string = ExtResource("2_jylhy")
+leaf = ExtResource("3_x8ott")
+backpack = ExtResource("4_cjbe1")
+cave_key = ExtResource("5_5m52e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -115,6 +125,7 @@ text = "Space"
 [node name="QuestBoards" type="Node2D" parent="."]
 
 [node name="LanternQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -146,12 +157,12 @@ text = "x3"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="x2" type="Label" parent="QuestBoards/LanternQuestBoard/NotLit"]
+[node name="x4" type="Label" parent="QuestBoards/LanternQuestBoard/NotLit"]
 texture_filter = 1
-offset_left = 21.6667
-offset_top = 8.33333
-offset_right = 108.667
-offset_bottom = 36.3333
+offset_left = 38.3333
+offset_top = 9.16667
+offset_right = 61.3333
+offset_bottom = 37.1667
 scale = Vector2(0.5, 0.5)
 theme_override_font_sizes/font_size = 20
 text = "x3"
@@ -160,8 +171,8 @@ vertical_alignment = 1
 
 [node name="Light" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
 position = Vector2(8.33333, 6.66667)
-scale = Vector2(0.006, 0.006)
-texture = ExtResource("5_jostw")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("9_6g6xx")
 
 [node name="UnlitLantern" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
 position = Vector2(14.7, 31.3667)
@@ -196,6 +207,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
+visible = false
 
 [node name="yay" type="Panel" parent="QuestBoards/LanternQuestBoard/Lit"]
 anchors_preset = 8
@@ -203,16 +215,19 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 9.16667
-offset_top = 0.833332
-offset_right = 49.1667
-offset_bottom = 40.8333
+offset_left = 0.833334
+offset_top = 1.66667
+offset_right = 40.8334
+offset_bottom = 41.6666
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_q8vqg")
 
+[node name="Sprite2D" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/Lit"]
+position = Vector2(47.5, 23.3333)
+texture = ExtResource("12_elvhs")
+
 [node name="BackpackQuestBoard" type="NinePatchRect" parent="QuestBoards"]
-visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -226,27 +241,26 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="Lacking" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
-visible = false
 
 [node name="String" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
 position = Vector2(20.8333, 32.5)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("7_6lu2f")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_wgbse")
 
 [node name="String2" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
 position = Vector2(20, 10)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("7_6lu2f")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("13_wgbse")
 
 [node name="Leaf" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
-position = Vector2(11.6667, 24.1667)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("8_vyjll")
+position = Vector2(9.16667, 22.5)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("14_cvdyu")
 
 [node name="Backpack" type="Sprite2D" parent="QuestBoards/BackpackQuestBoard/Lacking"]
 position = Vector2(45, 22.5)
-scale = Vector2(0.012, 0.012)
-texture = ExtResource("9_2hxh8")
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("15_w4f27")
 
 [node name="Arrow" type="Label" parent="QuestBoards/BackpackQuestBoard/Lacking"]
 texture_filter = 1
@@ -273,6 +287,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="All" type="Node2D" parent="QuestBoards/BackpackQuestBoard"]
+visible = false
 
 [node name="yay" type="Label" parent="QuestBoards/BackpackQuestBoard/All"]
 offset_left = 9.16667

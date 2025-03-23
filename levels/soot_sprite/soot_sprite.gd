@@ -151,7 +151,7 @@ func _vine_climb(delta):
 		#velocity.y = Jump_Force * 0.7
 	#if Input.is_action_just_pressed("left") and Input.is_action_just_pressed("ui_up"):
 		#velocity.y = Jump_Force * 0.7
-	
 
-
-	
+func reset_to_start():
+	global_position = Vector2(23, 11)  
+	#print(global_position)

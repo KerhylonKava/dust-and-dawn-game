@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://cffhbv8okplrm"]
 
 [ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_sx1xr"]
-[ext_resource type="Texture2D" uid="uid://c66cce2hjp442" path="res://levels/4level/crystal_03_green.png" id="2_j68d6"]
+[ext_resource type="Texture2D" uid="uid://kede5mrvcnlo" path="res://levels/4level/crystal_04_blue.png" id="2_htwwd"]
 
 [resource]
 script = ExtResource("1_sx1xr")
 name = "crystal"
-texture = ExtResource("2_j68d6")
+texture = ExtResource("2_htwwd")

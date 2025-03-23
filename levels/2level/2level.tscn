@@ -1,7 +1,7 @@
 [gd_scene load_steps=27 format=4 uid="uid://cx4nlrqn51avp"]
 
 [ext_resource type="Script" path="res://levels/2level/2master_script.gd" id="1_r5tmd"]
-[ext_resource type="Resource" path="res://inventory/items/backpack.tres" id="2_xjgve"]
+[ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="2_xjgve"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="3_vdxa2"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="4_38spk"]
 [ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="6_xw1xi"]
@@ -19,8 +19,6 @@
 [ext_resource type="Script" path="res://levels/2level/key_ask.gd" id="17_i2tn6"]
 [ext_resource type="Resource" uid="uid://clkgkrmd0llf2" path="res://inventory/items/cave_key.tres" id="18_8sfno"]
 [ext_resource type="Texture2D" uid="uid://cpu7fno1xh4d7" path="res://levels/2level/image-1-removebg-preview.png" id="18_60wqf"]
-[ext_resource type="PackedScene" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_b5h50"]
-[ext_resource type="PackedScene" path="res://Quest/lantern_quest/bubble_lantern.tscn" id="15_p7h23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ct018"]
 texture = ExtResource("3_vdxa2")

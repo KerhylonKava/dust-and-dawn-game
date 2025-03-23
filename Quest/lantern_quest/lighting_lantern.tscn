@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://ck5hocqdbjbxp"]
+[gd_scene load_steps=8 format=3 uid="uid://ck5hocqdbjbxp"]
 
 [ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="1_5eb4q"]
 [ext_resource type="Script" path="res://Quest/lantern_quest/lighting_lantern.gd" id="2_vp048"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="3_3vni1"]
 [ext_resource type="Resource" uid="uid://dgvgdem2lwae3" path="res://inventory/items/light.tres" id="4_kp31b"]
+[ext_resource type="Resource" uid="uid://clkgkrmd0llf2" path="res://inventory/items/cave_key.tres" id="5_be7vh"]
 [ext_resource type="AudioStream" uid="uid://cct35kge7tsi4" path="res://Sound_Effects/Wood Block1.wav" id="5_oemwo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0xsjh"]
@@ -18,6 +19,7 @@ script = ExtResource("2_vp048")
 unlit_lantern = ExtResource("3_3vni1")
 lit_lantern = ExtResource("1_5eb4q")
 light = ExtResource("4_kp31b")
+cave_key = ExtResource("5_be7vh")
 
 [node name="Area2D" type="Area2D" parent="."]
 

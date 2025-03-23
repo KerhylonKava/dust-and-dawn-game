@@ -5,10 +5,11 @@ extends Sprite2D
 @export var lit_lantern : Texture
 #var player = null
 @export var light: InvItem
+@export var cave_key : InvItem
 #@export var inventory : Inventory;
 #@export var inventory = "res://inventory/scripts/inventory.gd"
 @onready var LightingLantern_Sound = $LightingLantern_Sound
-var SootSprite = null
+@onready var SootSprite = get_parent().get_node("SootSprite")
 var player_in_area = false
 
 var lit = false
@@ -22,7 +23,12 @@ func _ready():
 	#lit_lantern = preload("res://Quest/lantern_quest/lit_lantern.png")
 	
 	# Start with the unlit lantern texture
-	texture = unlit_lantern
+	if amount(cave_key)>=1:
+		lit = true
+		texture = lit_lantern
+	else:
+		lit= false
+		texture = unlit_lantern
 	
 	# Get the player node and make sure they have collected the light sprite
 	#player = get_node("res://levels/soot_sprite/soot_sprite.gd")  # Adjust this path as needed

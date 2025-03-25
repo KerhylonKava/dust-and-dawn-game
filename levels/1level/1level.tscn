@@ -335,5 +335,6 @@ scale = Vector2(5, 5)
 z_index = 4
 texture_filter = 1
 position = Vector2(685, 489)
+collision_mask = 6
 
 [connection signal="body_entered" from="LeftWorldBorder" to="." method="_on_left_world_border_body_entered"]

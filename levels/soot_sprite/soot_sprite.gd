@@ -153,5 +153,5 @@ func _vine_climb(delta):
 		#velocity.y = Jump_Force * 0.7
 
 func reset_to_start():
-	global_position = Vector2(23, 11)  
+	global_position = Vector2(200, 650)  
 	#print(global_position)

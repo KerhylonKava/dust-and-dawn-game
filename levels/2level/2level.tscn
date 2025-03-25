@@ -334,7 +334,7 @@ position = Vector2(1891, 347)
 scale = Vector2(0.1, 0.1)
 
 [node name="MiniLantern" parent="." instance=ExtResource("13_b5h50")]
-position = Vector2(343, -83)
+position = Vector2(8704, 335)
 scale = Vector2(0.5, 0.5)
 
 [node name="key_ask" type="Sprite2D" parent="."]

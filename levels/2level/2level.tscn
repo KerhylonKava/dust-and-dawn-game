@@ -13,14 +13,14 @@
 [ext_resource type="Texture2D" uid="uid://cnoem4oju6eph" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-3.png" id="10_wreu6"]
 [ext_resource type="PackedScene" uid="uid://ck5hocqdbjbxp" path="res://Quest/lantern_quest/lighting_lantern.tscn" id="11_bkda0"]
 [ext_resource type="PackedScene" uid="uid://by0lyhto3vtcc" path="res://Quest/lantern_quest/light_collectable.tscn" id="12_5otbi"]
-[ext_resource type="PackedScene" uid="uid://b827sqqr1lud2" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_b5h50"]
+[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_b5h50"]
 [ext_resource type="PackedScene" uid="uid://ddgivr14yov5" path="res://Quest/lantern_quest/bubble_lantern.tscn" id="15_p7h23"]
 [ext_resource type="Texture2D" uid="uid://cak246ni8pwqh" path="res://levels/2level/00.png" id="16_pe2cl"]
 [ext_resource type="Script" path="res://levels/2level/key_ask.gd" id="17_i2tn6"]
 [ext_resource type="Resource" path="res://inventory/items/cave_key.tres" id="18_8sfno"]
 [ext_resource type="Texture2D" uid="uid://cpu7fno1xh4d7" path="res://levels/2level/image-1-removebg-preview.png" id="18_60wqf"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ct018"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0v5l3"]
 texture = ExtResource("3_vdxa2")
 texture_region_size = Vector2i(240, 240)
 0:0/next_alternative_id = 3
@@ -97,9 +97,9 @@ texture_region_size = Vector2i(240, 240)
 tile_size = Vector2i(240, 240)
 physics_layer_0/collision_layer = 255
 physics_layer_0/collision_mask = 7
-sources/2 = SubResource("TileSetAtlasSource_ct018")
+sources/2 = SubResource("TileSetAtlasSource_0v5l3")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eqm0g"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tkqwg"]
 texture = ExtResource("4_38spk")
 texture_region_size = Vector2i(12, 12)
 0:0/0 = 0
@@ -161,7 +161,7 @@ texture_region_size = Vector2i(12, 12)
 
 [sub_resource type="TileSet" id="TileSet_q1ekf"]
 tile_size = Vector2i(12, 12)
-sources/0 = SubResource("TileSetAtlasSource_eqm0g")
+sources/0 = SubResource("TileSetAtlasSource_tkqwg")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_he6s8"]
 size = Vector2(5, 1000)
@@ -351,6 +351,7 @@ offset_top = -12.6
 offset_right = 50.8
 offset_bottom = 10.4
 text = "?"
+metadata/_edit_use_anchors_ = true
 
 [node name="check" type="Sprite2D" parent="key_ask"]
 position = Vector2(14.4, 0.2)

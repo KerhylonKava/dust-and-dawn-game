@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_vd736"]
 [ext_resource type="PackedScene" uid="uid://m5isy1wxr6q6" path="res://levels/4level/bat.tscn" id="12_1yvu0"]
 [ext_resource type="PackedScene" uid="uid://db0lgg5o1033u" path="res://Characters/golem_npc.tscn" id="14_fv8gv"]
-[ext_resource type="PackedScene" uid="uid://b827sqqr1lud2" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
+[ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="15_tmyrt"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qyar3"]
 size = Vector2(5, 5000)
@@ -68,6 +68,7 @@ texture_region_size = Vector2i(240, 240)
 [sub_resource type="TileSet" id="TileSet_p7swh"]
 tile_size = Vector2i(240, 240)
 physics_layer_0/collision_layer = 3
+physics_layer_0/collision_mask = 7
 sources/1 = SubResource("TileSetAtlasSource_xalik")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oymjr"]

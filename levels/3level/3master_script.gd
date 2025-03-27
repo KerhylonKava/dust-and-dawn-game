@@ -4,22 +4,26 @@ extends Node2D
 #@onready var one_script = $"../one_level"
 #var side = one_script.side #1=left, 2=right
 var side = "right"
+var player_in_door = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	print(side)
-	if side == 'left':
-		$SootSprite.position.x = 50
-	elif side == 'right':
-		$SootSprite.position.x = 4950
 	$SootSprite/Camera2D.position_smoothing_speed = 5
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if Input.is_action_just_pressed("space"):
+		print("space")
+		if player_in_door:
+			print("scene switch")
+			get_tree().change_scene_to_file("res://levels/4level/4level.tscn")
 
-func _on_right_world_border_body_entered(body: Node2D) -> void:
+func _on_door_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
-		get_tree().change_scene_to_file("res://levels/one_level/one_level.tscn")
-		side = 'right'
-		$SootSprite/Camera2D.position_smoothing_speed = 0
+		player_in_door = true
+		print("player in door")
+
+
+func _on_door_exited(body: Node2D) -> void:
+	if body.has_method("soot_sprite"):
+		player_in_door = false

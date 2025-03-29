@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://wktrxxa6tjsn"]
+
+[ext_resource type="Texture2D" uid="uid://cbub8fhe0lohv" path="res://levels/3level/pot3.png" id="1_8k1jv"]
+[ext_resource type="Script" path="res://levels/3level/aging_component.gd" id="2_ustiv"]
+[ext_resource type="PackedScene" uid="uid://c1poso2sorxn" path="res://levels/3level/pot4.tscn" id="3_st7y0"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_w015y"]
+radius = 466.0
+height = 1112.0
+
+[node name="Pot3" type="Area2D"]
+collision_layer = 512
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8k1jv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-8, 111)
+shape = SubResource("CapsuleShape2D_w015y")
+
+[node name="AgingComponent" type="Node" parent="."]
+script = ExtResource("2_ustiv")
+age_threshold = 3.0
+next_scene = ExtResource("3_st7y0")

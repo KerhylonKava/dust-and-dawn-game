@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://ce3u41550ukq4"]
+
+[ext_resource type="Texture2D" uid="uid://brndi171aj8ls" path="res://levels/3level/potwithnobackground.png" id="1_srfup"]
+[ext_resource type="Script" path="res://levels/3level/aging_component.gd" id="2_53u3t"]
+[ext_resource type="PackedScene" uid="uid://wktrxxa6tjsn" path="res://levels/3level/pot3.tscn" id="3_q5d2i"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mcfxt"]
+radius = 367.067
+
+[node name="Pot2" type="Area2D"]
+scale = Vector2(0.08, 0.08)
+collision_layer = 512
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_srfup")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 255)
+shape = SubResource("CircleShape2D_mcfxt")
+
+[node name="AgingComponent" type="Node" parent="."]
+script = ExtResource("2_53u3t")
+current_age = null
+age_threshold = 2.0
+next_scene = ExtResource("3_q5d2i")

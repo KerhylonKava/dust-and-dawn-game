@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvbvsjav7brce"]
+
+[ext_resource type="Script" path="res://levels/3level/aging_button.gd" id="1_8kkml"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+scale = Vector2(2, 2)
+transform = Transform2D(2, 0, 0, 2, 0, 0)
+
+[node name="AgingButton" type="Button" parent="."]
+texture_filter = 1
+offset_right = 8.0
+offset_bottom = 8.0
+text = "+1 Age"
+script = ExtResource("1_8kkml")

@@ -21,5 +21,4 @@ shape = SubResource("CapsuleShape2D_w015y")
 
 [node name="AgingComponent" type="Node" parent="."]
 script = ExtResource("2_ustiv")
-age_threshold = 3.0
 next_scene = ExtResource("3_st7y0")

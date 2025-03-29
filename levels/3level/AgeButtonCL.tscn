@@ -1,14 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bvbvsjav7brce"]
+[gd_scene load_steps=3 format=3 uid="uid://bvbvsjav7brce"]
 
 [ext_resource type="Script" path="res://levels/3level/aging_button.gd" id="1_8kkml"]
+[ext_resource type="Resource" uid="uid://dannmbh880lvd" path="res://inventory/items/water.tres" id="2_keql6"]
 
-[node name="CanvasLayer" type="CanvasLayer"]
+[node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 0, 0)
 
 [node name="AgingButton" type="Button" parent="."]
 texture_filter = 1
 offset_right = 8.0
 offset_bottom = 8.0
-text = "+1 Age"
+text = "+1 🌱"
 script = ExtResource("1_8kkml")
+water = ExtResource("2_keql6")

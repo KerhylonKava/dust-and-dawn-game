@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bph0w16j0hg18"]
+[gd_scene load_steps=27 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/3level/3master_script.gd" id="1_yws20"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="2_dxul7"]
@@ -12,10 +12,13 @@
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="10_88hf0"]
 [ext_resource type="Texture2D" uid="uid://cak246ni8pwqh" path="res://levels/2level/00.png" id="11_gka7m"]
 [ext_resource type="Script" path="res://levels/2level/key_ask.gd" id="12_6pjym"]
-[ext_resource type="Resource" path="res://inventory/items/cave_key.tres" id="13_ahb8c"]
+[ext_resource type="Resource" uid="uid://clkgkrmd0llf2" path="res://inventory/items/cave_key.tres" id="13_ahb8c"]
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_ypvbn"]
 [ext_resource type="Texture2D" uid="uid://cpu7fno1xh4d7" path="res://levels/2level/image-1-removebg-preview.png" id="14_yfsft"]
 [ext_resource type="PackedScene" uid="uid://7me0kncs65rq" path="res://levels/3level/door.tscn" id="15_cqd3k"]
+[ext_resource type="PackedScene" uid="uid://dgen2atijofvj" path="res://levels/3level/pot.tscn" id="17_30nyl"]
+[ext_resource type="PackedScene" uid="uid://bvbvsjav7brce" path="res://levels/3level/AgeButtonCL.tscn" id="18_qaocd"]
+[ext_resource type="PackedScene" uid="uid://de0qto0phyvtp" path="res://levels/3level/water_collectable.tscn" id="19_fmkk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lslgf"]
 texture = ExtResource("2_dxul7")
@@ -226,6 +229,7 @@ motion_mirroring = Vector2(120, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/Sky"]
 modulate = Color(1, 1, 1, 0.862745)
+position = Vector2(0.238095, -2.5)
 texture = ExtResource("4_hst54")
 centered = false
 
@@ -316,6 +320,24 @@ scale = Vector2(5, 5)
 texture_filter = 1
 position = Vector2(511, 422)
 collision_mask = 6
+
+[node name="Pot" parent="." instance=ExtResource("17_30nyl")]
+position = Vector2(820, 436)
+
+[node name="water_collectable" parent="." instance=ExtResource("19_fmkk7")]
+position = Vector2(976, 426)
+scale = Vector2(0.2, 0.2)
+
+[node name="water_collectable3" parent="." instance=ExtResource("19_fmkk7")]
+position = Vector2(1583, 439)
+scale = Vector2(0.2, 0.2)
+
+[node name="water_collectable2" parent="." instance=ExtResource("19_fmkk7")]
+position = Vector2(1383, 446)
+scale = Vector2(0.2, 0.2)
+
+[node name="AgingButton" parent="." instance=ExtResource("18_qaocd")]
+position = Vector2(665, 393)
 
 [connection signal="body_entered" from="key_ask/Area2D" to="key_ask" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="key_ask/Area2D" to="key_ask" method="_on_area_2d_body_exited"]

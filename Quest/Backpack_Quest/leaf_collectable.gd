@@ -1,12 +1,12 @@
 extends StaticBody2D
 
-@export var leaf: InvItem
+@export var water: InvItem
 var SootSprite = null
 
 func _on_interactable_area_body_entered(body: Node2D) -> void:
 	if body.has_method("soot_sprite"):
 		SootSprite = body
-		playercollect(leaf,1)
+		playercollect(water,1)
 		queue_free()
 		#visible = false
 

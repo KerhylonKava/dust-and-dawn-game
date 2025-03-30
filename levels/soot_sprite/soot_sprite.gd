@@ -12,6 +12,8 @@ const WALL_SLIDING_SPEED = 1600
 @onready var vine_ray_cast: RayCast2D = $VineRayCast
 @export var inventory : Inventory
 @export var backpack : InvItem
+@export var cave_key : InvItem
+@export var glow_crystal : InvItem
 #@export var enough_items = inventory.enough_items
 
 @export var climbing = false
@@ -43,6 +45,15 @@ func _process(delta: float) -> void:
 	#if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
 	if jump_time > 0:
 		jump_time -= 1
+	
+	if Input.is_action_just_pressed("test"):
+		collect(backpack,1)
+		collect(cave_key,1)
+		collect(glow_crystal,1)
+		if !contains(backpack):
+			size(3)
+		elif contains(backpack):
+			size(12)
 	
 	
 	if Input.is_action_just_pressed("up"):
@@ -79,9 +90,9 @@ func _process(delta: float) -> void:
 	
 	else:
 		if velocity.x > 0:
-			velocity.x -= 0.15 * velocity.x
+			velocity.x -= 0.15 * velocity.x * delta / 0.0166
 		if velocity.x < 0:
-			velocity.x -= 0.15 * velocity.x
+			velocity.x -= 0.15 * velocity.x * delta / 0.0166
 		if velocity.x == 0 and is_on_floor():
 			animation.play("idle")
 			if FootSteps_Sound.playing:

@@ -7,7 +7,7 @@ extends StaticBody2D
 
 func _ready():
 	if playercontains(cave_key):
-		print("remove ",self.name)
+		#print("remove ",self.name)
 		queue_free()
 	else:
 		pass

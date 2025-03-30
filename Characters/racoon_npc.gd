@@ -28,8 +28,8 @@ func _process(delta):
 		$space.visible = false
 		$QuestBoards.visible = false
 
-	if Input.is_action_just_pressed("test"):
-		playercollect(cave_key,1)
+#	if Input.is_action_just_pressed("test"): 
+		#playercollect(cave_key,1) #cheat for testing
 
 	if player_in_area and Input.is_action_just_pressed("space"):
 		if scene == '1level':

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dtx1bqr1pxk16"]
+
+[ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_h7nwf"]
+[ext_resource type="Texture2D" uid="uid://dtsuul67d3ff1" path="res://levels/4level/glow_crystal.png" id="2_j8eoo"]
+
+[resource]
+script = ExtResource("1_h7nwf")
+name = "GlowCrystal"
+texture = ExtResource("2_j8eoo")

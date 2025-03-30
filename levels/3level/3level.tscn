@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bph0w16j0hg18"]
+[gd_scene load_steps=19 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/3level/3master_script.gd" id="1_yws20"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="2_dxul7"]
@@ -10,11 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="7_i4h8m"]
 [ext_resource type="Texture2D" uid="uid://cnoem4oju6eph" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-3.png" id="8_6exp2"]
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="10_88hf0"]
-[ext_resource type="Texture2D" uid="uid://cak246ni8pwqh" path="res://levels/2level/00.png" id="11_gka7m"]
-[ext_resource type="Script" path="res://levels/2level/key_ask.gd" id="12_6pjym"]
-[ext_resource type="Resource" path="res://inventory/items/cave_key.tres" id="13_ahb8c"]
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_ypvbn"]
-[ext_resource type="Texture2D" uid="uid://cpu7fno1xh4d7" path="res://levels/2level/image-1-removebg-preview.png" id="14_yfsft"]
 [ext_resource type="PackedScene" uid="uid://7me0kncs65rq" path="res://levels/3level/door.tscn" id="15_cqd3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lslgf"]
@@ -166,9 +162,6 @@ size = Vector2(5, 1000)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bjo8p"]
 size = Vector2(5, 5000)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_25ja6"]
-radius = 61.6263
-
 [node name="3level" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_yws20")
@@ -281,32 +274,6 @@ scale = Vector2(5, 5)
 position = Vector2(8704, 335)
 scale = Vector2(0.5, 0.5)
 
-[node name="key_ask" type="Sprite2D" parent="."]
-position = Vector2(200, 500)
-scale = Vector2(5, 5)
-texture = ExtResource("11_gka7m")
-script = ExtResource("12_6pjym")
-cave_key = ExtResource("13_ahb8c")
-
-[node name="Q" type="Label" parent="key_ask"]
-offset_left = 10.8
-offset_top = -12.6
-offset_right = 50.8
-offset_bottom = 10.4
-text = "?"
-metadata/_edit_use_anchors_ = true
-
-[node name="check" type="Sprite2D" parent="key_ask"]
-position = Vector2(14.4, 0.2)
-scale = Vector2(0.05, 0.05)
-texture = ExtResource("14_yfsft")
-
-[node name="Area2D" type="Area2D" parent="key_ask"]
-visible = false
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="key_ask/Area2D"]
-shape = SubResource("CircleShape2D_25ja6")
-
 [node name="Door" parent="." instance=ExtResource("15_cqd3k")]
 modulate = Color(0.75, 0.75, 0.75, 1)
 position = Vector2(504, 335)
@@ -317,8 +284,6 @@ texture_filter = 1
 position = Vector2(511, 422)
 collision_mask = 6
 
-[connection signal="body_entered" from="key_ask/Area2D" to="key_ask" method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="key_ask/Area2D" to="key_ask" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]
 

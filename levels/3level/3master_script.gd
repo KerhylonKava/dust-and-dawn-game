@@ -13,8 +13,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("space"):
-		print("space")
+		#print("space")
 		if player_in_door:
+			#if playercontains(scene completion item):
 			print("scene switch")
 			get_tree().change_scene_to_file("res://levels/4level/4level.tscn")
 

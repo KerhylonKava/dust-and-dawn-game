@@ -3,7 +3,7 @@ extends Node2D
 var SootSprite = null
 var player_in_area = false
 @export var crystal : InvItem
-
+@export var GlowCrystal : InvItem
 
 @onready var scene = get_parent().name
 @onready var animated_sprite_2d = $"Animated Sprite"
@@ -25,16 +25,23 @@ func _process(delta):
 		print("space")
 		if scene == '4level':
 			$QuestBoards/GolemQuestBoard.visible =  true
-			if amount(crystal)>= 10: 
+			if amount(crystal)>=10 and amount(GlowCrystal)<=0: 
 				$QuestBoards/GolemQuestBoard/NotFixed.visible = false
 				$QuestBoards/GolemQuestBoard/Fixed.visible = true
 				$QuestBoards.visible = true
 				print("true")
+				playerremove(crystal, 10)
+				playercollect(GlowCrystal, 1)
+			elif amount(GlowCrystal)>=1:
+				$QuestBoards/GolemQuestBoard/NotFixed.visible = false
+				$QuestBoards/GolemQuestBoard/Fixed.visible = true
+				$QuestBoards.visible = true
 			else:
 				$QuestBoards/GolemQuestBoard/NotFixed.visible = true
 				$QuestBoards/GolemQuestBoard/Fixed.visible = false
 				$QuestBoards.visible = true
 				print("false")
+				playercollect(crystal,10) #cheat for testing
 
 
 	

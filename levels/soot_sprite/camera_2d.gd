@@ -10,7 +10,7 @@ func _ready() -> void:
 		help_sign.help.connect(disable)
 		help_sign.helpend.connect(enable)
 	else:
-		print("help_sign is null! Check the path or if it's loaded.")
+		print("help sign be null!")
 	#help_sign.help.connect(zoom_camera)
 
 

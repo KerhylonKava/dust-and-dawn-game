@@ -7,7 +7,7 @@
 [ext_resource type="Resource" uid="uid://djfbhxdrp547d" path="res://inventory/items/leaf.tres" id="3_x8ott"]
 [ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="4_cjbe1"]
 [ext_resource type="Texture2D" uid="uid://d1w1iji3am8v4" path="res://Quest/lantern_quest/lit_lantern.png" id="4_vgruo"]
-[ext_resource type="Resource" uid="uid://clkgkrmd0llf2" path="res://inventory/items/cave_key.tres" id="5_5m52e"]
+[ext_resource type="Resource" path="res://inventory/items/cave_key.tres" id="5_5m52e"]
 [ext_resource type="Texture2D" uid="uid://dlc8gpnpj04u6" path="res://Quest/lantern_quest/unlit_lantern.png" id="6_iqdfx"]
 [ext_resource type="Texture2D" uid="uid://ber12p8vabu4e" path="res://Quest/Backpack_Quest/sr24e99a044a7aws3.png" id="9_2hxh8"]
 [ext_resource type="Texture2D" uid="uid://caqwtf3ab2jni" path="res://Quest/lantern_quest/ball_of_light.png" id="9_6g6xx"]

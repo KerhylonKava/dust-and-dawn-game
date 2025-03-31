@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://bvbvsjav7brce"]
+[gd_scene load_steps=3 format=3 uid="uid://c3fkthd71s3hl"]
 
 [ext_resource type="Script" path="res://levels/3level/aging_button.gd" id="1_8kkml"]
-[ext_resource type="Resource" uid="uid://dannmbh880lvd" path="res://inventory/items/water.tres" id="2_keql6"]
+[ext_resource type="Resource" uid="uid://bixq7nsy4bswe" path="res://inventory/items/water.tres" id="2_keql6"]
 
 [node name="Node2D" type="Node2D"]
 scale = Vector2(2, 2)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bph0w16j0hg18"]
+[gd_scene load_steps=22 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/3level/3master_script.gd" id="1_yws20"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="2_dxul7"]
@@ -291,6 +291,9 @@ collision_mask = 6
 [node name="Pot" parent="." instance=ExtResource("17_30nyl")]
 position = Vector2(820, 436)
 
+[node name="Pot2" parent="." instance=ExtResource("17_30nyl")]
+position = Vector2(302, 436)
+
 [node name="water_collectable" parent="." instance=ExtResource("19_fmkk7")]
 position = Vector2(976, 426)
 scale = Vector2(0.2, 0.2)
@@ -305,6 +308,9 @@ scale = Vector2(0.2, 0.2)
 
 [node name="AgingButton" parent="." instance=ExtResource("18_qaocd")]
 position = Vector2(665, 393)
+
+[node name="AgingButton2" parent="." instance=ExtResource("18_qaocd")]
+position = Vector2(176, 361)
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

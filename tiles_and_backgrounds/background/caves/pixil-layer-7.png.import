@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c6jr21lojj1f0"
-path="res://.godot/imported/pixil-layer-5 (1).png-5bb1c672b347e066f6152391f73a101a.ctex"
+uid="uid://2f2a52sstxxi"
+path="res://.godot/imported/pixil-layer-7.png-548883758de07358431f52842ed81502.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/3level/pixil-layer-5 (1).png"
-dest_files=["res://.godot/imported/pixil-layer-5 (1).png-5bb1c672b347e066f6152391f73a101a.ctex"]
+source_file="res://tiles_and_backgrounds/background/caves/pixil-layer-7.png"
+dest_files=["res://.godot/imported/pixil-layer-7.png-548883758de07358431f52842ed81502.ctex"]
 
 [params]
 

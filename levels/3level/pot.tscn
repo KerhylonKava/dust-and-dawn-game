@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dypi6xpa7qfnj"]
+[gd_scene load_steps=5 format=3 uid="uid://dgen2atijofvj"]
 
 [ext_resource type="Texture2D" uid="uid://b655gr581333j" path="res://levels/3level/pot.png" id="1_kyinu"]
 [ext_resource type="Script" path="res://levels/3level/aging_component.gd" id="2_blfqj"]
-[ext_resource type="PackedScene" path="res://levels/3level/pot2.tscn" id="3_bsdo5"]
+[ext_resource type="PackedScene" uid="uid://ce3u41550ukq4" path="res://levels/3level/pot2.tscn" id="3_bsdo5"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mcfxt"]
 radius = 367.067

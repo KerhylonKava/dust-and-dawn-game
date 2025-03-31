@@ -11,7 +11,7 @@ var player_in_area = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$QuestBoards/GolemQuestBoard.visible = false
-	animated_sprite_2d.play("default")
+	animated_sprite_2d.play("idle")
 
 
 func _process(delta):

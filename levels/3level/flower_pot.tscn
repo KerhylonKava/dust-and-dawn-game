@@ -1,0 +1,43 @@
+[gd_scene load_steps=8 format=3 uid="uid://m8nak1hr4u3w"]
+
+[ext_resource type="Texture2D" uid="uid://b655gr581333j" path="res://levels/3level/pot.png" id="1_3hjka"]
+[ext_resource type="Script" path="res://levels/3level/flower_pot.gd" id="1_ly5oo"]
+[ext_resource type="Resource" uid="uid://bixq7nsy4bswe" path="res://inventory/items/water.tres" id="2_ngjl8"]
+[ext_resource type="Texture2D" uid="uid://brndi171aj8ls" path="res://levels/3level/potwithnobackground.png" id="3_m3oec"]
+[ext_resource type="Texture2D" uid="uid://cbub8fhe0lohv" path="res://levels/3level/pot3.png" id="4_57mhr"]
+[ext_resource type="Texture2D" uid="uid://c4ch8ytpmkige" path="res://levels/3level/pot4.png" id="5_q0v2s"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kw3tq"]
+radius = 92.0
+
+[node name="FlowerPot" type="Node2D"]
+script = ExtResource("1_ly5oo")
+water = ExtResource("2_ngjl8")
+stage1 = ExtResource("1_3hjka")
+stage2 = ExtResource("3_m3oec")
+stage3 = ExtResource("4_57mhr")
+stage4 = ExtResource("5_q0v2s")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -14)
+shape = SubResource("CircleShape2D_kw3tq")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_3hjka")
+
+[node name="popup" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = -23.0
+offset_top = -82.0
+offset_right = 23.0
+offset_bottom = -33.0
+text = "Space
++1 🌱"
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

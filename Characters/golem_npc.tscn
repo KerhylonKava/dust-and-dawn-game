@@ -1,63 +1,55 @@
-[gd_scene load_steps=14 format=3 uid="uid://db0lgg5o1033u"]
+[gd_scene load_steps=13 format=3 uid="uid://db0lgg5o1033u"]
 
 [ext_resource type="Script" path="res://Characters/golem_npc.gd" id="1_cyxbc"]
 [ext_resource type="Resource" uid="uid://cffhbv8okplrm" path="res://inventory/items/crystal.tres" id="2_lld8v"]
-[ext_resource type="Texture2D" uid="uid://cgjqd2l7tcbdj" path="res://levels/4level/pixilart-sprite (8).png" id="3_2rbkr"]
+[ext_resource type="Texture2D" uid="uid://drx8amowvmyq2" path="res://levels/4level/golem_sprite_sheet.png" id="3_p18g6"]
 [ext_resource type="Texture2D" uid="uid://kede5mrvcnlo" path="res://levels/4level/crystal_04_blue.png" id="5_06slb"]
 [ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="6_x7y7w"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6v64"]
-radius = 48.0
-height = 96.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_m8yex"]
+radius = 28.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6fl8"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(0, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vtup"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(0, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s865o"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(48, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ietu4"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(15, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ano1"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(96, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_mbiu1"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(30, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1r3ew"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(144, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_enx2s"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(45, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4wmo"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(192, 0, 48, 48)
+[sub_resource type="AtlasTexture" id="AtlasTexture_bu837"]
+atlas = ExtResource("3_p18g6")
+region = Rect2(60, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2owp"]
-atlas = ExtResource("3_2rbkr")
-region = Rect2(240, 0, 48, 48)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m1rm5"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_vcuja"]
 animations = [{
 "frames": [{
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_g6fl8")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vtup")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s865o")
+"texture": SubResource("AtlasTexture_ietu4")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ano1")
-}, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_1r3ew")
+"texture": SubResource("AtlasTexture_mbiu1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_f4wmo")
+"texture": SubResource("AtlasTexture_enx2s")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x2owp")
+"texture": SubResource("AtlasTexture_bu837")
 }],
 "loop": true,
-"name": &"default",
-"speed": 7.0
+"name": &"idle",
+"speed": 5.0
 }]
 
 [node name="Golem NPC" type="Node2D"]
@@ -67,15 +59,13 @@ crystal = ExtResource("2_lld8v")
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 29)
-shape = SubResource("CapsuleShape2D_r6v64")
+shape = SubResource("CircleShape2D_m8yex")
 
 [node name="Animated Sprite" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, 28)
 scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_m1rm5")
-frame_progress = 0.964795
+sprite_frames = SubResource("SpriteFrames_vcuja")
+animation = &"idle"
 
 [node name="space" type="Label" parent="."]
 texture_filter = 1

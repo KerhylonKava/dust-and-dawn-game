@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://dannmbh880lvd"]
+[gd_resource type="Resource" script_class="InvItem" load_steps=3 format=3 uid="uid://bixq7nsy4bswe"]
 
 [ext_resource type="Script" path="res://inventory/scripts/inventory_item.gd" id="1_cy5ep"]
 [ext_resource type="Texture2D" uid="uid://dybyngd1cqmm4" path="res://levels/3level/pixil-frame-0 (27).png" id="2_ip71s"]

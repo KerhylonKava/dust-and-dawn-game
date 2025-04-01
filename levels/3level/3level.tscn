@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://bph0w16j0hg18"]
+[gd_scene load_steps=23 format=4 uid="uid://bph0w16j0hg18"]
 
 [ext_resource type="Script" path="res://levels/3level/3master_script.gd" id="1_yws20"]
 [ext_resource type="Texture2D" uid="uid://5bda1r655qep" path="res://tiles_and_backgrounds/tilesets/base/sr27485c03040aws3.png" id="2_dxul7"]
@@ -11,9 +11,10 @@
 [ext_resource type="Texture2D" uid="uid://cnoem4oju6eph" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-3.png" id="8_6exp2"]
 [ext_resource type="PackedScene" uid="uid://dkomw1ppldg5v" path="res://Characters/racoon_npc.tscn" id="10_88hf0"]
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="13_ypvbn"]
+[ext_resource type="PackedScene" uid="uid://ca6ycpkg7kte3" path="res://levels/3level/flower_pot.tscn" id="15_6wumv"]
 [ext_resource type="PackedScene" uid="uid://7me0kncs65rq" path="res://levels/3level/door.tscn" id="15_cqd3k"]
-[ext_resource type="PackedScene" uid="uid://dgen2atijofvj" path="res://levels/3level/pot.tscn" id="17_30nyl"]
-[ext_resource type="PackedScene" uid="uid://bvbvsjav7brce" path="res://levels/3level/AgeButtonCL.tscn" id="18_qaocd"]
+[ext_resource type="Resource" uid="uid://bixq7nsy4bswe" path="res://inventory/items/water.tres" id="15_y60uv"]
+[ext_resource type="PackedScene" uid="uid://c1l0ksvu0b1w2" path="res://Characters/MushroomGirl_npc.tscn" id="16_stf8a"]
 [ext_resource type="PackedScene" uid="uid://de0qto0phyvtp" path="res://levels/3level/water_collectable.tscn" id="19_fmkk7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lslgf"]
@@ -288,11 +289,8 @@ texture_filter = 1
 position = Vector2(511, 422)
 collision_mask = 6
 
-[node name="Pot" parent="." instance=ExtResource("17_30nyl")]
-position = Vector2(820, 436)
-
 [node name="water_collectable" parent="." instance=ExtResource("19_fmkk7")]
-position = Vector2(976, 426)
+position = Vector2(1480, 447)
 scale = Vector2(0.2, 0.2)
 
 [node name="water_collectable3" parent="." instance=ExtResource("19_fmkk7")]
@@ -303,8 +301,14 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(1383, 446)
 scale = Vector2(0.2, 0.2)
 
-[node name="AgingButton" parent="." instance=ExtResource("18_qaocd")]
-position = Vector2(665, 393)
+[node name="Mushroom NPC" parent="." instance=ExtResource("16_stf8a")]
+position = Vector2(736, 344)
+scale = Vector2(3.5, 3.5)
+water = ExtResource("15_y60uv")
+
+[node name="FlowerPot" parent="." instance=ExtResource("15_6wumv")]
+position = Vector2(1087, 425)
+scale = Vector2(2, 2)
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

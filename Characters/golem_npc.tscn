@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Characters/golem_npc.gd" id="1_cyxbc"]
 [ext_resource type="Resource" uid="uid://cffhbv8okplrm" path="res://inventory/items/crystal.tres" id="2_lld8v"]
-[ext_resource type="Texture2D" path="res://levels/4level/pixilart-sprite (8).png" id="3_2rbkr"]
+[ext_resource type="Texture2D" uid="uid://wjbbx7ojd3xg" path="res://levels/3level/pixilart-sprite (8) (1).png" id="3_t4hrk"]
 [ext_resource type="Texture2D" uid="uid://kede5mrvcnlo" path="res://levels/4level/crystal_04_blue.png" id="5_06slb"]
 [ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="6_x7y7w"]
 
@@ -10,54 +10,59 @@
 radius = 48.0
 height = 96.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g6fl8"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_eliqr"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_s865o"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_agaxq"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(48, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1ano1"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ei5mf"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(96, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1r3ew"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkpqv"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(144, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_f4wmo"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_dom3d"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(192, 0, 48, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_x2owp"]
-atlas = ExtResource("3_2rbkr")
+[sub_resource type="AtlasTexture" id="AtlasTexture_o0srq"]
+atlas = ExtResource("3_t4hrk")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m1rm5"]
 animations = [{
 "frames": [{
-"duration": 6.0,
-"texture": SubResource("AtlasTexture_g6fl8")
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_eliqr")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_s865o")
+"texture": SubResource("AtlasTexture_agaxq")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1ano1")
+"texture": SubResource("AtlasTexture_ei5mf")
 }, {
-"duration": 1.5,
-"texture": SubResource("AtlasTexture_1r3ew")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f4wmo")
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_xkpqv")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x2owp")
+"texture": SubResource("AtlasTexture_dom3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o0srq")
 }],
 "loop": true,
 "name": &"default",
 "speed": 7.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"done",
+"speed": 5.0
 }]
 
 [node name="Golem NPC" type="Node2D"]
@@ -75,7 +80,6 @@ texture_filter = 1
 position = Vector2(0, 28)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_m1rm5")
-frame_progress = 0.964795
 
 [node name="space" type="Label" parent="."]
 texture_filter = 1

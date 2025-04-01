@@ -125,7 +125,6 @@ text = "Space"
 [node name="QuestBoards" type="Node2D" parent="."]
 
 [node name="LanternQuestBoard" type="NinePatchRect" parent="QuestBoards"]
-visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0
@@ -139,6 +138,7 @@ patch_margin_right = 6
 patch_margin_bottom = 6
 
 [node name="NotLit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
+visible = false
 
 [node name="LitLantern" type="Sprite2D" parent="QuestBoards/LanternQuestBoard/NotLit"]
 position = Vector2(42.7, 31.3667)
@@ -207,7 +207,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Lit" type="Node2D" parent="QuestBoards/LanternQuestBoard"]
-visible = false
 
 [node name="yay" type="Panel" parent="QuestBoards/LanternQuestBoard/Lit"]
 anchors_preset = 8
@@ -228,6 +227,7 @@ position = Vector2(47.5, 23.3333)
 texture = ExtResource("12_elvhs")
 
 [node name="BackpackQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+visible = false
 texture_filter = 1
 offset_left = -35.0
 offset_top = -64.0

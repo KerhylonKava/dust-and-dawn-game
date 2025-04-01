@@ -1,0 +1,119 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1l0ksvu0b1w2"]
+
+[ext_resource type="Script" path="res://Characters/mushroom_npc.gd" id="1_ruqoj"]
+[ext_resource type="Texture2D" uid="uid://cjjise6tdyhpg" path="res://Characters/sr2fb43c18436aws3.png" id="3_8ihac"]
+[ext_resource type="Texture2D" uid="uid://bjlil2kbetjap" path="res://inventory/images/inventory-background.png" id="4_u8de1"]
+[ext_resource type="Texture2D" uid="uid://dybyngd1cqmm4" path="res://levels/3level/pixil-frame-0 (27).png" id="5_qoc7g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r6v64"]
+radius = 28.0
+height = 56.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m1rm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8ihac")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="Mushroom NPC" type="Node2D"]
+script = ExtResource("1_ruqoj")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 14)
+shape = SubResource("CapsuleShape2D_r6v64")
+
+[node name="Animated Sprite" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-7.10543e-15, 14)
+scale = Vector2(0.05, 0.05)
+sprite_frames = SubResource("SpriteFrames_m1rm5")
+
+[node name="space" type="Label" parent="."]
+texture_filter = 1
+offset_left = -23.0
+offset_top = -37.0
+offset_right = 23.0
+offset_bottom = -14.0
+text = "Space"
+
+[node name="QuestBoards" type="Node2D" parent="."]
+
+[node name="MushroomQuestBoard" type="NinePatchRect" parent="QuestBoards"]
+texture_filter = 1
+offset_left = -45.0
+offset_top = -56.0
+offset_right = 35.0
+offset_bottom = -20.0
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("4_u8de1")
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+
+[node name="NotFixed" type="Node2D" parent="QuestBoards/MushroomQuestBoard"]
+visible = false
+scale = Vector2(1.5, 1.5)
+
+[node name="Crystal" type="Sprite2D" parent="QuestBoards/MushroomQuestBoard/NotFixed"]
+position = Vector2(45.5556, 13.8889)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("5_qoc7g")
+
+[node name="Arrow" type="Label" parent="QuestBoards/MushroomQuestBoard/NotFixed"]
+texture_filter = 1
+offset_left = 13.8889
+offset_top = 5.0
+offset_right = 31.8889
+offset_bottom = 33.0
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "→"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow3" type="Label" parent="QuestBoards/MushroomQuestBoard/NotFixed"]
+texture_filter = 1
+offset_left = 24.4444
+offset_top = 5.55556
+offset_right = 52.4444
+offset_bottom = 33.5556
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "x 3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Arrow2" type="Label" parent="QuestBoards/MushroomQuestBoard/NotFixed"]
+texture_filter = 1
+offset_left = 1.11111
+offset_top = -3.33333
+offset_right = 36.1111
+offset_bottom = 65.6667
+scale = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 20
+text = "🌱"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fixed" type="Node2D" parent="QuestBoards/MushroomQuestBoard"]
+
+[node name="yay" type="Label" parent="QuestBoards/MushroomQuestBoard/Fixed"]
+texture_filter = 1
+offset_left = -10.0
+offset_top = 8.33333
+offset_right = 91.0003
+offset_bottom = 31.3333
+text = "😄🙌"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

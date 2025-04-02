@@ -1,6 +1,7 @@
-[gd_scene load_steps=26 format=4 uid="uid://do2bc0yiyglqv"]
+[gd_scene load_steps=27 format=4 uid="uid://do2bc0yiyglqv"]
 
 [ext_resource type="Script" path="res://levels/4level/4master_script.gd" id="1_k3qyv"]
+[ext_resource type="Resource" uid="uid://bfpb4ji0lsj5q" path="res://inventory/items/backpack.tres" id="2_3id4b"]
 [ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="2_opgrr"]
 [ext_resource type="Texture2D" uid="uid://6ikmhb43drcv" path="res://levels/3level/pixil-layer-1 (1).png" id="3_d0ayg"]
 [ext_resource type="Resource" uid="uid://b3gktauwfmwse" path="res://inventory/items/right.tres" id="3_w1ik6"]
@@ -135,6 +136,7 @@ sources/0 = SubResource("TileSetAtlasSource_y4mvq")
 [node name="4level" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_k3qyv")
+backpack = ExtResource("2_3id4b")
 GlowCrystal = ExtResource("15_4cwbe")
 right = ExtResource("3_w1ik6")
 left = ExtResource("4_vt271")

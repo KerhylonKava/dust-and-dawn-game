@@ -80,7 +80,7 @@ tile_size = Vector2i(240, 240)
 physics_layer_0/collision_layer = 2
 sources/2 = SubResource("TileSetAtlasSource_2c6j7")
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5x4pd"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5142w"]
 texture = ExtResource("9_hjrew")
 texture_region_size = Vector2i(12, 12)
 0:0/0 = 0
@@ -149,7 +149,7 @@ texture_region_size = Vector2i(12, 12)
 [sub_resource type="TileSet" id="TileSet_lqmsa"]
 tile_size = Vector2i(12, 12)
 physics_layer_0/collision_layer = 64
-sources/0 = SubResource("TileSetAtlasSource_5x4pd")
+sources/0 = SubResource("TileSetAtlasSource_5142w")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oymjr"]
 bg_color = Color(0.36, 0.36, 0.36, 0.552941)

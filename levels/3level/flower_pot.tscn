@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://cbub8fhe0lohv" path="res://levels/3level/pot3.png" id="4_57mhr"]
 [ext_resource type="Texture2D" uid="uid://c4ch8ytpmkige" path="res://levels/3level/pot4.png" id="5_q0v2s"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_kw3tq"]
-radius = 92.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_b10ud"]
+radius = 44.0
+height = 88.0
 
 [node name="FlowerPot" type="Node2D"]
 script = ExtResource("1_ly5oo")
@@ -22,7 +23,7 @@ stage4 = ExtResource("5_q0v2s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, -14)
-shape = SubResource("CircleShape2D_kw3tq")
+shape = SubResource("CapsuleShape2D_b10ud")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

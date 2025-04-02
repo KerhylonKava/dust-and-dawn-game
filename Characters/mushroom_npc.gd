@@ -3,6 +3,9 @@ extends Node2D
 var SootSprite = null
 var player_in_area = false
 @export var water : InvItem
+@onready var p1 = get_parent().get_node("FlowerPot")
+@onready var p2 = get_parent().get_node("FlowerPot2")
+@onready var p3 = get_parent().get_node("FlowerPot3")
 
 
 @onready var scene = get_parent().name
@@ -25,19 +28,19 @@ func _process(delta):
 		print("space")
 		if scene == '3level':
 			$QuestBoards/MushroomQuestBoard.visible =  true
-			if amount(water)>=15:
+			if p1.grown and p2.grown and p3.grown:
 				$QuestBoards/MushroomQuestBoard/NotFixed.visible = false
 				$QuestBoards/MushroomQuestBoard/Fixed.visible = true
 				$QuestBoards.visible = true
 				print("true")
-				playerremove(water, 10)
+				#playerremove(water, 10)
 				
 			else:
 				$QuestBoards/MushroomQuestBoard/NotFixed.visible = true
 				$QuestBoards/MushroomQuestBoard/Fixed.visible = false
 				$QuestBoards.visible = true
 				print("false")
-				playercollect(water,10) #cheat for testing
+				#playercollect(water,9) #cheat for testing
 
 
 	

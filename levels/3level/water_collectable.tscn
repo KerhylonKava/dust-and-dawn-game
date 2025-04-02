@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://de0qto0phyvtp"]
+[gd_scene load_steps=5 format=3 uid="uid://cqojurasy3w4n"]
 
 [ext_resource type="Script" path="res://Quest/Backpack_Quest/leaf_collectable.gd" id="1_yrkxk"]
-[ext_resource type="Resource" uid="uid://dannmbh880lvd" path="res://inventory/items/water.tres" id="2_j60p0"]
+[ext_resource type="Resource" uid="uid://bixq7nsy4bswe" path="res://inventory/items/water.tres" id="2_j60p0"]
 [ext_resource type="Texture2D" uid="uid://dybyngd1cqmm4" path="res://levels/3level/pixil-frame-0 (27).png" id="3_tsgm4"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_mlo7e"]

@@ -41,7 +41,7 @@ func _process(delta):
 				$QuestBoards/GolemQuestBoard/Fixed.visible = false
 				$QuestBoards.visible = true
 				print("false")
-				playercollect(crystal,10) #cheat for testing
+				#playercollect(crystal,10) #cheat for testing
 
 
 	

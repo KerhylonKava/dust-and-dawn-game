@@ -11,6 +11,7 @@ var growtime = 50
 
 var player_in_area = false
 var SootSprite = null
+var grown = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -21,16 +22,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if player_in_area:
-		if playercontains(water):
+		if playercontains(water) and stage <= 3:
 			$popup.visible = true
 			if Input.is_action_just_pressed("space"):
-				if stage <= 4:
 					grow()
 					playerremove(water,1)
 		elif !playercontains(water):
 			$popup.visible = false
 	elif !player_in_area:
 		$popup.visible = false
+	#if Input.is_action_just_pressed("test"):
+		#grown = true # testing cheat
 
 
 
@@ -70,3 +72,4 @@ func grow():
 		$Sprite2D.texture = stage3
 	elif $Sprite2D.texture == stage3:
 		$Sprite2D.texture = stage4
+		grown = true

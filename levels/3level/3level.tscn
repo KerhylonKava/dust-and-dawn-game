@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=4 uid="uid://bph0w16j0hg18"]
 
-[ext_resource type="Script" path="res://levels/3level/3master_script.gd" id="1_yws20"]
+[ext_resource type="Script" path="res://levels/5level/5master_script.gd" id="1_yws20"]
 [ext_resource type="Texture2D" uid="uid://dvlji5qsbw7di" path="res://tiles_and_backgrounds/tilesets/base/pixil-frame-0 (25) (1).png" id="2_cgo02"]
 [ext_resource type="Texture2D" uid="uid://diyk14nx4wvkg" path="res://tiles_and_backgrounds/tilesets/decor/set-pixilart (3).png" id="3_g804v"]
 [ext_resource type="Texture2D" uid="uid://pgae0jpg0wje" path="res://tiles_and_backgrounds/background/Lake/pixil-layer-0.png" id="4_hst54"]

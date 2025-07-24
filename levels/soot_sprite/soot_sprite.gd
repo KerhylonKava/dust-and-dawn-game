@@ -3,7 +3,8 @@ const UP_DIRECITON := Vector2.UP
 
 @onready var is_moving = false
 const WALL_SLIDING_SPEED = 1600
-
+const PUSH_FORCE = 100
+const MAX_VELOCITY = 150
 @export var speed := 450/0.0166
 #scale.x = scale.y * direction 
 @onready var FootSteps_Sound = $FootSteps_Sound
@@ -28,7 +29,7 @@ var jumps_made := 0
 var on_ladder = false
 var is_falling := velocity.y > 0 and not is_on_floor()
 var onAutoJumpOpject = false
-
+var FLOOR_NORMAL = Vector2.UP
 var Jump_Force = -1100
 
 # Called when the node enters the scene tree for the first time.
@@ -105,9 +106,15 @@ func _process(delta: float) -> void:
 	#Gravity
 	velocity.y += 30 * delta / 0.0166
 
+
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		var collision_crate = collision.get_collider()
+		if collision_crate.is_in_group("Crates") and abs(collision_crate.get_linear_velocity().x) < MAX_VELOCITY: 
+			collision_crate.apply_central_impulse(collision.get_normal() * -PUSH_FORCE)
 	move_and_slide()
 	
-
+ 
 
 @warning_ignore("shadowed_variable")
 func collect(item,amount):
@@ -166,3 +173,13 @@ func _vine_climb(delta):
 func reset_to_start():
 	global_position = Vector2(200, 650)  
 	#print(global_position)
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body.is_in_group("Crates"):
+		body.collision_layer = 1
+		body.collision_mask = 1
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	pass # Replace with function body.

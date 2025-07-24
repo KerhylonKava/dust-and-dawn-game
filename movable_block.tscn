@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dlvb6uloyisjd"]
+
+[ext_resource type="Script" path="res://movable_block.gd" id="1_ea0sw"]
+[ext_resource type="Texture2D" uid="uid://b4koic1xeodbr" path="res://inventory/images/inventory-slot.png" id="1_tv0oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddue5"]
+size = Vector2(29.5, 29)
+
+[node name="MovableBlock" type="RigidBody2D"]
+script = ExtResource("1_ea0sw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("1_tv0oa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0.5)
+shape = SubResource("RectangleShape2D_ddue5")

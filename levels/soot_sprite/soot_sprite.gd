@@ -19,7 +19,7 @@ const MAX_VELOCITY = 150
 
 @export var climbing = false
 
-
+@onready var sound_effect_player = $Jump_Sound
 var onAutoJumpObject: bool = false
 
 var jump_time = 0

@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://6c0uvypso4ey"]
+
+[ext_resource type="Texture2D" uid="uid://bvsul3siauro8" path="res://icon.png" id="1_mvecb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk88t"]
+size = Vector2(108, 109)
+
+[node name="Crate" type="RigidBody2D" groups=["Crates"]]
+position = Vector2(656, 417)
+collision_layer = 2
+collision_mask = 2
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.7, 1.7)
+texture = ExtResource("1_mvecb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_tk88t")

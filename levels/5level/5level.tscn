@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c2iqfamhxpg5m"]
+[gd_scene load_steps=23 format=4 uid="uid://c2iqfamhxpg5m"]
 
 [ext_resource type="Script" path="res://levels/5level/5master_script.gd" id="1_37v0y"]
 [ext_resource type="Texture2D" uid="uid://dvlji5qsbw7di" path="res://tiles_and_backgrounds/tilesets/base/pixil-frame-0 (25) (1).png" id="2_g4nxj"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="9_cf7i5"]
 [ext_resource type="PackedScene" uid="uid://7me0kncs65rq" path="res://levels/3level/door.tscn" id="10_wx16b"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_5j7st"]
-[ext_resource type="Texture2D" uid="uid://bvsul3siauro8" path="res://icon.png" id="12_h6y01"]
+[ext_resource type="PackedScene" uid="uid://6c0uvypso4ey" path="res://levels/5level/crate.tscn" id="12_ppbec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lslgf"]
 texture = ExtResource("2_g4nxj")
@@ -268,9 +268,6 @@ height = 74.0
 radius = 23.0
 height = 94.0
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk88t"]
-size = Vector2(108, 109)
-
 [node name="5level" type="Node2D"]
 texture_filter = 1
 script = ExtResource("1_37v0y")
@@ -407,19 +404,8 @@ shape = SubResource("CapsuleShape2D_ed3rt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SootSprite/Area2D"]
 shape = SubResource("CapsuleShape2D_3dups")
 
-[node name="Crate" type="RigidBody2D" parent="." groups=["Crates"]]
-position = Vector2(656, 417)
-collision_layer = 2
-collision_mask = 2
-metadata/_edit_group_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="Crate"]
-scale = Vector2(1.7, 1.7)
-texture = ExtResource("12_h6y01")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Crate"]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tk88t")
+[node name="Crate" parent="." instance=ExtResource("12_ppbec")]
+lock_rotation = true
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

@@ -117,8 +117,8 @@ texture_region_size = Vector2i(12, 12)
 
 [sub_resource type="TileSet" id="TileSet_od334"]
 tile_size = Vector2i(12, 12)
-physics_layer_0/collision_layer = 255
-physics_layer_0/collision_mask = 7
+physics_layer_0/collision_layer = 16
+physics_layer_0/collision_mask = 23
 sources/2 = SubResource("TileSetAtlasSource_lslgf")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6gvr5"]
@@ -348,6 +348,7 @@ scale = Vector2(14, 14)
 transform = Transform2D(14, 0, 0, 14, -40, -250)
 
 [node name="Sky" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 modulate = Color(0.45, 0.45, 0.45, 1)
 texture_filter = 1
 scale = Vector2(1.2, 1.2)
@@ -437,7 +438,7 @@ position = Vector2(1999, 27)
 scale = Vector2(4, 4)
 
 [node name="pick_up_crate" parent="." instance=ExtResource("12_8xbee")]
-position = Vector2(2390, 426)
+position = Vector2(889, -2155)
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

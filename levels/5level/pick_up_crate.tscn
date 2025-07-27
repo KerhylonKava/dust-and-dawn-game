@@ -3,33 +3,31 @@
 [ext_resource type="Script" path="res://levels/5level/pick_up_crate.gd" id="1_4e03c"]
 [ext_resource type="Texture2D" uid="uid://bvsul3siauro8" path="res://icon.png" id="2_scrvd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tk88t"]
-size = Vector2(108, 109)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hjsqx"]
-size = Vector2(217, 111)
+size = Vector2(109, 111)
 
-[node name="pick_up_crate" type="RigidBody2D" groups=["Crates"]]
-position = Vector2(629, 413)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6asjb"]
+size = Vector2(108, 110.5)
+
+[node name="pick_up_crate" type="RigidBody2D"]
+position = Vector2(643, 412)
 collision_layer = 2
-collision_mask = 2
-sleeping = true
+collision_mask = 18
 lock_rotation = true
 script = ExtResource("1_4e03c")
-metadata/_edit_group_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.7, 1.7)
 texture = ExtResource("2_scrvd")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
-shape = SubResource("RectangleShape2D_tk88t")
-
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 7
-collision_mask = 7
+collision_layer = 255
+collision_mask = 255
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(2.5, -1.5)
+[node name="pick_collision" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1.5, -1)
 shape = SubResource("RectangleShape2D_hjsqx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, -3.75)
+shape = SubResource("RectangleShape2D_6asjb")

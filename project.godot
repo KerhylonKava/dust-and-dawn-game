@@ -97,6 +97,8 @@ throw={
 
 2d_physics/layer_1="soot sprite"
 2d_physics/layer_2="crate"
+2d_physics/layer_3="pick up crate"
+2d_physics/layer_5="ground"
 2d_physics/layer_10="unbuildable"
 
 [rendering]

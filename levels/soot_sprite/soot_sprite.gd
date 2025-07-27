@@ -16,12 +16,9 @@ const MAX_VELOCITY = 150
 @export var cave_key : InvItem
 @export var glow_crystal : InvItem
 #@export var enough_items = inventory.enough_items
-
 @export var climbing = false
-
 @onready var sound_effect_player = $Jump_Sound
 var onAutoJumpObject: bool = false
-
 var jump_time = 0
 var jump_strength := 700/0.0166
 var max_jumps := 1
@@ -31,6 +28,7 @@ var is_falling := velocity.y > 0 and not is_on_floor()
 var onAutoJumpOpject = false
 var FLOOR_NORMAL = Vector2.UP
 var Jump_Force = -1100
+var canPick = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,7 +44,7 @@ func _process(delta: float) -> void:
 	#if is_on_wall_only(): velocity.y = WALL_SLIDING_SPEED * delta
 	if jump_time > 0:
 		jump_time -= 1
-	
+
 	if Input.is_action_just_pressed("test"):
 		collect(backpack,1)
 		collect(cave_key,1)
@@ -55,8 +53,8 @@ func _process(delta: float) -> void:
 			size(3)
 		elif contains(backpack):
 			size(12)
-	
-	
+
+
 	if Input.is_action_just_pressed("up"):
 		animation.play("jump")
 		Jump_Sound.play()
@@ -77,7 +75,7 @@ func _process(delta: float) -> void:
 			if FootSteps_Sound.playing:
 				FootSteps_Sound.stop()
 		velocity.x = -speed * delta
-	
+
 	elif Input.is_action_pressed("right"):
 		$SootSpriteImage.flip_h = false
 		if is_on_floor():
@@ -98,8 +96,8 @@ func _process(delta: float) -> void:
 			animation.play("idle")
 			if FootSteps_Sound.playing:
 				FootSteps_Sound.stop()
-	
-	
+
+
 	if jump_time > 0:
 		velocity.y = -jump_strength * delta
 	
@@ -144,21 +142,12 @@ func size(size):
 func soot_sprite():
 	pass
 
-"""
-var has_collected_light_sprite = false
-var has_collected_leaf_sprite = false
-var has_collected_string_sprite = false
-"""
 func _physics_process(delta: float) -> void:
 	var vineCollider = vine_ray_cast.get_collider()
 	if vineCollider: _vine_climb(delta)
 	
 	if onAutoJumpOpject:
 		if is_on_floor(): onAutoJumpOpject = false
-
-
-
-
 
 func _vine_climb(delta):
 	var direction := Vector2.ZERO

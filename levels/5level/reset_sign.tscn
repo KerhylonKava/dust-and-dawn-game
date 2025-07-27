@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://baf7v2wvp10ia"]
+[gd_scene load_steps=6 format=3 uid="uid://baf7v2wvp10ia"]
 
 [ext_resource type="Script" path="res://levels/5level/reset_sign.gd" id="1_xmrjs"]
 [ext_resource type="Texture2D" uid="uid://cjxlmg6ogteyj" path="res://Quest/01.png" id="2_7m43p"]
@@ -6,6 +6,26 @@
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8m7vs"]
 radius = 49.0
+
+[sub_resource type="GDScript" id="GDScript_ptqai"]
+script/source = "extends RigidBody2D
+var pickedObject 
+var player
+var selected = false
+# Called when the node enters the scene tree for the first time.
+#func _ready() -> void:
+	#player = \"res://levels/soot_sprite/soot_sprite.tscn\"
+	#player.interact_object.connect(_set_selected)
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta: float) -> void:
+#	pass
+
+
+#func _input(event: InputEvent):
+	#if event.is_action_pressed(\"Space\"):
+		#player.pick_up_object(self) 
+"
 
 [node name="ResetSign" type="Node2D"]
 scale = Vector2(3, 3)
@@ -40,14 +60,17 @@ horizontal_alignment = 1
 [node name="Crate2" parent="." instance=ExtResource("3_o7cqh")]
 position = Vector2(95.3333, -96)
 scale = Vector2(0.3, 0.3)
+script = SubResource("GDScript_ptqai")
 
 [node name="Crate3" parent="." instance=ExtResource("3_o7cqh")]
 position = Vector2(95.3333, -129.333)
 scale = Vector2(0.3, 0.3)
+script = SubResource("GDScript_ptqai")
 
 [node name="Crate4" parent="." instance=ExtResource("3_o7cqh")]
 position = Vector2(95, -162.333)
 scale = Vector2(0.3, 0.3)
+script = SubResource("GDScript_ptqai")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

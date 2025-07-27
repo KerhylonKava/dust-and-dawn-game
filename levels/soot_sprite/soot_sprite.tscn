@@ -146,3 +146,6 @@ pitch_scale = 1.1
 [node name="Jump_Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_obrhm")
 volume_db = 5.252
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, -51)

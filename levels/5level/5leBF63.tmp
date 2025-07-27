@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://c2iqfamhxpg5m"]
+[gd_scene load_steps=24 format=4 uid="uid://c2iqfamhxpg5m"]
 
 [ext_resource type="Script" path="res://levels/5level/5master_script.gd" id="1_37v0y"]
 [ext_resource type="Texture2D" uid="uid://dvlji5qsbw7di" path="res://tiles_and_backgrounds/tilesets/base/pixil-frame-0 (25) (1).png" id="2_g4nxj"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://n5w8iif0wcgb" path="res://levels/soot_sprite/mini_lantern.tscn" id="9_cf7i5"]
 [ext_resource type="PackedScene" uid="uid://7me0kncs65rq" path="res://levels/3level/door.tscn" id="10_wx16b"]
 [ext_resource type="PackedScene" uid="uid://ds50p7iginw18" path="res://levels/soot_sprite/soot_sprite.tscn" id="11_5j7st"]
-[ext_resource type="PackedScene" uid="uid://cqglwu2tvmf1u" path="res://levels/5level/pick_up_crate.tscn" id="12_8xbee"]
 [ext_resource type="PackedScene" uid="uid://6c0uvypso4ey" path="res://levels/5level/crate.tscn" id="12_ppbec"]
 [ext_resource type="PackedScene" uid="uid://baf7v2wvp10ia" path="res://levels/5level/reset_sign.tscn" id="13_phwhm"]
 
@@ -270,26 +269,6 @@ height = 74.0
 radius = 23.0
 height = 94.0
 
-[sub_resource type="GDScript" id="GDScript_ptqai"]
-script/source = "extends RigidBody2D
-var pickedObject 
-var player
-var selected = false
-# Called when the node enters the scene tree for the first time.
-#func _ready() -> void:
-	#player = \"res://levels/soot_sprite/soot_sprite.tscn\"
-	#player.interact_object.connect(_set_selected)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-#	pass
-
-
-#func _input(event: InputEvent):
-	#if event.is_action_pressed(\"Space\"):
-		#player.pick_up_object(self) 
-"
-
 [node name="5level" type="Node2D"]
 texture_filter = 1
 position = Vector2(0, -2)
@@ -430,14 +409,10 @@ shape = SubResource("CapsuleShape2D_3dups")
 
 [node name="Crate" parent="." instance=ExtResource("12_ppbec")]
 position = Vector2(1019, 422)
-script = SubResource("GDScript_ptqai")
 
 [node name="ResetSign" parent="." instance=ExtResource("13_phwhm")]
 position = Vector2(1999, 27)
 scale = Vector2(4, 4)
-
-[node name="pick_up_crate" parent="." instance=ExtResource("12_8xbee")]
-position = Vector2(2390, 426)
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

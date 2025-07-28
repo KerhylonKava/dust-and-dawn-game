@@ -11,8 +11,9 @@ size = Vector2(108, 110.5)
 
 [node name="pick_up_crate" type="RigidBody2D"]
 position = Vector2(643, 412)
-collision_layer = 2
-collision_mask = 18
+collision_layer = 4
+collision_mask = 255
+can_sleep = false
 lock_rotation = true
 script = ExtResource("1_4e03c")
 

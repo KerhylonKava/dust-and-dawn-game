@@ -438,7 +438,7 @@ position = Vector2(1999, 27)
 scale = Vector2(4, 4)
 
 [node name="pick_up_crate" parent="." instance=ExtResource("12_8xbee")]
-position = Vector2(889, -2155)
+position = Vector2(1337, 376)
 
 [connection signal="body_entered" from="Door/Area2D" to="." method="_on_door_entered"]
 [connection signal="body_exited" from="Door/Area2D" to="." method="_on_door_exited"]

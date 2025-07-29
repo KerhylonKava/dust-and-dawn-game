@@ -148,4 +148,4 @@ stream = ExtResource("7_obrhm")
 volume_db = 5.252
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -51)
+position = Vector2(0, -77)

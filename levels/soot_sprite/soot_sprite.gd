@@ -106,7 +106,6 @@ func _process(delta: float) -> void:
 
 
 	for i in get_slide_collision_count():
-		print("Moving")
 		var collision = get_slide_collision(i)
 		var collision_crate = collision.get_collider()
 		if collision_crate.is_in_group("Crates") and abs(collision_crate.get_linear_velocity().x) < MAX_VELOCITY: 

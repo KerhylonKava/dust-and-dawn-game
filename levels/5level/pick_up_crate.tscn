@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqglwu2tvmf1u"]
+[gd_scene load_steps=5 format=3 uid="uid://dukbh11pthebo"]
 
 [ext_resource type="Script" path="res://levels/5level/pick_up_crate.gd" id="1_4e03c"]
 [ext_resource type="Texture2D" uid="uid://bvsul3siauro8" path="res://icon.png" id="2_scrvd"]

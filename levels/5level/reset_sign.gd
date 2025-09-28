@@ -6,6 +6,7 @@ var player_in_area = false
 @onready var crate2 = $Crate2
 @onready var crate3 = $Crate3
 @onready var crate4 = $Crate4
+@onready var crate5 = $Crate5
 
 
 
@@ -41,3 +42,6 @@ func _process(delta: float) -> void:
 		remove_child(crate4)
 		add_child(crate4)
 		crate4.global_position = Vector2(2372, -409)
+		remove_child(crate5)
+		add_child(crate5)
+		crate5.global_position = Vector2(2372, -500)
